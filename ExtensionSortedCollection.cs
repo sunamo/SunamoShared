@@ -20,7 +20,7 @@ public class ExtensionSortedCollection
 
     public void AddOnlyFileName(string fileName)
     {
-        string ext = Path.GetExtension(fileName).ToLower();
+        string ext = FS.GetExtension(fileName).ToLower();
         string fn = Path.GetFileNameWithoutExtension(fileName).ToLower();
         DictionaryHelper.AddOrCreateIfDontExists(dictionary, ext, fn);
     }

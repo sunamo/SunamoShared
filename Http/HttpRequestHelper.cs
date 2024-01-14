@@ -107,7 +107,7 @@ public static partial class HttpRequestHelper
 
         if (string.IsNullOrWhiteSpace(ext))
         {
-            ext = Path.GetExtension(href);
+            ext = FS.GetExtension(href);
             ext = SH.RemoveAfterFirst(ext, AllChars.q);
         }
 
@@ -187,7 +187,7 @@ public static partial class HttpRequestHelper
 
         FS.GetPathAndFileNameWithoutExtension(path, out p, out fn, out ext);
 
-        var ext2 = Path.GetExtension(path);
+        var ext2 = FS.GetExtension(path);
         var downloaded = Download(uri, /*path,*/ null, p, fn, 1000, ext2);
 
         // TODO: měl jsem tu arg , string fullPathForCompare

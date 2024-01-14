@@ -33,7 +33,7 @@ public partial class PicturesSunamo
 
     public static bool GetImageFormatFromExtension1(string filePath, out string ext)
     {
-        ext = Path.GetExtension(filePath).TrimStart(AllChars.dot).ToLower();
+        ext = FS.GetExtension(filePath).TrimStart(AllChars.dot).ToLower();
 
         if (PicturesSunamo.IsSupportedResizeForExtension(ext))
         {
@@ -44,7 +44,7 @@ public partial class PicturesSunamo
 
     public static ImageFormats GetImageFormatsFromExtension(string filePath)
     {
-        string ext = Path.GetExtension(filePath).TrimStart(AllChars.dot).ToLower();
+        string ext = FS.GetExtension(filePath).TrimStart(AllChars.dot).ToLower();
         return GetImageFormatsFromExtension2(ext);
     }
 

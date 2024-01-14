@@ -1,5 +1,5 @@
 namespace SunamoShared.Helpers;
-//public partial class DictionaryHelper : DictionaryHelperSE
+//public partial class DictionaryHelper : DictionaryHelper
 //{
 
 //}
