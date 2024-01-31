@@ -60,7 +60,7 @@ public static partial class HttpRequestHelper
                 case FileMoveCollisionOption.LeaveLarger:
                     break;
                 case FileMoveCollisionOption.DontManipulate:
-                    if (FS.ExistsFile(to))
+                    if (File.Exists(to))
                     {
                         continue;
                     }
@@ -108,10 +108,10 @@ public static partial class HttpRequestHelper
         if (string.IsNullOrWhiteSpace(ext))
         {
             ext = FS.GetExtension(href);
-            ext = SH.RemoveAfterFirst(ext, AllChars.q);
+            ext = SHParts.RemoveAfterFirst(ext, AllChars.q);
         }
 
-        fn = SH.RemoveAfterFirst(fn, AllChars.q);
+        fn = SHParts.RemoveAfterFirst(fn, AllChars.q);
         string path = Path.Combine(folder2, fn + ext);
 
         //if (path != fullPathForCompare)
@@ -121,7 +121,7 @@ public static partial class HttpRequestHelper
 
         FS.CreateFoldersPsysicallyUnlessThere(folder2);
 
-        if (!FS.ExistsFile(path) || FS.GetFileSize(path) == 0)
+        if (!File.Exists(path) || FS.GetFileSize(path) == 0)
         {
             var c = HttpRequestHelper.GetResponseBytes(href, HttpMethod.Get, timeoutInMs);
 

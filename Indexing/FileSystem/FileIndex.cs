@@ -113,7 +113,7 @@ public class FileIndex
     {
         FolderItem fi = new FolderItem();
         fi.IDParent = _actualFolderID;
-        fi.Name = FS.GetFileName(p);
+        fi.Name = Path.GetFileName(p);
         fi.Path = FS.GetDirectoryName(p);
         return fi;
     }
@@ -147,7 +147,7 @@ public class FileIndex
         FileItem fi = new FileItem();
         //fi.IDDirectory = folders.Count;
         //fi.IDParent = actualFolderID;
-        fi.Name = FS.GetFileName(p);
+        fi.Name = Path.GetFileName(p);
         //fi.Path = FS.GetDirectoryName(p);
 
         //if (relativeDirectoryName)
@@ -264,7 +264,7 @@ public class FileIndex
                 int columnToInsert = relativeFilePathForEveryColumn[relativeFilePath];
                 string fullFilePath = relativeDirectories[file.IDRelativeDirectory] + file.Name;
 
-                if (FS.ExistsFile(fullFilePath))
+                if (File.Exists(fullFilePath))
                 {
                     long l2 = FS.GetFileSize(fullFilePath);
                     // To result set CheckBoxData - full path and size

@@ -16,7 +16,7 @@ public partial class Utils
         StringBuilder sb = new StringBuilder();
         foreach (byte b in ba)
         {
-            sb.Append(SH.Format4(HexFormat, b));
+            sb.Append(SHFormat.Format4(HexFormat, b));
         }
 
         return sb.ToString();

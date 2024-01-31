@@ -23,7 +23,7 @@ public partial class PH
         paths.Reverse();
 #endif
         var paths2 = paths.Select(x => Path.Combine(x, exe));
-        var files = paths2.Where(x => FS.ExistsFile(x));
+        var files = paths2.Where(x =>File.Exists(x));
         var fi = files.FirstOrDefault();
 
         var exePath = fi;

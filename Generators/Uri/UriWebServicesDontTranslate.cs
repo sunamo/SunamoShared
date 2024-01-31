@@ -22,6 +22,6 @@ public partial class UriWebServices
 
     public static bool IsToOpen(string item)
     {
-        return !CA.IsEqualToAnyElement<string>(item, Consts.NA, Consts.na);
+        return !CAGSH.IsEqualToAnyElement<string>(item, Consts.NA, Consts.na);
     }
 }

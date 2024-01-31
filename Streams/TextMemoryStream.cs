@@ -21,7 +21,7 @@ public class TextMemoryStream
         fn = t;
 
         string line2 = string.Empty;
-        if (FS.ExistsFile(fn))
+        if (File.Exists(fn))
         {
             line2 =
 #if ASYNC

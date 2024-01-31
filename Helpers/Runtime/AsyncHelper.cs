@@ -90,7 +90,7 @@ public class AsyncHelper : AsyncHelperSE
         synch.Dispose();
     }
 
-    public async void RunAsync(Task task)
+    public async Task RunAsync(Task task)
     {
         await task;
     }

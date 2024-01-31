@@ -53,7 +53,7 @@ namespace SunamoShared.SE.Helpers.FileSystem.RelPath;
 //proto vždy ořežu
 //         */
 
-//        if (FS.ExistsFile(relativeTo))
+//        if (File.Exists(relativeTo))
 //        {
 //            result = result.Substring(3);
 //        }

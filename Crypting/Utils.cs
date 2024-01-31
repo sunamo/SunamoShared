@@ -55,7 +55,7 @@ public partial class UtilsNonNetStandard
     public static string WriteConfigKey(string key, string value)
     {
         string s = "<add key=\"{0}\" value=\"{1}\" />" + Environment.NewLine;
-        return SH.Format2(s, key, value);
+        return SHFormat.Format2(s, key, value);
     }
 
     /// <summary>
@@ -66,7 +66,7 @@ public partial class UtilsNonNetStandard
     public static string WriteXmlElement(string element, string value)
     {
         string s = "<{0}>{1}</{0}>" + Environment.NewLine;
-        return SH.Format2(s, element, value);
+        return SHFormat.Format2(s, element, value);
     }
 
     /// <summary>
@@ -86,6 +86,6 @@ public partial class UtilsNonNetStandard
             s = "<{0}>" + Environment.NewLine;
         }
 
-        return SH.Format2(s, element);
+        return SHFormat.Format2(s, element);
     }
 }

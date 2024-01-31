@@ -98,7 +98,6 @@ global using SunamoLang.Interfaces;
 global using SunamoLang;
 global using SunamoNumbers;
 global using SunamoRandom;
-global using SunamoShared.Helpers.FileSystem;
 global using SunamoShared.Helpers;
 global using SunamoStringGetLines;
 global using SunamoTextBuilder;

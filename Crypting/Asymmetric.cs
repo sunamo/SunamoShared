@@ -1,4 +1,3 @@
-
 namespace SunamoShared.Crypting;
 
 
@@ -564,7 +563,7 @@ public class Asymmetric
             {
                 s = "public";
             }
-            ThrowEx.Custom(SH.Format2(sess.i18n(XlfKeys.TheProvided0EncryptionKeyXMLDoesNotAppearToBeValid) + ".", s));
+            ThrowEx.Custom(SHFormat.Format2(sess.i18n(XlfKeys.TheProvided0EncryptionKeyXMLDoesNotAppearToBeValid) + ".", s));
 
         }
     }

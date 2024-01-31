@@ -29,7 +29,7 @@ public static partial class HttpRequestHelper
 
         string html = null;
 
-        if (!FS.ExistsFile(path) || a.forceDownload)
+        if (!File.Exists(path) || a.forceDownload)
         {
             Download(uri, null, path);
         }

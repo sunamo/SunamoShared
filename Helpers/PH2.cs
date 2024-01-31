@@ -59,7 +59,7 @@ public partial class PH
 
                 try
                 {
-                    if (FS.ExistsFile(fullFile))
+                    if (File.Exists(fullFile))
                     {
                         exe = fullFile;
                         break;
@@ -78,7 +78,7 @@ public partial class PH
 
             try
             {
-                if (FS.ExistsFile(thisFile))
+                if (File.Exists(thisFile))
                 {
                     exe = thisFile;
                     break;

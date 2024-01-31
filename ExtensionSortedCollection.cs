@@ -27,6 +27,6 @@ public class ExtensionSortedCollection
 
     public void AddWholeFilePath(string filePath)
     {
-        AddOnlyFileName(FS.GetFileName(filePath));
+        AddOnlyFileName(Path.GetFileName(filePath));
     }
 }
