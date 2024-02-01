@@ -2,7 +2,7 @@ namespace SunamoShared.TemplatesNotCompiled;
 
 public class MainWindowSunamo_Ctor
 {
-    public static void FirstSection<Dispatcher>(string appName, Action<Dispatcher> WpfAppInit, Func<IClipboardHelper> ClipboardHelperWinStdInstance, Action checkForAlreadyRunning, Action applyCryptData, Dispatcher d)
+    public static async Task FirstSection<Dispatcher>(string appName, Action<Dispatcher> WpfAppInit, Func<IClipboardHelper> ClipboardHelperWinStdInstance, Action checkForAlreadyRunning, Action applyCryptData, Dispatcher d)
     {
         ThisAppSE.Name = appName;
         ThisApp.EventLogName = appName;
@@ -17,6 +17,6 @@ public class MainWindowSunamo_Ctor
         AppData.ci.CreateAppFoldersIfDontExists(new CreateAppFoldersIfDontExistsArgs());
         applyCryptData();
 
-        XlfResourcesHSunamo.SaveResouresToRLSunamo(LocalizationLanguagesLoader.Load());
+        XlfResourcesHSunamo.SaveResouresToRLSunamo(await LocalizationLanguagesLoader.Load());
     }
 }

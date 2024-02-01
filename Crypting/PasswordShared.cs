@@ -18,28 +18,29 @@ public partial class Password
         RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
         StringBuilder vr = new StringBuilder(PasswordLength);
         rng.GetBytes(randomBytes);
+        Random random = new Random();
 
         for (int y = 0; y < countCharsLower; y++)
         {
-            vr.Insert(RandomHelper.RandomInt(0, vr.Length - 1), allowedCharsLower[(int)randomBytes[y] % allowedCharsLower.Count]);
+            vr.Insert(random.Next(0, vr.Length - 1), allowedCharsLower[(int)randomBytes[y] % allowedCharsLower.Count]);
         }
 
         rng.GetBytes(randomBytes);
         for (int y = 0; y < countCharsUpper; y++)
         {
-            vr.Insert(RandomHelper.RandomInt(0, vr.Length - 1), allowedCharsUpper[(int)randomBytes[y] % allowedCharsUpper.Count]);
+            vr.Insert(random.Next(0, vr.Length - 1), allowedCharsUpper[(int)randomBytes[y] % allowedCharsUpper.Count]);
         }
 
         rng.GetBytes(randomBytes);
         for (int y = 0; y < countCharsNumbers; y++)
         {
-            vr.Insert(RandomHelper.RandomInt(0, vr.Length - 1), allowedCharsNumbers[(int)randomBytes[y] % allowedCharsNumbers.Count]);
+            vr.Insert(random.Next(0, vr.Length - 1), allowedCharsNumbers[(int)randomBytes[y] % allowedCharsNumbers.Count]);
         }
 
         rng.GetBytes(randomBytes);
         for (int y = 0; y < countCharsSpecial; y++)
         {
-            vr.Insert(RandomHelper.RandomInt(0, vr.Length - 1), allowedCharsSpecial[(int)randomBytes[y] % allowedCharsSpecial.Count]);
+            vr.Insert(random.Next(0, vr.Length - 1), allowedCharsSpecial[(int)randomBytes[y] % allowedCharsSpecial.Count]);
         }
 
         return vr.ToString();

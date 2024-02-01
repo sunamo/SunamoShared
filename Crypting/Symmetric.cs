@@ -185,7 +185,7 @@ public class Symmetric
             }
             else
             {
-                ThrowEx.Custom(sess.i18n(XlfKeys.NoKeyWasProvidedForTheDecryptionOperation) + "!");
+                throw new Exception(sess.i18n(XlfKeys.NoKeyWasProvidedForTheDecryptionOperation) + "!");
             }
         }
         if (_iv.IsEmpty)
@@ -196,7 +196,7 @@ public class Symmetric
             }
             else
             {
-                ThrowEx.Custom(sess.i18n(XlfKeys.NoInitializationVectorWasProvidedForTheDecryptionOperation) + "!");
+                throw new Exception(sess.i18n(XlfKeys.NoInitializationVectorWasProvidedForTheDecryptionOperation) + "!");
             }
         }
         _crypto.Key = _key.Bytes;
@@ -343,7 +343,7 @@ public class Symmetric
         }
         catch (CryptographicException ex)
         {
-            ThrowEx.Custom(sess.i18n(XlfKeys.UnableToDecryptDataTheProvidedKeyMayBeInvalid) + "." + SunamoExceptions.OnlyInSE.Exceptions.TextOfExceptions(ex));
+            throw new Exception(sess.i18n(XlfKeys.UnableToDecryptDataTheProvidedKeyMayBeInvalid) + "." + SunamoExceptions.OnlyInSE.Exceptions.TextOfExceptions(ex));
         }
         finally
         {

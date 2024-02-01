@@ -16,11 +16,11 @@ public class XlfResourcesHSunamo
     /// 1. Entry method 
     /// Only for non-UWP apps
     /// </summary>
-    public static string SaveResouresToRLSunamo(string key, LocalizationLanguages ll = null)
+    public static async Task<string> SaveResouresToRLSunamo(string key, LocalizationLanguages ll = null)
     {
         if (ll == null)
         {
-            ll = LocalizationLanguagesLoader.Load();
+            ll = await LocalizationLanguagesLoader.Load();
         }
 
         return XlfResourcesH.SaveResouresToRL<string, string>(key, VpsHelperSunamo.SunamoProject(), ll);
@@ -28,6 +28,6 @@ public class XlfResourcesHSunamo
 
     static XlfResourcesHSunamo()
     {
-        TranslateDictionary.ReloadIfKeyWontBeFound = SaveResouresToRLSunamo;
+        //TranslateDictionary.ReloadIfKeyWontBeFound = SaveResouresToRLSunamo;
     }
 }

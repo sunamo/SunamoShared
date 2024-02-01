@@ -36,7 +36,7 @@ public class MyThreadPool : IThreadPool
     public bool QueueUserWorkItem(WaitCallback callBack)
     {
         if (callBack == null)
-            ThrowEx.Custom("  callback method cannot be null");
+            throw new Exception("  callback method cannot be null");
 
         lock (jobs)
         {

@@ -55,8 +55,8 @@ public sealed class Pool : IDisposable
     {
         lock (_tasks)
         {
-            if (_disallowAdd) { ThrowEx.Custom(sess.i18n(XlfKeys.ThisPoolInstanceIsInTheProcessOfBeingDisposedCanTAddAnymore)); }
-            if (_disposed) { ThrowEx.Custom(sess.i18n(XlfKeys.ThisPoolInstanceHasAlreadyBeenDisposed)); }
+            if (_disallowAdd) { throw new Exception(sess.i18n(XlfKeys.ThisPoolInstanceIsInTheProcessOfBeingDisposedCanTAddAnymore)); }
+            if (_disposed) { throw new Exception(sess.i18n(XlfKeys.ThisPoolInstanceHasAlreadyBeenDisposed)); }
             _tasks.AddLast(task);
             Monitor.PulseAll(_tasks); // pulse because tasks count changed
         }

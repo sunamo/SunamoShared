@@ -13,7 +13,7 @@ public class AsyncHelper : AsyncHelperSE
     /// <summary>
     /// To all regions insert comments whats not and what working
     ///
-    /// Not working with FS.GetFilesMoreMascAsync - with use https://stackoverflow.com/a/34518914 OK
+    /// Not working with Directory.GetFilesMoreMascAsync - with use https://stackoverflow.com/a/34518914 OK
     /// Task.Run<>(async () => await FunctionAsync()).Result;
     /// </summary>
     /// <typeparam name="T"></typeparam>
@@ -287,7 +287,7 @@ public class AsyncHelper : AsyncHelperSE
 
         public override void Send(SendOrPostCallback d, object state)
         {
-            ThrowEx.Custom(sess.i18n(XlfKeys.WeCannotSendToOurSameThread));
+            throw new Exception(sess.i18n(XlfKeys.WeCannotSendToOurSameThread));
         }
 
         public override void Post(SendOrPostCallback d, object state)
@@ -321,7 +321,7 @@ public class AsyncHelper : AsyncHelperSE
                     task.Item1(task.Item2);
                     if (InnerException != null) // the method threw an exeption
                     {
-                        ThrowEx.Custom(sess.i18n(XlfKeys.AsyncHelpersRunMethodThrewAnException) + ". " + InnerException);
+                        throw new Exception(sess.i18n(XlfKeys.AsyncHelpersRunMethodThrewAnException) + ". " + InnerException);
                     }
                 }
                 else

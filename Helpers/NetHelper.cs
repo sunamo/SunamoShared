@@ -29,7 +29,7 @@ PostFiles(string address, HttpMethod method, IList<UploadFile> files, Dictionary
         {
             var buffer = Encoding.ASCII.GetBytes(boundary + Environment.NewLine);
             requestStream.Write(buffer, 0, buffer.Length);
-            buffer = Encoding.ASCII.GetBytes(SHFormat.Format2("Content-Disposition: form-data; name=\"{0}\"{1}{1}", name, Environment.NewLine));
+            buffer = Encoding.ASCII.GetBytes(string.Format("Content-Disposition: form-data; name=\"{0}\"{1}{1}", name, Environment.NewLine));
             requestStream.Write(buffer, 0, buffer.Length);
             buffer = Encoding.UTF8.GetBytes(values[name] + Environment.NewLine);
             requestStream.Write(buffer, 0, buffer.Length);
@@ -41,10 +41,10 @@ PostFiles(string address, HttpMethod method, IList<UploadFile> files, Dictionary
             var buffer = Encoding.ASCII.GetBytes(boundary + Environment.NewLine);
             requestStream.Write(buffer, 0, buffer.Length);
 
-            buffer = Encoding.UTF8.GetBytes(SHFormat.Format2("Content-Disposition: form-data; name=\"{0}\"; filename=\"{1}\"{2}", file.Name, file.Filename, Environment.NewLine));
+            buffer = Encoding.UTF8.GetBytes(string.Format("Content-Disposition: form-data; name=\"{0}\"; filename=\"{1}\"{2}", file.Name, file.Filename, Environment.NewLine));
             requestStream.Write(buffer, 0, buffer.Length);
 
-            buffer = Encoding.ASCII.GetBytes(SHFormat.Format2(sess.i18n(XlfKeys.ContentType011), file.ContentType, Environment.NewLine));
+            buffer = Encoding.ASCII.GetBytes(string.Format(sess.i18n(XlfKeys.ContentType011), file.ContentType, Environment.NewLine));
             requestStream.Write(buffer, 0, buffer.Length);
 
             file.Stream.CopyTo(requestStream);

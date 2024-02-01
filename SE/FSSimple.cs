@@ -53,7 +53,7 @@ namespace SunamoShared.SE;
 //    /// <returns></returns>
 //    public static string GetExtension(string path)
 //    {
-//        return FS.GetExtension(path);
+//        return Path.GetExtension(path);
 //    }
 
 //    public static bool? ExistsDirectoryNull(string d)

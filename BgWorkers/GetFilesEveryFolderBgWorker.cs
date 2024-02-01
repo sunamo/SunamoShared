@@ -20,7 +20,7 @@ public class GetFilesEveryFolderBgWorker
 
     private void BgWorker_DoWork(object sender, DoWorkEventArgs ea)
     {
-        //result = Task.Run<List<string>>(async () => await FS.GetFilesEveryFolder(e.path, e.masc, e.searchOption, new GetFilesEveryFolderArgs { _trimA1AndLeadingBs = e._trimA1AndLeadingBs })).Result;
+        //result = Task.Run<List<string>>(async () => await Directory.GetFilesEveryFolder(e.path, e.masc, e.searchOption, new GetFilesEveryFolderArgs { _trimA1AndLeadingBs = e._trimA1AndLeadingBs })).Result;
 
         // Automatically after process method call Completed
     }

@@ -14,7 +14,7 @@ public partial class UtilsNonNetStandard
         m = Regex.Match(xml, AllStrings.lt + element + ">(?<Element>[^>]*)</" + element + AllStrings.gt, RegexOptions.IgnoreCase);
         if (m == null)
         {
-            ThrowEx.Custom(sess.i18n(XlfKeys.CouldNotFind) + " " + element + "></" + element + "  " + sess.i18n(XlfKeys.inProvidedPublicKeyXML) + ".");
+            throw new Exception(sess.i18n(XlfKeys.CouldNotFind) + " " + element + "></" + element + "  " + sess.i18n(XlfKeys.inProvidedPublicKeyXML) + ".");
         }
 
         return m.Groups["Element"].ToString();
@@ -31,7 +31,7 @@ public partial class UtilsNonNetStandard
         {
             if (isRequired)
             {
-                ThrowEx.Custom("key " + key + "  is missing from .config file");
+                throw new Exception("key " + key + "  is missing from .config file");
                 return string.Empty;
             }
             else
@@ -55,7 +55,7 @@ public partial class UtilsNonNetStandard
     public static string WriteConfigKey(string key, string value)
     {
         string s = "<add key=\"{0}\" value=\"{1}\" />" + Environment.NewLine;
-        return SHFormat.Format2(s, key, value);
+        return string.Format(s, key, value);
     }
 
     /// <summary>
@@ -66,7 +66,7 @@ public partial class UtilsNonNetStandard
     public static string WriteXmlElement(string element, string value)
     {
         string s = "<{0}>{1}</{0}>" + Environment.NewLine;
-        return SHFormat.Format2(s, element, value);
+        return string.Format(s, element, value);
     }
 
     /// <summary>
@@ -86,6 +86,6 @@ public partial class UtilsNonNetStandard
             s = "<{0}>" + Environment.NewLine;
         }
 
-        return SHFormat.Format2(s, element);
+        return string.Format(s, element);
     }
 }

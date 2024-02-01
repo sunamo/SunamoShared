@@ -257,7 +257,7 @@ FromFile(string var)
 #if ASYNC
 await
 #endif
-TF.ReadAllText(var);
+File.ReadAllTextAsync(var);
         return d;
     }
 }

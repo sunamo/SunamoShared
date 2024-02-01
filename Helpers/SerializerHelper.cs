@@ -46,10 +46,15 @@ public static class SerializerHelperJson
 
         var contentsToWriteToFile = JsonConvert.SerializeObject(objectToWrite, a.formatting);
         var path = GetPath(fileNameWithoutExt);
-#if ASYNC
-        await
-#endif
-            TF.WriteAllText(path, contentsToWriteToFile, a.append);
+
+        if (a.append)
+        {
+            File.AppendAllTextAsync(path, contentsToWriteToFile);
+        }
+        else
+        {
+            File.WriteAllTextAsync(path, contentsToWriteToFile);
+        }
 
         if (a.phWinCode != null)
         {

@@ -4,7 +4,7 @@ namespace SunamoShared.Threading;
 /// </summary>
 public class TimeThreadPool //: IDisposable
 {
-    Timer timer = null;
+    System.Threading.Timer timer = null;
     Dictionary<int, Thread> threads = new Dictionary<int, Thread>();
     Stack<int> stack = new Stack<int>();
     int maxThreadAtTime = 3;
@@ -33,7 +33,7 @@ public class TimeThreadPool //: IDisposable
             //thread.Start(args[i]);
             threads.Add(i, thread);
         }
-        timer = new Timer(TimerElapsed, null, 0, 1000);
+        timer = new System.Threading.Timer(TimerElapsed, null, 0, 1000);
 
     }
 

@@ -47,10 +47,10 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
         }
         else
         {
-            ThrowEx.Custom(sess.i18n(XlfKeys.NotSupportedStrategyOfSavingFiles) + ".");
+            throw new Exception(sess.i18n(XlfKeys.NotSupportedStrategyOfSavingFiles) + ".");
         }
         mask += AllStrings.asterisk + ext;
-        List<StorageFile> files2 = null; // FS.GetFilesInterop(_folder, mask, false, ac);
+        List<StorageFile> files2 = null; // Directory.GetFilesInterop(_folder, mask, false, ac);
         foreach (var item in files2)
         {
             //var itemS = FS.StorageFilePath<StorageFolder, StorageFile>(item, ac);
@@ -169,7 +169,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
     /// </summary>
     /// <param name="dt"></param>
     /// <param name="name"></param>
-    public FileNameWithDateTime<StorageFolder, StorageFile> SaveFileWithDate(string name, string content)
+    public async Task<FileNameWithDateTime<StorageFolder, StorageFile>> SaveFileWithDate(string name, string content)
     {
         DateTime dt = DateTime.Now;
         DateTime today = DateTime.Today;
@@ -199,7 +199,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
         }
 
         var storageFile = default(StorageFile); //FS.GetStorageFile<StorageFolder, StorageFile>(_folder, DeleteWrongCharsInFileName(fnwoe) + _ext, ac);
-        TF.WriteAllText<StorageFolder, StorageFile>(storageFile, content, ac);
+        //await File.WriteAllTextAsync<StorageFolder, StorageFile>(storageFile, content, ac);
 #if DEBUG
         //DebugLogger.DebugWriteLine(storageFile.FullPath());
 #endif

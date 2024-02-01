@@ -27,7 +27,7 @@ public class TextMemoryStream
 #if ASYNC
     await
 #endif
- TF.ReadAllText(t, Encoding.UTF8);
+ File.ReadAllTextAsync(t, Encoding.UTF8);
         }
 
         line.Append(line2);

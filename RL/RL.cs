@@ -59,7 +59,7 @@ public partial class RL
     /// <param name="cs"></param>
     public static string GetStringByLang(string v, Langs cs)
     {
-        ThrowEx.Custom(sess.i18n(XlfKeys.InDesktopAppDontPassLangs));
+        throw new Exception(sess.i18n(XlfKeys.InDesktopAppDontPassLangs));
         //if (l == Langs.en)
         //{
         //    return sess.i18n(k];

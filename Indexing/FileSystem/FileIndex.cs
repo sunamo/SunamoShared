@@ -80,7 +80,7 @@ public class FileIndex
         _actualFolderID++;
         directories.Add(folder);
 
-        var dirs = FS.GetFolders(folder, AllStringsSE.asterisk, SearchOption.AllDirectories);
+        var dirs = Directory.GetDirectories(folder, AllStringsSE.asterisk, SearchOption.AllDirectories);
         List<string> fils = new List<string>();
 
         foreach (var item in dirs)
@@ -105,7 +105,7 @@ public class FileIndex
     /// <param name="folder"></param>
     private void AddFilesFromFolder(string basePath, string folder)
     {
-        var files2 = FS.GetFiles(folder, FS.MascFromExtension(), SearchOption.TopDirectoryOnly);
+        var files2 = Directory.GetFiles(folder, FS.MascFromExtension(), SearchOption.TopDirectoryOnly);
         files2.ToList().ForEach(c => files.Add(GetFileItem(c, basePath)));
     }
 
@@ -114,7 +114,7 @@ public class FileIndex
         FolderItem fi = new FolderItem();
         fi.IDParent = _actualFolderID;
         fi.Name = Path.GetFileName(p);
-        fi.Path = FS.GetDirectoryName(p);
+        fi.Path = Path.GetDirectoryName(p);
         return fi;
     }
 
@@ -148,11 +148,11 @@ public class FileIndex
         //fi.IDDirectory = folders.Count;
         //fi.IDParent = actualFolderID;
         fi.Name = Path.GetFileName(p);
-        //fi.Path = FS.GetDirectoryName(p);
+        //fi.Path = Path.GetDirectoryName(p);
 
         //if (relativeDirectoryName)
         //{
-        string relDirName = FS.GetDirectoryName(p).Replace(basePath, "");
+        string relDirName = Path.GetDirectoryName(p).Replace(basePath, "");
         if (!relativeDirectories.Contains(relDirName))
         {
             relativeDirectories.Add(relDirName);
@@ -266,7 +266,7 @@ public class FileIndex
 
                 if (File.Exists(fullFilePath))
                 {
-                    long l2 = FS.GetFileSize(fullFilePath);
+                    long l2 = new FileInfo(fullFilePath).Length;
                     // To result set CheckBoxData - full path and size
                     vr[r, columnToInsert] = new CheckBoxData<TWithSize<string>> { t = new TWithSize<string> { t = fullFilePath, size = l2 } };
                 }

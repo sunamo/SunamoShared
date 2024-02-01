@@ -31,7 +31,7 @@ namespace SunamoShared.SE.Helpers.FileSystem.RelPath;
 //        {
 //            if (FS.IsFileHasKnownExtension(relativeTo))
 //            {
-//                var rp = FS.GetDirectoryName(relativeTo);
+//                var rp = Path.GetDirectoryName(relativeTo);
 //                if (path.StartsWith(rp))
 //                {
 //                    path = SHReplace.ReplaceOnce(path, rp, Consts.se);
@@ -90,13 +90,13 @@ namespace SunamoShared.SE.Helpers.FileSystem.RelPath;
 //        // pokud by to bylo nutn�, ud�lat to p�es DI
 //        //if (FS.IsFileHasKnownExtension(relativeTo))
 //        //{
-//        //    removedFnRelativeTo = FS.GetFileName(relativeTo);
-//        //    relativeTo = FS.GetDirectoryName(relativeTo);
+//        //    removedFnRelativeTo = Path.GetFileName(relativeTo);
+//        //    relativeTo = Path.GetDirectoryName(relativeTo);
 //        //}
 //        //if (FS.IsFileHasKnownExtension(path))
 //        //{
-//        //    removedFnPath = FS.GetFileName(path);
-//        //    path = FS.GetDirectoryName(path);
+//        //    removedFnPath = Path.GetFileName(path);
+//        //    path = Path.GetDirectoryName(path);
 //        //}
 
 //        relativeTo = GetFullPath(relativeTo);

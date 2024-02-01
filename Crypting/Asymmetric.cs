@@ -318,7 +318,7 @@ public class Asymmetric
 
         public static string FromFile(string p)
         {
-            ThrowEx.Custom(sess.i18n(XlfKeys.TheMethodOrOperationIsNotImplemented) + ".");
+            throw new Exception(sess.i18n(XlfKeys.TheMethodOrOperationIsNotImplemented) + ".");
             return null;
         }
     }
@@ -495,7 +495,7 @@ public class Asymmetric
         {
             if (ex.Message.ToLower().IndexOf("bad length") > -1)
             {
-                ThrowEx.Custom(sess.i18n(XlfKeys.YourDataIsTooLargeRSAEncryptionIsDesignedToEncryptRelativelySmallAmountsOfDataTheExactByteLimitDependsOnTheKeySizeToEncryptMoreDataUseSymmetricEncryptionAndThenEncryptThatSymmetricKeyWithAsymmetricRSAEncryption) + ".");
+                throw new Exception(sess.i18n(XlfKeys.YourDataIsTooLargeRSAEncryptionIsDesignedToEncryptRelativelySmallAmountsOfDataTheExactByteLimitDependsOnTheKeySizeToEncryptMoreDataUseSymmetricEncryptionAndThenEncryptThatSymmetricKeyWithAsymmetricRSAEncryption) + ".");
 
             }
             else
@@ -563,7 +563,7 @@ public class Asymmetric
             {
                 s = "public";
             }
-            ThrowEx.Custom(SHFormat.Format2(sess.i18n(XlfKeys.TheProvided0EncryptionKeyXMLDoesNotAppearToBeValid) + ".", s));
+            throw new Exception(string.Format(sess.i18n(XlfKeys.TheProvided0EncryptionKeyXMLDoesNotAppearToBeValid) + ".", s));
 
         }
     }
@@ -605,7 +605,7 @@ public class Asymmetric
         {
             if (ex.Message.ToLower().IndexOf("csp for this implementation could not be acquired") > -1)
             {
-                ThrowEx.Custom(sess.i18n(XlfKeys.UnableToObtainCryptographicServiceProvider) + ". " + sess.i18n(XlfKeys.EitherThePermissionsAreIncorrectOnThe) + " 'C:\\Documents and Settings\\All Users\\Application DataCrypt\\Microsoft\\Crypto\\RSA\\MachineKeys' folder, or the current security context '" + WindowsIdentity.GetCurrent().Name + "' does not have access to this folder.");
+                throw new Exception(sess.i18n(XlfKeys.UnableToObtainCryptographicServiceProvider) + ". " + sess.i18n(XlfKeys.EitherThePermissionsAreIncorrectOnThe) + " 'C:\\Documents and Settings\\All Users\\Application DataCrypt\\Microsoft\\Crypto\\RSA\\MachineKeys' folder, or the current security context '" + WindowsIdentity.GetCurrent().Name + "' does not have access to this folder.");
             }
             else
             {

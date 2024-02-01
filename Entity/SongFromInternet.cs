@@ -100,8 +100,8 @@ public class SongFromInternet : IEquatable<SongFromInternet>
         title.AddRange(splittedNazevTitle);
         remix.AddRange(splittedRemix);
 
-        titleWoDiacritic = CA.WithoutDiacritic(CA.ToListStringIList(title));
-        remixWoDiacritic = CA.WithoutDiacritic(CA.ToListStringIList(remix));
+        titleWoDiacritic = CA.WithoutDiacritic(new List<string>(title));
+        remixWoDiacritic = CA.WithoutDiacritic(new List<string>(remix));
 
         SetInConvention();
 
@@ -351,7 +351,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     public static bool breakInCalculateSimilarity = false;
     public string Artist()
     {
-        return SHJoin.JoinSpace(nazev);
+        return string.Join(AllStrings.space, nazev);
     }
 
     public string ArtistInConvention()
@@ -361,7 +361,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     public string Title()
     {
-        return SHJoin.JoinSpace(title);
+        return string.Join(AllStrings.space, title);
     }
 
     public string TitleInConvention()
@@ -371,7 +371,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     public string Remix()
     {
-        return SHJoin.JoinSpace(remix);
+        return string.Join(AllStrings.space, remix);
     }
 
     public string RemixInConvention()

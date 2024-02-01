@@ -27,7 +27,7 @@ public class HttpUtility : HttpUtilitySE
     {
         if (html == null)
         {
-            ThrowEx.Custom("html");
+            throw new Exception("html");
         }
         // replace & by &amp; but only once!
         Regex rx = backwardCompatibility

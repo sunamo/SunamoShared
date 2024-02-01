@@ -15,7 +15,7 @@ public class GoogleMyMapsHelper
         List<List<string>> exists = new List<List<string>>();
         foreach (var i in s)
         {
-            SheetsHelper.JoinForGoogleSheetRow(sb, CA.Trim(CA.ToListString(i.A, i.B)));
+            SheetsHelper.JoinForGoogleSheetRow(sb, CA.Trim(new List<string>([i.A, i.B])));
         }
 
         return sb.ToString();

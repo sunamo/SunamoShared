@@ -68,7 +68,7 @@ public class NormalizeDate
         november = 4,5,6,7
         december = -4,5,6,7
          */
-        var d = NH.MakeUpTo2NumbersToZero(dt.Day);
+        var d = dt.Day.ToString("D2");
         var firstChar = d[0];
 
         StringBuilder sb = new StringBuilder();

@@ -1,4 +1,7 @@
+
 namespace SunamoShared.Crypting;
+using SunamoStringFormat;
+
 public partial class Utils
 {
     /// <summary>
@@ -39,7 +42,7 @@ public partial class Utils
         }
         catch (FormatException)
         {
-            ThrowEx.Custom(sess.i18n(XlfKeys.TheProvidedStringDoesNotAppearToBeBase64Encoded) + ":" + Environment.NewLine + base64Encoded + Environment.NewLine);
+            throw new Exception(sess.i18n(XlfKeys.TheProvidedStringDoesNotAppearToBeBase64Encoded) + ":" + Environment.NewLine + base64Encoded + Environment.NewLine);
         }
         return null;
     }
@@ -86,7 +89,7 @@ public partial class Utils
         }
         catch (Exception ex)
         {
-            ThrowEx.Custom(sess.i18n(XlfKeys.TheProvidedStringDoesNotAppearToBeHexEncoded) + ":" + Environment.NewLine + hexEncoded + Environment.NewLine + SunamoExceptions.OnlyInSE.Exceptions.TextOfExceptions(ex));
+            throw new Exception(sess.i18n(XlfKeys.TheProvidedStringDoesNotAppearToBeHexEncoded) + ":" + Environment.NewLine + hexEncoded + Environment.NewLine + SunamoExceptions.OnlyInSE.Exceptions.TextOfExceptions(ex));
             return null;
         }
     }

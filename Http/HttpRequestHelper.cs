@@ -1,4 +1,7 @@
+
 namespace SunamoShared.Http;
+using SunamoStringParts;
+
 
 
 /// <summary>
@@ -91,7 +94,7 @@ public static partial class HttpRequestHelper
     /// <param name = "folder2"></param>
     /// <param name = "fn"></param>
     /// <param name = "ext"></param>
-    public static bool Download(string href, BoolString DontHaveAllowedExtension, string folder2, string fn, int timeoutInMs, string ext = null)
+    public static async Task<bool> Download(string href, BoolString DontHaveAllowedExtension, string folder2, string fn, int timeoutInMs, string ext = null)
     {
         // TODO: měl jsem tu arg , string fullPathForCompare
         // zkontrolovat zda se tu ta cesta skládá správně
@@ -107,7 +110,7 @@ public static partial class HttpRequestHelper
 
         if (string.IsNullOrWhiteSpace(ext))
         {
-            ext = FS.GetExtension(href);
+            ext = Path.GetExtension(href);
             ext = SHParts.RemoveAfterFirst(ext, AllChars.q);
         }
 
@@ -121,13 +124,13 @@ public static partial class HttpRequestHelper
 
         FS.CreateFoldersPsysicallyUnlessThere(folder2);
 
-        if (!File.Exists(path) || FS.GetFileSize(path) == 0)
+        if (!File.Exists(path) || new FileInfo(path).Length == 0)
         {
             var c = HttpRequestHelper.GetResponseBytes(href, HttpMethod.Get, timeoutInMs);
 
             if (c.Length != 0)
             {
-                TF.WriteAllBytesArray(path, c);
+                await File.WriteAllBytesAsync(path, c);
                 return true;
             }
         }
@@ -181,14 +184,14 @@ public static partial class HttpRequestHelper
     /// <param name="DontHaveAllowedExtension"></param>
     /// <param name="path"></param>
     /// <returns></returns>
-    public static bool Download(string uri, BoolString DontHaveAllowedExtension, string path)
+    public static async Task<bool> Download(string uri, BoolString DontHaveAllowedExtension, string path)
     {
         string p, fn, ext;
 
         FS.GetPathAndFileNameWithoutExtension(path, out p, out fn, out ext);
 
-        var ext2 = FS.GetExtension(path);
-        var downloaded = Download(uri, /*path,*/ null, p, fn, 1000, ext2);
+        var ext2 = Path.GetExtension(path);
+        var downloaded = await Download(uri, /*path,*/ null, p, fn, 1000, ext2);
 
         // TODO: měl jsem tu arg , string fullPathForCompare
         // zkontrolovat zda se tu ta cesta skládá správně

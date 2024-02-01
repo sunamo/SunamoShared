@@ -8,7 +8,7 @@ public class LocalizationLanguagesLoader
     /// Zatím mi není známo že by metoda se nemohla volat kdykoliv odkudkoliv takže ji tak budu volat.
     /// </summary>
     /// <returns></returns>
-    public static LocalizationLanguages Load()
+    public static async Task<LocalizationLanguages> Load()
     {
         if (result == null)
         {
@@ -17,8 +17,8 @@ public class LocalizationLanguagesLoader
 
             result = new LocalizationLanguages()
             {
-                Cs = TF.ReadAllTextSync(@"E:\vs\Projects\sunamoWithoutLocalDep\sunamo\MultilingualResources\sunamo.cs-CZ.min.xlf"),
-                En = TF.ReadAllTextSync(@"E:\vs\Projects\sunamoWithoutLocalDep\sunamo\MultilingualResources\sunamo.en-US.min.xlf")
+                Cs = await File.ReadAllTextAsync(@"E:\vs\Projects\sunamoWithoutLocalDep\sunamo\MultilingualResources\sunamo.cs-CZ.min.xlf"),
+                En = await File.ReadAllTextAsync(@"E:\vs\Projects\sunamoWithoutLocalDep\sunamo\MultilingualResources\sunamo.en-US.min.xlf")
             };
         }
 

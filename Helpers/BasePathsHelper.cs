@@ -57,7 +57,7 @@ namespace SunamoShared.Helpers;
 //            if (exQ && exMb)
 //            {
 //                var cf = !FS.IsCountOfFilesMoreThan(bpMb, "*", 200);
-//                //var np = FS.CreateDirectory(bpMb, DirectoryCreateCollisionOption.AddSerie, SerieStyle.Underscore, false);
+//                //var np = Directory.CreateDirectory(bpMb, DirectoryCreateCollisionOption.AddSerie, SerieStyle.Underscore, false);
 //                exists[bpMb] = false;
 //                where = exists.Where(d => d.Value).Select(d => d.Key);
 //            }
@@ -65,7 +65,7 @@ namespace SunamoShared.Helpers;
 //            if (where.Count() > 1)
 //            {
 //                // TODO: Udělat tu aby se mi při mb a q a v E:\ to byl jen junction nebo neúplná složka to smazalo/přejmenovalo
-//                //if(FS.ExistsDirectory(bpMb) && FS.ExistsDirectory(bpQ))
+//                //if(Directory.Exists(bpMb) && Directory.Exists(bpQ))
 //                //{
 //                //    if (JunctionPoint.)
 //                //    {
@@ -74,7 +74,7 @@ namespace SunamoShared.Helpers;
 //                //})));
 //                //}
 
-//                ThrowEx.Custom("Can't identify platform on which app run, more folders found: " + string.Join(Comma(where.ToArray()));
+//                throw new Exception("Can't identify platform on which app run, more folders found: " + string.Join(Comma(where.ToArray()));
 //            }
 //            else
 //            {
@@ -140,6 +140,6 @@ namespace SunamoShared.Helpers;
 
 //    private static void Add(string bpMb)
 //    {
-//        exists.Add(bpMb, FS.ExistsDirectoryWorker(bpMb));
+//        exists.Add(bpMb, Directory.ExistsWorker(bpMb));
 //    }
 //}

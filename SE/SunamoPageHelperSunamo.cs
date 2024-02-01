@@ -1,3 +1,5 @@
+namespace SunamoShared.SE;
+
 //namespace SunamoShared.SE;
 ///// <summary>
 /////     Usage: methods from .web

@@ -67,11 +67,11 @@ namespace SunamoShared.Indexing;
 //            }
 //            else
 //            {
-//                ThrowEx.Custom("Nepodporovaná strategie ukládání.");
+//                throw new Exception("Nepodporovaná strategie ukládání.");
 //            }
 //            mask += AllStrings.asterisk;
 //            #region MyRegion
-//            List<string> f = FS.GetFiles(folder, AllStrings.asterisk + ext, SearchOption.TopDirectoryOnly);
+//            List<string> f = Directory.GetFiles(folder, AllStrings.asterisk + ext, SearchOption.TopDirectoryOnly);
 //            foreach (var item in f)
 //            {
 //                string fnwoe = Path.GetFileNameWithoutExtension(item);

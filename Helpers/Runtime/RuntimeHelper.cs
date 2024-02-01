@@ -106,7 +106,7 @@ public partial class RuntimeHelper
         {
             if (throwException)
             {
-                ThrowEx.Custom(sess.i18n(XlfKeys.ChangeDialogResultHasAlredyRegisteredHandler));
+                throw new Exception(sess.i18n(XlfKeys.ChangeDialogResultHasAlredyRegisteredHandler));
             }
             else
             {

@@ -85,7 +85,7 @@ public class ErrorMessageGenerator
                 case FileExceptions.General:
                     return "Nezn\u00E1m\u00E1 nebo obecn\u00E1 chyba";
                 default:
-                    ThrowEx.Custom("Neimplementovan\u00E1 v\u011Btev");
+                    throw new Exception("Neimplementovan\u00E1 v\u011Btev");
                     return null;
             }
         }
@@ -103,7 +103,7 @@ public class ErrorMessageGenerator
                 case FileExceptions.General:
                     return sess.i18n(XlfKeys.UnknownOrGeneralError);
                 default:
-                    ThrowEx.Custom(sess.i18n(XlfKeys.NotImplementedCase));
+                    throw new Exception(sess.i18n(XlfKeys.NotImplementedCase));
                     return null;
             }
         }

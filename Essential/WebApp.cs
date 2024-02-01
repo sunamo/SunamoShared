@@ -15,6 +15,6 @@ public class WebApp
 
     public static void SetStatus(TypeOfMessage st, string status, params string[] args)
     {
-        StatusSetted(st, SHFormat.Format2(status, args));
+        StatusSetted(st, string.Format(status, args));
     }
 }

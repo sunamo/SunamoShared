@@ -38,6 +38,6 @@ public class GuidHelper
             ls.Add(AddDashes(ts));
         }
 
-        return SHJoin.JoinNL(ls);
+        return string.Join(Environment.NewLine, ls);
     }
 }

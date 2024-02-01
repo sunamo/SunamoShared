@@ -6,7 +6,7 @@ public class WikipediaHelper
     public static string HtmlEntitiesList(Func<List<string>, List<string>, string> CSharpHelperGetDictionaryValuesFromTwoList)
     {
         var c = string.Empty;
-        //c = TF.ReadAllText(@"D:\_Test\sunamo\shared\WikipediaHelper\ParseTable.html");
+        //c = File.ReadAllTextAsync(@"D:\_Test\sunamo\shared\WikipediaHelper\ParseTable.html");
 
         var tables = ParseTable(c, sess.i18n(XlfKeys.Character), sess.i18n(XlfKeys.Names));
 

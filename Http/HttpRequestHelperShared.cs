@@ -38,7 +38,7 @@ public static partial class HttpRequestHelper
 #if ASYNC
     await
 #endif
- TF.ReadAllText(path);
+ File.ReadAllTextAsync(path);
 
         return html;
     }

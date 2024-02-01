@@ -30,7 +30,7 @@ public class CastHelper
         }
         else if (t == TypesList.tString)
         {
-            return SHJoin.JoinNL((List<string>)l);
+            return string.Join(Environment.NewLine, (List<string>)l);
         }
         else
         {
