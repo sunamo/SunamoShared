@@ -32,7 +32,7 @@ public class PowershellBuilder : IPowershellBuilder
 
     private PowershellBuilder()
     {
-        //Git = new GitBashBuilder();
+        //Git = new GitBashBuilder(new TextBuilder());
     }
 
     public static IPowershellBuilder Create()

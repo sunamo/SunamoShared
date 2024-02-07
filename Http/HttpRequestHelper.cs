@@ -141,10 +141,10 @@ public static partial class HttpRequestHelper
     static string ShortPathFromUri(string s)
     {
         #region Nefungovalo, furt to bylo příliš dlouhé
-        //s = SH.KeepAfterFirst(s, "://");
-        //s = SH.KeepAfterFirst(s, "www.");
+        //s = SHParts.KeepAfterFirst(s, "://");
+        //s = SHParts.KeepAfterFirst(s, "www.");
         //// Abych ušetřil ještě nějaké místo, nebudu vkládat ani host
-        //s = SH.KeepAfterFirst(s, "/");
+        //s = SHParts.KeepAfterFirst(s, "/");
 
         /*
          * Z nějakého důvodu, když to dekóduji, tak mi C# nedokáže zapsat soubor s tímto názvem

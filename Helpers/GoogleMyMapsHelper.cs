@@ -44,7 +44,7 @@ public class GoogleMyMapsHelper
         {
             if (!allowEmptyCity)
             {
-                //input = CLCmd.LoadFromClipboardOrConsole("2 rows from sheets");
+                //input = CL.LoadFromClipboardOrConsole("2 rows from sheets");
                 ThrowEx.IsNull(input);
             }
         }
