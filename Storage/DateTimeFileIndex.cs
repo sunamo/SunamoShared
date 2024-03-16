@@ -14,7 +14,7 @@ public class FileNameWithDateTime<StorageFolder, StorageFile>
     /// <summary>
     /// I'm in standard, not uwp, therefore I cant point to MainPage
     /// </summary>
-    AbstractCatalog<StorageFolder, StorageFile> ac;
+    AbstractCatalogShared<StorageFolder, StorageFile> ac;
     public DateTime dt = DateTime.MinValue;
     public string name = "";
     /// <summary>
@@ -39,7 +39,7 @@ public class FileNameWithDateTime<StorageFolder, StorageFile>
     /// </summary>
     /// <param name="row1"></param>
     /// <param name="row2"></param>
-    public FileNameWithDateTime(string row1, string row2, AbstractCatalog<StorageFolder, StorageFile> ac)
+    public FileNameWithDateTime(string row1, string row2, AbstractCatalogShared<StorageFolder, StorageFile> ac)
     {
         _displayText = row1 + AllStringsSE.space + row2;
         _row1 = row1;

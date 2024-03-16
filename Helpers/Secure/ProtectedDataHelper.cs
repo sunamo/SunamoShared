@@ -1,6 +1,10 @@
+using System.Security.Cryptography;
+
 namespace SunamoShared.Helpers.Secure;
 public static class ProtectedDataHelper
 {
+    public static dynamic DataProtectionScope { get; private set; }
+
     public static string EncryptString(string salt, SecureString input)
     {
         byte[] entropy = Encoding.Unicode.GetBytes(salt);

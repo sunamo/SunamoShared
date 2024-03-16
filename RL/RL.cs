@@ -46,8 +46,8 @@ public partial class RL
     public static void Initialize(Langs l)
     {
         RL.l = l;
-        AppLangHelper.currentCulture = new CultureInfo(l.ToString());
-        AppLangHelper.currentUICulture = new CultureInfo(l.ToString());
+        AppLangHelperShared.currentCulture = new CultureInfo(l.ToString());
+        AppLangHelperShared.currentUICulture = new CultureInfo(l.ToString());
     }
 
     /// <summary>

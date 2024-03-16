@@ -14,10 +14,10 @@ public class RA
         RegistryKey hklm = Registry.CurrentUser;
         RegistryKey sw = hklm.OpenSubKey("SOFTWARE", true);
 
-        m = sw.OpenSubKey(ThisAppSE.Name, true);
+        m = sw.OpenSubKey(ThisApp.Name, true);
         if (m == null)
         {
-            m = sw.CreateSubKey(ThisAppSE.Name);
+            m = sw.CreateSubKey(ThisApp.Name);
             valuesInKey = new List<string>();
         }
         else

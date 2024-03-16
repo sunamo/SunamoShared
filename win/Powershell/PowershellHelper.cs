@@ -22,13 +22,13 @@ public class PowershellHelper : IPowershellHelper
 #else
     void  
 #endif
- CmdC(string v)
+ CmdC(string v, Func<bool, ITextBuilder> ciTextBuilder)
     {
 
 #if ASYNC
         await
 #endif
-     p.CmdC(v);
+     p.CmdC(v, ciTextBuilder);
     }
 
     public

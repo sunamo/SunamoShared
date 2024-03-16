@@ -11,6 +11,30 @@ public partial class ManageArtistDashTitle
         remix = r.Item3;
     }
 
+    public static bool ContainsBracket(string t, ref List<char> left, ref List<char> right, bool mustBeLeftAndRight = false)
+    {
+        left = SH.ContainsAnyChar(t, false, AllLists.leftBrackets);
+        right = SH.ContainsAnyChar(t, false, AllLists.leftBrackets);
+        if (mustBeLeftAndRight)
+        {
+            if (left.Count > 0 && right.Count > 0)
+            {
+                return true;
+            }
+        }
+        else
+        {
+            if (left.Count > 0 || right.Count > 0)
+            {
+                return true;
+            }
+        }
+
+
+
+        return false;
+    }
+
     /// <param name = "item"></param>
     /// <param name = "artist"></param>
     /// <param name = "song"></param>

@@ -1,41 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Version>24.2.6.1</Version>
+    <Version>24.2.7.3</Version>
     <Description>Many code (222 code files to 1/9/2024) which is waiting for separated to standalone packages</Description>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="_sunamo\**" />
-    <EmbeddedResource Remove="_sunamo\**" />
-    <None Remove="_sunamo\**" />
-  </ItemGroup>
   <ItemGroup>
     <Content Remove="C:\Users\r\.nuget\packages\sunamoxlf\23.12.9.1\contentFiles\any\net8.0\WinSec\Readme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SunamoAsync" Version="24.2.1.1" />
-    <PackageReference Include="SunamoDateTime" Version="24.1.23.1" />
-    <PackageReference Include="SunamoEnumsHelper" Version="24.1.14.1" />
-    <PackageReference Include="SunamoFIleSystem" Version="24.1.23.1" />
-    <PackageReference Include="SunamoGitBashBuilder" Version="24.1.14.1" />
-    <PackageReference Include="SunamoGoogleSheets" Version="24.1.14.1" />
-    <PackageReference Include="SunamoHtml" Version="24.1.14.1" />
-    <PackageReference Include="SunamoInterfaces" Version="24.1.31.2" />
-    <PackageReference Include="SunamoLogMessage" Version="24.1.14.1" />
-    <PackageReference Include="SunamoSerializer" Version="24.1.23.1" />
+    <PackageReference Include="SunamoCompare" Version="24.2.6.2" />
     <PackageReference Include="SunamoStringData" Version="24.1.24.1" />
-    <PackageReference Include="SunamoThisApp" Version="24.1.14.1" />
-    <PackageReference Include="SunamoUri" Version="24.1.14.1" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Diacritics" Version="3.3.27" />
-    <PackageReference Include="SunamoUriWebServices" Version="24.2.1.1" />
-    <PackageReference Include="SunamoWinStd" Version="24.2.1.2" />
-    <PackageReference Include="System.Diagnostics.EventLog" Version="8.0.0" />
-    <PackageReference Include="System.Management" Version="8.0.0" />
-    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0">
-    </PackageReference>
-    <PackageReference Include="System.Security.Permissions" Version="8.0.0" />
+    <PackageReference Include="SunamoXlfKeys" Version="24.2.6.2" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MultilingualResources\sunamo.cs-CZ.min.xlf" />
@@ -47,6 +26,7 @@
     <Folder Include="Data\" />
     <Folder Include="Enums\" />
     <Folder Include="Helpers\FileSystem\" />
+    <Folder Include="LoggerAbstract\" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>

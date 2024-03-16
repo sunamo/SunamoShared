@@ -20,4 +20,13 @@ public static partial class YouTube
         return "http://www.youtube.com/results?search_query=" + UH.UrlEncode(co);
     }
 
+    public static string ReplaceAll(string r, List<string> what, string forWhat)
+    {
+        foreach (var item in what)
+        {
+            r = r.Replace(item, forWhat);
+        }
+
+        return r;
+    }
 }

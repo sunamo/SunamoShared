@@ -4,7 +4,7 @@ namespace SunamoShared.Storage;
 public class DateTimeFileIndex<StorageFolder, StorageFile>
 {
     static Type type = typeof(DateTimeFileIndex<StorageFolder, StorageFile>);
-    public AbstractCatalog<StorageFolder, StorageFile> ac;
+    public AbstractCatalogShared<StorageFolder, StorageFile> ac;
     public event VoidT<List<FileNameWithDateTime<StorageFolder, StorageFile>>> InitComplete;
     private StorageFolder _folder = default;
     private string _ext = null;
@@ -29,7 +29,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
     /// <param name="af"></param>
     /// <param name="ext"></param>
     /// <param name="ds"></param>
-    public void Initialize(AppFolders af, string ext, FileEntriesDuplicitiesStrategy ds, AbstractCatalog<StorageFolder, StorageFile> ac)
+    public void Initialize(AppFolders af, string ext, FileEntriesDuplicitiesStrategy ds, AbstractCatalogShared<StorageFolder, StorageFile> ac)
     {
         this.ac = ac;
         _ds = ds;
@@ -87,7 +87,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
             return FileEntriesDuplicitiesStrategy.Time;
         }
     }
-    public FileNameWithDateTime<StorageFolder, StorageFile> CreateObjectFileNameWithDateTime(string row1, string row2, string item, AbstractCatalog<StorageFolder, StorageFile> ac)
+    public FileNameWithDateTime<StorageFolder, StorageFile> CreateObjectFileNameWithDateTime(string row1, string row2, string item, AbstractCatalogShared<StorageFolder, StorageFile> ac)
     {
         FileNameWithDateTime<StorageFolder, StorageFile> add = new FileNameWithDateTime<StorageFolder, StorageFile>(row1, row2, ac);
         // Here must return c#
@@ -154,7 +154,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
         }
         catch (Exception ex)
         {
-            ThisApp.Error(sess.i18n(XlfKeys.FileCannotBeDeleted) + AllStrings.space + SunamoExceptions.OnlyInSE.Exceptions.TextOfExceptions(ex));
+            //ThisApp.Error(sess.i18n(XlfKeys.FileCannotBeDeleted) + AllStrings.space + SunamoExceptions.OnlyInSE.Exceptions.TextOfExceptions(ex));
         }
     }
     public string GetStorageFile(FileNameWithDateTime<StorageFolder, StorageFile> o)
@@ -171,40 +171,42 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
     /// <param name="name"></param>
     public async Task<FileNameWithDateTime<StorageFolder, StorageFile>> SaveFileWithDate(string name, string content)
     {
-        DateTime dt = DateTime.Now;
-        DateTime today = DateTime.Today;
-        string fnwoe = "";
-        int? max = null;
-        if (_ds == FileEntriesDuplicitiesStrategy.Time)
-        {
-            fnwoe = ConvertDateTimeToFileNamePostfix.ToConvention(name, dt, true);
-        }
-        else if (_ds == FileEntriesDuplicitiesStrategy.Serie)
-        {
-            IList<int?> ml = files.Where(u => u.dt == today).Select(s => s.serie).ToList();
-            max = ml.Count();
-            if (max != 0)
-            {
-                max = ml.Max() + 1;
-            }
-            if (!max.HasValue)
-            {
-                max = 1;
-            }
-            fnwoe = DTHelper.DateTimeToFileName(dt, false) + "_S_" + max.Value + AllStrings.lowbar + name;
-        }
-        else
-        {
-            // Zbytečné, kontroluje se již v konstruktoru
-        }
+        throw new NotImplementedException();
 
-        var storageFile = default(StorageFile); //FS.GetStorageFile<StorageFolder, StorageFile>(_folder, DeleteWrongCharsInFileName(fnwoe) + _ext, ac);
-        //await File.WriteAllTextAsync<StorageFolder, StorageFile>(storageFile, content, ac);
-#if DEBUG
-        //DebugLogger.DebugWriteLine(storageFile.FullPath());
-#endif
-        var o = CreateObjectFileNameWithDateTime(GetDisplayText(dt, max, _l), name, dt, max, name, fnwoe);
-        files.Add(o);
-        return o;
+        //        DateTime dt = DateTime.Now;
+        //        DateTime today = DateTime.Today;
+        //        string fnwoe = "";
+        //        int? max = null;
+        //        if (_ds == FileEntriesDuplicitiesStrategy.Time)
+        //        {
+        //            fnwoe = ConvertDateTimeToFileNamePostfix.ToConvention(name, dt, true);
+        //        }
+        //        else if (_ds == FileEntriesDuplicitiesStrategy.Serie)
+        //        {
+        //            IList<int?> ml = files.Where(u => u.dt == today).Select(s => s.serie).ToList();
+        //            max = ml.Count();
+        //            if (max != 0)
+        //            {
+        //                max = ml.Max() + 1;
+        //            }
+        //            if (!max.HasValue)
+        //            {
+        //                max = 1;
+        //            }
+        //            fnwoe = DTHelper.DateTimeToFileName(dt, false) + "_S_" + max.Value + AllStrings.lowbar + name;
+        //        }
+        //        else
+        //        {
+        //            // Zbytečné, kontroluje se již v konstruktoru
+        //        }
+
+        //        var storageFile = default(StorageFile); //FS.GetStorageFile<StorageFolder, StorageFile>(_folder, DeleteWrongCharsInFileName(fnwoe) + _ext, ac);
+        //        //await File.WriteAllTextAsync<StorageFolder, StorageFile>(storageFile, content, ac);
+        //#if DEBUG
+        //        //DebugLogger.DebugWriteLine(storageFile.FullPath());
+        //#endif
+        //        var o = CreateObjectFileNameWithDateTime(GetDisplayText(dt, max, _l), name, dt, max, name, fnwoe);
+        //        files.Add(o);
+        //        return o;
     }
 }

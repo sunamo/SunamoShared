@@ -45,7 +45,7 @@ public class TextMemoryStream
 #if ASYNC
         await
 #endif
-     TF.WriteAllText(fn, line.ToString());
+     File.WriteAllTextAsync(fn, line.ToString());
     }
 
     //public string LineStartingWith(string date)

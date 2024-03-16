@@ -1,3 +1,5 @@
+using System.Runtime.Serialization;
+
 namespace SunamoShared.Helpers;
 
 
@@ -10,9 +12,10 @@ class SerializerHelper<T>
 /// </summary>
 public static class SerializerHelperJson
 {
-    public static string GetPath(string fileNameWithoutExt)
+    public static string GetPath(string path)
     {
-        return AppData.ci.GetFile(AppFolders.Other, fileNameWithoutExt + ".json");
+        return path;
+        //return AppData.ci.GetFile(AppFolders.Other, fileNameWithoutExt + ".json");
     }
 
     /// <summary>
@@ -82,7 +85,7 @@ public static class SerializerHelperJson
 #if ASYNC
     await
 #endif
-TF.ReadAllText(GetPath(fileNameWithoutExt));
+File.ReadAllTextAsync(GetPath(fileNameWithoutExt));
         var deser = JsonConvert.DeserializeObject<T>(fileContents);
 
         return deser;

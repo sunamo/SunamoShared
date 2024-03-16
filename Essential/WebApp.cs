@@ -1,3 +1,5 @@
+using SunamoTypeOfMessage;
+
 namespace SunamoShared.Essential;
 
 
@@ -5,11 +7,11 @@ namespace SunamoShared.Essential;
 public class WebApp
 {
     public static Langs l = Langs.en;
-    public static ResourcesHelper Resources;
+    public static ResourcesShared Resources;
     public static string Name;
     public static readonly bool initialized = false;
     public static string Namespace = "";
-    public static event SetStatusDelegate StatusSetted;
+    public static event Action<TypeOfMessage, string> StatusSetted;
 
 
 

@@ -1,3 +1,5 @@
+
+
 namespace SunamoShared.Crypting;
 
 
@@ -552,7 +554,7 @@ public class Asymmetric
         {
             _rsa.FromXmlString(keyXml);
         }
-        catch (XmlSyntaxException ex)
+        catch (/*XmlSyntaxException*/ Exception ex)
         {
             string s = null;
             if (isPrivate)

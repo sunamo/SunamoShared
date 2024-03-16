@@ -26,7 +26,7 @@ public partial class UtilsNonNetStandard
     /// </summary>
     public static string GetConfigString(string key, bool isRequired)
     {
-        string s = Convert.ToString(ConfigurationManager.AppSettings.Get(key));
+        string s = null; //Convert.ToString(ConfigurationManager.AppSettings.Get(key));
         if (s == null)
         {
             if (isRequired)

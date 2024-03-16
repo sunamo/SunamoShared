@@ -27,7 +27,7 @@ public class PowershellBuilder : IPowershellBuilder
     /// <summary>
     /// NSN, protože pouze volá metody z PowershellBuilder
     /// </summary>
-    public TextBuilder sb { get; set; }
+    public ITextBuilder sb { get; set; }
     public INpmBashBuilder Npm { get; set; }
 
     private PowershellBuilder()
@@ -35,11 +35,16 @@ public class PowershellBuilder : IPowershellBuilder
         //Git = new GitBashBuilder(new TextBuilder());
     }
 
-    public static IPowershellBuilder Create()
+    public static IPowershellBuilder Create(IGitBashBuilder git, INpmBashBuilder npm)
     {
         var result = (IPowershellBuilder)Activator.CreateInstance(typeToActivate);
-        result.Git = new GitBashBuilder(result.sb);
-        result.Npm = new NpmBashBuilder(result.sb);
+        //result.Git = new GitBashBuilder(result.sb);
+        //result.Npm = new NpmBashBuilder(result.sb);
+
+        result.Git = git;
+        result.Npm = npm;
+
+
         return result;
     }
 

@@ -5,7 +5,7 @@ public partial class PlatformInteropHelper
     #region For easy copy
     public static bool IsSellingApp()
     {
-        return RH.ExistsClass("SellingHelper");
+        return false; //RH.ExistsClass("SellingHelper");
     }
     #endregion
 }

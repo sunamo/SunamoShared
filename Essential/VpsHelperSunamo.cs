@@ -39,7 +39,7 @@ Zkopíroval jsem z C:\repos\_\Projects\sunamoWithoutLocalDep.webWithoutDep\Sunam
         }
         else
         {
-            return BasePathsHelper.vs + @"sunamo\";
+            return BasePathsHelperShared.vs + @"sunamo\";
         }
     }
 
@@ -51,7 +51,7 @@ Zkopíroval jsem z C:\repos\_\Projects\sunamoWithoutLocalDep.webWithoutDep\Sunam
         }
         else
         {
-            return BasePathsHelper.vs + @"sunamo.cz\";
+            return BasePathsHelperShared.vs + @"sunamo.cz\";
         }
     }
 

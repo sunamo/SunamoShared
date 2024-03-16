@@ -1,9 +1,5 @@
 
 namespace SunamoShared.Http;
-using SunamoStringParts;
-
-
-
 /// <summary>
 /// Náhrada za třídu NetHelper
 /// Can be only in shared coz is not available in standard
@@ -137,6 +133,8 @@ public static partial class HttpRequestHelper
 
         return false;
     }
+
+
 
     static string ShortPathFromUri(string s)
     {
