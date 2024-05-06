@@ -41,7 +41,7 @@ public class FileNameWithDateTime<StorageFolder, StorageFile>
     /// <param name="row2"></param>
     public FileNameWithDateTime(string row1, string row2, AbstractCatalogShared<StorageFolder, StorageFile> ac)
     {
-        _displayText = row1 + AllStringsSE.space + row2;
+        _displayText = row1 + AllStrings.space + row2;
         _row1 = row1;
         _row2 = row2;
         this.ac = ac;

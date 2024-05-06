@@ -1,0 +1,12 @@
+Powershell
+PowershellBuilder
+IPowershellBuilder
+Git
+Type
+IGitBashBuilder
+ITextBuilder
+INpmBashBuilder
+Npm
+Activator
+Consts
+CommandWithPath

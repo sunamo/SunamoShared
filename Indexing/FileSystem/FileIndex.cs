@@ -80,7 +80,7 @@ public class FileIndex
         _actualFolderID++;
         directories.Add(folder);
 
-        var dirs = Directory.GetDirectories(folder, AllStringsSE.asterisk, SearchOption.AllDirectories);
+        var dirs = Directory.GetDirectories(folder, AllStrings.asterisk, SearchOption.AllDirectories);
         List<string> fils = new List<string>();
 
         foreach (var item in dirs)

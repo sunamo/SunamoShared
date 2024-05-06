@@ -211,7 +211,7 @@ namespace SunamoShared.SE.Helpers.FileSystem.RelPath;
 
 //    //public static string Postfix(string arg1, string v)
 //    //{
-//    //    arg1 = arg1.TrimEnd(AllCharsSE.bs) + v + AllStringsSE.bs;
+//    //    arg1 = arg1.TrimEnd(AllCharsSE.bs) + v + AllStrings.bs;
 //    //    return arg1;
 //    //}
 

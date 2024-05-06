@@ -320,7 +320,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
             feats = s.AlternateArtists();
             foreach (var item in feats)
             {
-                s = new SongFromInternet(item + AllStringsSE.dash + song);
+                s = new SongFromInternet(item + AllStrings.dash + song);
                 result2 = CalculateSimilarity(s, true);
 
                 if (breakInCalculateSimilarity)
@@ -385,7 +385,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
         sb.Append(TitleInConvention());
         if (remix.Count != 0)
         {
-            sb.Append(AllStringsSE.lsqb + RemixInConvention() + AllStringsSE.rsqb);
+            sb.Append(AllStrings.lsqb + RemixInConvention() + AllStrings.rsqb);
         }
         return sb.ToString();
     }
@@ -426,10 +426,10 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     public override string ToString()
     {
         StringBuilder vr = new StringBuilder();
-        vr.Append(Artist() + AllStringsSE.dash + Title());
+        vr.Append(Artist() + AllStrings.dash + Title());
         if (remix.Count != 0)
         {
-            vr.Append(" [" + Remix() + AllStringsSE.rsqb);
+            vr.Append(" [" + Remix() + AllStrings.rsqb);
         }
         return vr.ToString();
     }
@@ -437,10 +437,10 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     public string ToConventionString()
     {
         StringBuilder vr = new StringBuilder();
-        vr.Append(ArtistInConvention() + AllStringsSE.dash + TitleInConvention());
+        vr.Append(ArtistInConvention() + AllStrings.dash + TitleInConvention());
         if (remix.Count != 0)
         {
-            vr.Append(" [" + RemixInConvention() + AllStringsSE.rsqb);
+            vr.Append(" [" + RemixInConvention() + AllStrings.rsqb);
         }
         return vr.ToString();
     }
@@ -448,7 +448,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     private IList<string> SplitRemix(string u)
     {
         // comma - artists like Hm... or The Academy Is..
-        List<string> gg = SHSplit.Split(u, AllStringsSE.amp, AllStringsSE.space, AllStringsSE.comma, AllStringsSE.dash, AllStringsSE.lsqb, AllStringsSE.rsqb, AllStringsSE.lb, AllStringsSE.rb);
+        List<string> gg = SHSplit.Split(u, AllStrings.amp, AllStrings.space, AllStrings.comma, AllStrings.dash, AllStrings.lsqb, AllStrings.rsqb, AllStrings.lb, AllStrings.rb);
         //gg.ForEach(g => g.ToLower());
         for (int i = 0; i < gg.Count; i++)
         {
@@ -459,7 +459,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     private IList<string> SplitNazevTitle(string u)
     {
-        List<string> gg = SHSplit.Split(u, AllStringsSE.amp, AllStringsSE.space, AllStringsSE.comma, AllStringsSE.dash);
+        List<string> gg = SHSplit.Split(u, AllStrings.amp, AllStrings.space, AllStrings.comma, AllStrings.dash);
         //gg.ForEach(g => g.ToLower());
         for (int i = 0; i < gg.Count; i++)
         {

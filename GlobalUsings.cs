@@ -34,7 +34,7 @@ global using SunamoShared.Helpers;
 global using System.Net.Security;
 global using System.Net;
 global using SunamoData.Data;
-global using SunamoExtensions;
+
 global using System.Security.Cryptography.X509Certificates;
 global using SunamoShared.Essential;
 global using Newtonsoft.Json;

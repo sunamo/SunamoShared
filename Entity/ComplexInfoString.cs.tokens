@@ -1,0 +1,10 @@
+Entity
+Dictionary
+QuantityNumbers
+QuantityLowerChars
+QuantitySpecialChars
+QuantityUpperChars
+AllChars
+NumberLettersOrDigit
+CountOfNeededLettersOrDigit
+MaxValue
