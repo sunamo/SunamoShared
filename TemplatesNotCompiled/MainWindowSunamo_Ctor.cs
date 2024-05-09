@@ -1,3 +1,5 @@
+
+namespace SunamoShared.TemplatesNotCompiled;
 //namespace SunamoShared.TemplatesNotCompiled;
 
 //public class MainWindowSunamo_Ctor

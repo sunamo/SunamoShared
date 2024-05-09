@@ -1,4 +1,6 @@
-﻿using System;
+
+namespace SunamoShared._public;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

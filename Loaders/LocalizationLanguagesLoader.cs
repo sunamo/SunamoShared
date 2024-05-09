@@ -1,3 +1,5 @@
+
+namespace SunamoShared.Loaders;
 //namespace SunamoShared.Loaders;
 
 //public class LocalizationLanguagesLoader

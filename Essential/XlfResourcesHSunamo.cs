@@ -1,3 +1,5 @@
+
+namespace SunamoShared.Essential;
 //namespace SunamoShared.Essential;
 //public class XlfResourcesHSunamo
 //{

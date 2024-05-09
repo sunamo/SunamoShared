@@ -1,3 +1,5 @@
+
+namespace SunamoShared;
 //namespace SunamoShared;
 //public class ParserEventLog
 //{
