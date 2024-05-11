@@ -1,4 +1,4 @@
-namespace SunamoShared.Threading;
+namespace SunamoShared;
 public class ThreadPoolEvent
 {
     int n = 0;

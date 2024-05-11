@@ -1,4 +1,4 @@
-﻿namespace SunamoShared._sunamo;
+namespace SunamoShared;
 internal class DTHelperMulti
 {
     internal static string DateToString(DateTime p, Langs l)

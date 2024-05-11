@@ -1,4 +1,4 @@
-namespace SunamoShared.Lazy;
+namespace SunamoShared;
 public class LazyT<T>
 {
     private Func<string, bool, T> getCommonSettings;

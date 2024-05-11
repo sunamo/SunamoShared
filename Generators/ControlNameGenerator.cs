@@ -1,4 +1,4 @@
-namespace SunamoShared.Generators;
+namespace SunamoShared;
 
 public static partial class ControlNameGenerator
 {

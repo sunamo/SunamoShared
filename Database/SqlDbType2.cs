@@ -1,4 +1,4 @@
-namespace SunamoShared.Database;
+namespace SunamoShared;
 // Is already in SunamoSqlServer. It cause compile error
 //public enum SqlDbType2
 //{

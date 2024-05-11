@@ -1,4 +1,4 @@
-namespace SunamoShared.Threading;
+namespace SunamoShared;
 
 public sealed class PoolLinkedList : IDisposable
 {

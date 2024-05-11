@@ -1,6 +1,6 @@
 
 
-namespace SunamoShared._sunamo;
+namespace SunamoShared;
 internal class ThisApp
 {
     internal static string EventLogName;

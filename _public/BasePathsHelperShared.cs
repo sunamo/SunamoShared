@@ -1,5 +1,5 @@
 
-namespace SunamoShared._public;
+namespace SunamoShared;
 using System;
 using System.Collections.Generic;
 using System.Linq;

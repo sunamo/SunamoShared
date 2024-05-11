@@ -1,4 +1,4 @@
-namespace SunamoShared.Crypting;
+namespace SunamoShared;
 /// <summary>
 /// Friend public class for shared utility methods used by multiple Encryption classes
 /// </summary>

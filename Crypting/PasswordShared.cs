@@ -1,4 +1,4 @@
-namespace SunamoShared.Crypting;
+namespace SunamoShared;
 
 public partial class Password
 {

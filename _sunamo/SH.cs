@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoShared._sunamo;
+namespace SunamoShared;
 internal class SH
 {
     #region SH.FirstCharUpper

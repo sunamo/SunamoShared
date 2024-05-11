@@ -1,4 +1,4 @@
-namespace SunamoShared.Indexing.FileSystem;
+namespace SunamoShared;
 
 
 

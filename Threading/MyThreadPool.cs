@@ -1,4 +1,4 @@
-namespace SunamoShared.Threading;
+namespace SunamoShared;
 
 //public delegate void WaitCallback();
 public interface IThreadPool

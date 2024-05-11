@@ -1,4 +1,4 @@
-namespace SunamoShared.Helpers.Resource;
+namespace SunamoShared;
 
 public partial class PicturesSunamo
 {

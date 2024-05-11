@@ -1,4 +1,4 @@
-namespace SunamoShared.Threading.Downloading;
+namespace SunamoShared;
 /// <summary>
 /// Obsahuje URI ke stažení - každá URI má jedinečné identifikační číslo
 /// </summary>

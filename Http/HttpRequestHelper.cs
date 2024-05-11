@@ -1,5 +1,5 @@
 
-namespace SunamoShared.Http;
+namespace SunamoShared;
 /// <summary>
 /// Náhrada za třídu NetHelper
 /// Can be only in shared coz is not available in standard

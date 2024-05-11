@@ -1,4 +1,4 @@
-namespace SunamoShared.win;
+namespace SunamoShared;
 
 
 public class DW2 : IDW

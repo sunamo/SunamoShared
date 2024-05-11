@@ -1,4 +1,4 @@
-namespace SunamoShared.Helpers.Runtime;
+namespace SunamoShared;
 
 
 public partial class RuntimeHelper

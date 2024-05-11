@@ -1,4 +1,4 @@
-namespace SunamoShared.Crypting;
+namespace SunamoShared;
 
 /// <summary>
 /// Class for generating and hashing passwords

@@ -1,4 +1,4 @@
-namespace SunamoShared.Essential.EventArgsNs;
+namespace SunamoShared;
 
 public delegate void UriEventHandler(object sender, UriEventArgs e);
 

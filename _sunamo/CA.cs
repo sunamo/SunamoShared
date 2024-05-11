@@ -1,11 +1,11 @@
-﻿using Diacritics.Extensions;
+using Diacritics.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoShared._sunamo;
+namespace SunamoShared;
 internal class CA
 {
     internal static List<string> TrimStart(string backslash, List<string> s)

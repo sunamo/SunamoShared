@@ -1,6 +1,6 @@
 
 
-namespace SunamoShared.Essential;
+namespace SunamoShared;
 
 
 

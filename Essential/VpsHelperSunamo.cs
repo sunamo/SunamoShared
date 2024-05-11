@@ -1,4 +1,4 @@
-namespace SunamoShared.Essential;
+namespace SunamoShared;
 public partial class VpsHelperSunamo
 {
     #region For easy copy

@@ -1,4 +1,4 @@
-namespace SunamoShared.Indexing.TextContent;
+namespace SunamoShared;
 
 
 

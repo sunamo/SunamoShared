@@ -1,4 +1,4 @@
-namespace SunamoShared.Exceptions;
+namespace SunamoShared;
 
 public class UnauthorizedAccess : Exception
 {

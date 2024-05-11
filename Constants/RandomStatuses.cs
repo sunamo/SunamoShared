@@ -1,4 +1,4 @@
-namespace SunamoShared.Constants;
+namespace SunamoShared;
 
 public class RandomStatuses
 {

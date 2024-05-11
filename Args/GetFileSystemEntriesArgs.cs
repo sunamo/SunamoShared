@@ -1,4 +1,4 @@
-namespace SunamoShared.Args;
+namespace SunamoShared;
 
 
 public class GetFileSystemEntriesArgs

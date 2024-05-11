@@ -1,4 +1,4 @@
-namespace SunamoShared.SE;
+namespace SunamoShared;
 ///// <summary>
 /////     FSXlf - postfixy jsou píčovina. volám v tom metody stejné třídy. Můžu nahradit FS. v SunExc ale musel bych to
 /////     zkopírovat zpět. to nese riziko že jsem přidal novou metodu kterou bych překopírováním ztratil. Krom toho to nedrží

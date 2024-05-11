@@ -1,4 +1,4 @@
-namespace SunamoShared.Helpers.Thread;
+namespace SunamoShared;
 /// <summary>
 /// To not inicialize 
 /// </summary>

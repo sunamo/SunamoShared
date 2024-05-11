@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace SunamoShared.Helpers;
+namespace SunamoShared;
 
 
 class SerializerHelper<T>

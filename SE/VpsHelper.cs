@@ -1,4 +1,4 @@
-namespace SunamoShared.SE;
+namespace SunamoShared;
 //namespace Xlf
 //{ 
 

@@ -1,4 +1,4 @@
-namespace SunamoShared.Web;
+namespace SunamoShared;
 
 /// <summary>
 /// Summary description for YouTube

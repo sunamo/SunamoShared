@@ -1,4 +1,4 @@
-namespace SunamoShared.Crypting;
+namespace SunamoShared;
 
 /// <summary>
 /// Pokud se zde pracuje s řetězci, jsou v kódování UTF8

@@ -1,4 +1,4 @@
-namespace SunamoShared.Helpers.DataTypes;
+namespace SunamoShared;
 
 public class BitHelper
 {

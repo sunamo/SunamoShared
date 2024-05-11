@@ -1,4 +1,4 @@
-namespace SunamoShared.List;
+namespace SunamoShared;
 
 public partial class KeyValuePairIList
 {

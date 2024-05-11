@@ -1,4 +1,4 @@
-namespace SunamoShared.Storage;
+namespace SunamoShared;
 
 
 public class DateTimeFileIndex<StorageFolder, StorageFile>

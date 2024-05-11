@@ -1,6 +1,6 @@
 
 
-namespace SunamoShared.Crypting;
+namespace SunamoShared;
 
 
 

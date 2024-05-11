@@ -1,4 +1,4 @@
-﻿namespace SunamoShared._public;
+namespace SunamoShared;
 public class AbstractCatalogShared<StorageFolder, StorageFile>
 {
 }

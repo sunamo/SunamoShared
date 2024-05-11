@@ -1,5 +1,5 @@
 
-namespace SunamoShared.Helpers;
+namespace SunamoShared;
 ////namespace SunamoShared.Helpers;
 
 

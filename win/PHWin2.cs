@@ -1,4 +1,4 @@
-namespace SunamoShared.win;
+namespace SunamoShared;
 
 
 /// <summary>

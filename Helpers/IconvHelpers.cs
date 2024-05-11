@@ -1,4 +1,4 @@
-namespace SunamoShared.Helpers;
+namespace SunamoShared;
 
 public class IconvHelpers
 {

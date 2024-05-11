@@ -1,4 +1,4 @@
-namespace SunamoShared.Control;
+namespace SunamoShared;
 
 public class ColumnSizeHelper
 {

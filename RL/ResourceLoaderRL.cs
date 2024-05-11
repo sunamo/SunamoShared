@@ -1,4 +1,4 @@
-namespace SunamoShared.RL;
+namespace SunamoShared;
 public class ResourceLoaderRL
 {
     public string GetString(string k)

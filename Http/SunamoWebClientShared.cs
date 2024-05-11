@@ -1,4 +1,4 @@
-namespace SunamoShared.Http;
+namespace SunamoShared;
 
 
 public partial class SunamoWebClient : WebClient

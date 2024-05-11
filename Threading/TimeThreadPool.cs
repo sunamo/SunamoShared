@@ -1,4 +1,4 @@
-namespace SunamoShared.Threading;
+namespace SunamoShared;
 /// <summary>
 /// Run by time new thread. 
 /// </summary>

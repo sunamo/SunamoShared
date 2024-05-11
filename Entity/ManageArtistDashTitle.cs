@@ -1,4 +1,4 @@
-namespace SunamoShared.Entity;
+namespace SunamoShared;
 
 /// <summary>
 /// Is used by more projects - for example MusicSorter, sunamo.cz, SunamoCzAdmin

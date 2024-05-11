@@ -1,4 +1,4 @@
-namespace SunamoShared.Helpers.DataTypes;
+namespace SunamoShared;
 public class Base64Helpers
 {
     public const string jpeg = "data:image/jpeg;base64,";

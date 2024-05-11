@@ -1,4 +1,4 @@
-namespace SunamoShared.Generators;
+namespace SunamoShared;
 public static class SpecialFolders
 {
     public static string MyDocuments(string path)

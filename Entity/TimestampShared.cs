@@ -1,4 +1,4 @@
-namespace SunamoShared.Entity;
+namespace SunamoShared;
 
 public partial class Timestamp
 {

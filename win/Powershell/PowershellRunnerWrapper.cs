@@ -1,4 +1,4 @@
-namespace SunamoShared.win.Powershell;
+namespace SunamoShared;
 
 
 public class PowershellRunnerWrapper : IPowershellRunner

@@ -1,4 +1,4 @@
-namespace SunamoShared.Helpers.Text;
+namespace SunamoShared;
 public static class BitConverterBE
 {
     public static byte[] GetBytes(ulong value)

@@ -1,4 +1,4 @@
-namespace SunamoShared.Crypting;
+namespace SunamoShared;
 public class CryptDelegates
 {
     public Func<string, string, string> decryptString;

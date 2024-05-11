@@ -1,4 +1,4 @@
-namespace SunamoShared.Exceptions;
+namespace SunamoShared;
 /// <summary>
 /// Is using when the code can't be implemented because it's non logic and avoid showing in search result
 /// 

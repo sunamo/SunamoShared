@@ -1,4 +1,4 @@
-namespace SunamoShared.Storage;
+namespace SunamoShared;
 
 /// <summary>
 /// Working with files in format Copy:

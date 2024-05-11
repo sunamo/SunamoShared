@@ -1,4 +1,4 @@
-﻿namespace SunamoShared._sunamo;
+namespace SunamoShared;
 internal class SHJoin
 {
     internal static string JoinFromIndex(int dex, object delimiter2, IList parts)

@@ -1,4 +1,4 @@
-namespace SunamoShared.Threading.Downloading;
+namespace SunamoShared;
 /// <summary>
 /// 
 /// </summary>

@@ -1,4 +1,4 @@
-namespace SunamoShared.Entity;
+namespace SunamoShared;
 /// <summary>
 /// 
 /// </summary>

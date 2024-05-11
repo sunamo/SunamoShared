@@ -1,4 +1,4 @@
-namespace SunamoShared.Helpers.Secure;
+namespace SunamoShared;
 
 
 /// <summary>

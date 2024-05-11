@@ -1,4 +1,4 @@
-namespace SunamoShared.Helpers.Resource;
+namespace SunamoShared;
 public class GuidHelper
 {
     public static string RemoveDashes(string e)
