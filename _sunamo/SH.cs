@@ -1,5 +1,5 @@
-﻿using Diacritics.Extensions;
-using SunamoStringData;
+using Diacritics.Extensions;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
