@@ -114,7 +114,7 @@ namespace SunamoShared.SE.Helpers.FileSystem.RelPath;
 //        // If there is nothing in common they can't share the same root, return the "to" path as is.
 //        if (commonLength == 0)
 //        {
-//            return Path.Combine(path.Replace(relativeTo, string.Empty).TrimStart(AllCharsSE.bs), removedFnPath);
+//            return Path.Combine(path.Replace(relativeTo, string.Empty).TrimStart(AllChars.bs), removedFnPath);
 //        }
 
 //        // Trailing separators aren't significant for comparison
@@ -211,7 +211,7 @@ namespace SunamoShared.SE.Helpers.FileSystem.RelPath;
 
 //    //public static string Postfix(string arg1, string v)
 //    //{
-//    //    arg1 = arg1.TrimEnd(AllCharsSE.bs) + v + AllStrings.bs;
+//    //    arg1 = arg1.TrimEnd(AllChars.bs) + v + AllStrings.bs;
 //    //    return arg1;
 //    //}
 

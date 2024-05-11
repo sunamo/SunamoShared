@@ -57,3 +57,6 @@ global using SunamoShared._sunamo;
 global using SunamoShared._public;
 global using SunamoXlfKeys;
 global using SunamoCompare;
+global using System.Collections.Generic;
+global using System.Collections;
+

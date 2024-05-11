@@ -137,7 +137,7 @@ internal class FS
         string fn = Path.GetFileNameWithoutExtension(origS);
         string e = Path.GetExtension(origS);
 
-        if (origS.Contains(AllCharsSE.slash) || origS.Contains(AllCharsSE.bs))
+        if (origS.Contains(AllChars.slash) || origS.Contains(AllChars.bs))
         {
             string p = Path.GetDirectoryName(origS);
 
@@ -330,7 +330,7 @@ nad
     {
         if (v != string.Empty)
         {
-            v = v.TrimEnd(AllCharsSE.bs) + AllCharsSE.bs;
+            v = v.TrimEnd(AllChars.bs) + AllChars.bs;
         }
 
         SH.FirstCharUpper(ref v);

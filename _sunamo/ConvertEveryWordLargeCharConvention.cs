@@ -9,7 +9,7 @@ internal class ConvertEveryWordLargeCharConvention
 {
     private static bool IsSpecialChar(char item)
     {
-        return new List<char>([AllCharsSE.bs, AllCharsSE.lb, AllCharsSE.rb, AllCharsSE.rsqb, AllCharsSE.lsqb, AllCharsSE.dot, AllCharsSE.apostrophe]).Any(d => d == item); //CAGSH.IsEqualToAnyElement<char>(item, );
+        return new List<char>([AllChars.bs, AllChars.lb, AllChars.rb, AllChars.rsqb, AllChars.lsqb, AllChars.dot, AllChars.apostrophe]).Any(d => d == item); //CAGSH.IsEqualToAnyElement<char>(item, );
     }
 
     internal static string ToConvention(string p)
@@ -24,7 +24,7 @@ internal class ConvertEveryWordLargeCharConvention
                 if (char.IsUpper(item))
                 {
                     dalsiVelke = false;
-                    sb.Append(AllCharsSE.space);
+                    sb.Append(AllChars.space);
                     sb.Append(item);
                     continue;
                 }
@@ -35,7 +35,7 @@ internal class ConvertEveryWordLargeCharConvention
                     {
                         if (!IsSpecialChar(sb[sb.Length - 1]))
                         {
-                            sb.Append(AllCharsSE.space);
+                            sb.Append(AllChars.space);
                         }
                     }
                     sb.Append(char.ToUpper(item));
@@ -53,7 +53,7 @@ internal class ConvertEveryWordLargeCharConvention
                 }
                 else
                 {
-                    sb.Append(AllCharsSE.space);
+                    sb.Append(AllChars.space);
                     continue;
                 }
             }
@@ -61,7 +61,7 @@ internal class ConvertEveryWordLargeCharConvention
             {
                 if (!char.IsUpper(sb[sb.Length - 1]))
                 {
-                    sb.Append(AllCharsSE.space);
+                    sb.Append(AllChars.space);
                 }
                 sb.Append(item);
             }
@@ -82,7 +82,7 @@ internal class ConvertEveryWordLargeCharConvention
             }
             else
             {
-                sb.Append(AllCharsSE.space);
+                sb.Append(AllChars.space);
                 dalsiVelke = true;
             }
         }
