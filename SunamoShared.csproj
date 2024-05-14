@@ -71,6 +71,51 @@
     <Compile Include="..\SunamoExceptions\_AddedToAllCsproj\SHSunamoExceptions.cs" Link="_linked\SunamoExceptions\_AddedToAllCsproj\SHSunamoExceptions.cs" />
     <Compile Include="..\SunamoExceptions\_AddedToAllCsproj\CASunamoExceptions.cs" Link="_linked\SunamoExceptions\_AddedToAllCsproj\CASunamoExceptions.cs" />
     <Compile Include="..\SunamoXlfKeys\XlfKeys.cs" Link="_linked\SunamoXlfKeys\XlfKeys.cs" />
+    <Compile Include="..\SunamoCollections\CA.cs" Link="_linked\SunamoCollections\CA.cs" />
+    <Compile Include="..\SunamoThisApp\ThisApp.cs" Link="_linked\SunamoThisApp\ThisApp.cs" />
+    <Compile Include="..\SunamoParsing\TryParse.cs" Link="_linked\SunamoParsing\TryParse.cs" />
+    <Compile Include="..\SunamoFubuCsProjFile\_NotMine\None.cs" Link="_linked\SunamoFubuCsProjFile\_NotMine\None.cs" />
+    <Compile Include="..\SunamoEnums\Enums\TypeOfMessage.cs" Link="_linked\SunamoEnums\Enums\TypeOfMessage.cs" />
+    <Compile Include="..\SunamoTypeOfMessage\TypeOfMessage.cs" Link="_linked\SunamoTypeOfMessage\TypeOfMessage.cs" />
+    <Compile Include="..\SunamoEnumsHelper\EnumHelper.cs" Link="_linked\SunamoEnumsHelper\EnumHelper.cs" />
+    <Compile Include="..\SunamoCollectionsGeneric\Collections\D.cs" Link="_linked\SunamoCollectionsGeneric\Collections\D.cs" />
+    <Compile Include="..\SunamoCrypt\Enums\Provider.cs" Link="_linked\SunamoCrypt\Enums\Provider.cs" />
+    <Compile Include="..\SunamoStringSplit\SHSplit.cs" Link="_linked\SunamoStringSplit\SHSplit.cs" />
+    <Compile Include="..\SunamoString\SH.cs" Link="_linked\SunamoString\SH.cs" />
+    <Compile Include="..\SunamoConverters\Converts\ConvertEveryWordLargeCharConvention.cs" Link="_linked\SunamoConverters\Converts\ConvertEveryWordLargeCharConvention.cs" />
+    <Compile Include="..\SunamoStringReplace\SHReplace.cs" Link="_linked\SunamoStringReplace\SHReplace.cs" />
+    <Compile Include="..\SunamoBts\BTS.cs" Link="_linked\SunamoBts\BTS.cs" />
+    <Compile Include="..\SunamoParsing\Parse.cs" Link="_linked\SunamoParsing\Parse.cs" />
+    <Compile Include="..\SunamoStringGetLines\SHGetLines.cs" Link="_linked\SunamoStringGetLines\SHGetLines.cs" />
+    <Compile Include="..\SunamoValues\Values\Emoticons.cs" Link="_linked\SunamoValues\Values\Emoticons.cs" />
+    <Compile Include="..\SunamoReflection\RH.cs" Link="_linked\SunamoReflection\RH.cs" />
+    <Compile Include="..\SunamoFubuCsProjFile\_NotMine\Content.cs" Link="_linked\SunamoFubuCsProjFile\_NotMine\Content.cs" />
+    <Compile Include="..\SunamoData\Data\WriteToJsonFileData.cs" Link="_linked\SunamoData\Data\WriteToJsonFileData.cs" />
+    <Compile Include="..\SunamoYaml\YamlHelper.cs" Link="_linked\SunamoYaml\YamlHelper.cs" />
+    <Compile Include="..\SunamoAsync\AsyncHelper.cs" Link="_linked\SunamoAsync\AsyncHelper.cs" />
+    <Compile Include="..\SunamoFileSystem\FS.cs" Link="_linked\SunamoFileSystem\FS.cs" />
+    <Compile Include="..\SunamoStringParts\SHParts.cs" Link="_linked\SunamoStringParts\SHParts.cs" />
+    <Compile Include="..\SunamoUri\UH.cs" Link="_linked\SunamoUri\UH.cs" />
+    <Compile Include="..\SunamoPlatformUwpInterop\AppData\AppData.cs" Link="_linked\SunamoPlatformUwpInterop\AppData\AppData.cs" />
+    <Compile Include="..\SunamoFubuCore\Util\Cache.cs" Link="_linked\SunamoFubuCore\Util\Cache.cs" />
+    <Compile Include="..\SunamoFileExtensions\AllExtensions.cs" Link="_linked\SunamoFileExtensions\AllExtensions.cs" />
+    <Compile Include="..\SunamoCompare\ISunamoComparer.cs" Link="_linked\SunamoCompare\ISunamoComparer.cs" />
+    <Compile Include="..\SunamoEnums\Enums\FileEntriesDuplicitiesStrategy.cs" Link="_linked\SunamoEnums\Enums\FileEntriesDuplicitiesStrategy.cs" />
+    <Compile Include="..\SunamoStringJoin\SHJoin.cs" Link="_linked\SunamoStringJoin\SHJoin.cs" />
+    <Compile Include="..\SunamoDateTime\DT\DTHelper.cs" Link="_linked\SunamoDateTime\DT\DTHelper.cs" />
+    <Compile Include="..\SunamoCollectionsGeneric\Collections\L.cs" Link="_linked\SunamoCollectionsGeneric\Collections\L.cs" />
+    <Compile Include="..\SunamoValues\Values\M.cs" Link="_linked\SunamoValues\Values\M.cs" />
+    <Compile Include="..\SunamoExceptions\ai\AI.cs" Link="_linked\SunamoExceptions\ai\AI.cs" />
+    <Compile Include="..\SunamoCl\CL.cs" Link="_linked\SunamoCl\CL.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IL.cs" Link="_linked\SunamoInterfaces\Interfaces\IL.cs" />
+    <Compile Include="..\SunamoNumbers\MH.cs" Link="_linked\SunamoNumbers\MH.cs" />
+    <Compile Include="..\SunamoWinStd\PH.cs" Link="_linked\SunamoWinStd\PH.cs" />
+    <Compile Include="..\SunamoPS\PS.cs" Link="_linked\SunamoPS\PS.cs" />
+    <Compile Include="..\SunamoFileIO\TF.cs" Link="_linked\SunamoFileIO\TF.cs" />
+    <Compile Include="..\SunamoString\TT.cs" Link="_linked\SunamoString\TT.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IDW.cs" Link="_linked\SunamoInterfaces\Interfaces\IDW.cs" />
+    <Compile Include="..\SunamoData\Data\SunamoSize.cs" Link="_linked\SunamoData\Data\SunamoSize.cs" />
+    <Compile Include="..\SunamoData\Data\FileForSearching.cs" Link="_linked\SunamoData\Data\FileForSearching.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="SunamoCompare" Version="24.2.6.2" />
