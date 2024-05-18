@@ -118,12 +118,9 @@
     <Compile Include="..\SunamoData\Data\FileForSearching.cs" Link="_linked\SunamoData\Data\FileForSearching.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SunamoCompare" Version="24.2.6.2" />
-    <PackageReference Include="SunamoStringData" Version="24.2.6.2" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Diacritics" Version="3.3.27" />
-    <PackageReference Include="SunamoXlfKeys" Version="24.2.6.2" />
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
