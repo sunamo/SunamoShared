@@ -1,4 +1,13 @@
-namespace SunamoShared;
+using System.Collections.Specialized;
+using System.Net;
+
+namespace
+#if SunamoDevCode
+SunamoDevCode
+#else
+SunamoConverters
+#endif
+;
 
 
 /// <summary>
