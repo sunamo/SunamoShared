@@ -15,11 +15,58 @@
     <Compile Include="..\SunamoValues\AllChars.cs" Link="_linked\SunamoValues\AllChars.cs" />
     <Compile Include="..\SunamoValues\AllStrings.cs" Link="_linked\SunamoValues\AllStrings.cs" />
     <Compile Include="..\SunamoValues\Consts.cs" Link="_linked\SunamoValues\Consts.cs" />
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="..\SunamoExceptions\OnlyInSE\ThrowEx.cs" Link="_linked\SunamoExceptions\OnlyInSE\ThrowEx.cs" />
+    <Compile Include="..\SunamoEnums\Enums\FileEntriesDuplicitiesStrategy.cs" Link="_linked\SunamoEnums\Enums\FileEntriesDuplicitiesStrategy.cs" />
+    <Compile Include="..\SunamoDelegates\VoidT.cs" Link="_linked\SunamoDelegates\VoidT.cs" />
+    <Compile Include="..\SunamoEnums\Enums\Langs.cs" Link="_linked\SunamoEnums\Enums\Langs.cs" />
+    <Compile Include="..\SunamoEnums\Enums\AppFolders.cs" Link="_linked\SunamoEnums\Enums\AppFolders.cs" />
+    <Compile Include="..\SunamoXlfKeys\XlfKeys.cs" Link="_linked\SunamoXlfKeys\XlfKeys.cs" />
+    <Compile Include="..\SunamoData\Data\TWithSize.cs" Link="_linked\SunamoData\Data\TWithSize.cs" />
+    <Compile Include="..\SunamoData\Data\CheckBoxData.cs" Link="_linked\SunamoData\Data\CheckBoxData.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IProgressBar.cs" Link="_linked\SunamoInterfaces\Interfaces\IProgressBar.cs" />
+    <Compile Include="..\SunamoData\Data\HttpRequestData.cs" Link="_linked\SunamoData\Data\HttpRequestData.cs" />
+    <Compile Include="..\SunamoArgs\InvokeProcessArgs.cs" Link="_linked\SunamoArgs\InvokeProcessArgs.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\ProgressState.cs" Link="_linked\SunamoInterfaces\Interfaces\ProgressState.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\SunamoPS\IPowershellRunner.cs" Link="_linked\SunamoInterfaces\Interfaces\SunamoPS\IPowershellRunner.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IPercentCalculator.cs" Link="_linked\SunamoInterfaces\Interfaces\IPercentCalculator.cs" />
+    <Compile Include="..\SunamoArgs\PsInvokeArgs.cs" Link="_linked\SunamoArgs\PsInvokeArgs.cs" />
+    <Compile Include="..\SunamoData\Data\WriteToJsonFileData.cs" Link="_linked\SunamoData\Data\WriteToJsonFileData.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\ITextBuilder.cs" Link="_linked\SunamoInterfaces\Interfaces\ITextBuilder.cs" />
+    <Compile Include="..\SunamoEnums\Enums\CommandWithPath.cs" Link="_linked\SunamoEnums\Enums\CommandWithPath.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\SunamoPS\IPowershellHelper.cs" Link="_linked\SunamoInterfaces\Interfaces\SunamoPS\IPowershellHelper.cs" />
+    <Compile Include="..\SunamoEnums\Enums\TypeOfMessage.cs" Link="_linked\SunamoEnums\Enums\TypeOfMessage.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IPHWin.cs" Link="_linked\SunamoInterfaces\Interfaces\IPHWin.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\SunamoPS\IPowershellBuilder.cs" Link="_linked\SunamoInterfaces\Interfaces\SunamoPS\IPowershellBuilder.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IGitBashBuilder.cs" Link="_linked\SunamoInterfaces\Interfaces\IGitBashBuilder.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\INpmBashBuilder.cs" Link="_linked\SunamoInterfaces\Interfaces\INpmBashBuilder.cs" />
+    <Compile Include="..\SunamoData\Data\FileForSearching.cs" Link="_linked\SunamoData\Data\FileForSearching.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IFSItem.cs" Link="_linked\SunamoInterfaces\Interfaces\IFSItem.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IIDParent.cs" Link="_linked\SunamoInterfaces\Interfaces\IIDParent.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IName.cs" Link="_linked\SunamoInterfaces\Interfaces\IName.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IPath.cs" Link="_linked\SunamoInterfaces\Interfaces\IPath.cs" />
+    <Compile Include="..\SunamoData\Data\SunamoSize.cs" Link="_linked\SunamoData\Data\SunamoSize.cs" />
+    <Compile Include="..\SunamoEnums\Enums\ImageFormats.cs" Link="_linked\SunamoEnums\Enums\ImageFormats.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\ISelectedT.cs" Link="_linked\SunamoInterfaces\Interfaces\ISelectedT.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IFSWin.cs" Link="_linked\SunamoInterfaces\Interfaces\IFSWin.cs" />
+    <Compile Include="..\SunamoDelegates\BoolString.cs" Link="_linked\SunamoDelegates\BoolString.cs" />
+    <Compile Include="..\SunamoEnums\Enums\FileMoveCollisionOption.cs" Link="_linked\SunamoEnums\Enums\FileMoveCollisionOption.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IInputDownload.cs" Link="_linked\SunamoInterfaces\Interfaces\IInputDownload.cs" />
+    <Compile Include="..\SunamoCompare\ISunamoComparer.cs" Link="_linked\SunamoCompare\ISunamoComparer.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IDW.cs" Link="_linked\SunamoInterfaces\Interfaces\IDW.cs" />
+    <Compile Include="..\SunamoDelegates\VoidBoolNullable.cs" Link="_linked\SunamoDelegates\VoidBoolNullable.cs" />
+    <Compile Include="..\SunamoExceptions\InSunamoIsDerivedFrom\HttpUtilitySE.cs" Link="_linked\SunamoExceptions\InSunamoIsDerivedFrom\HttpUtilitySE.cs" />
+    <Compile Include="..\SunamoArgs\GetFilesMoreMascArgs.cs" Link="_linked\SunamoArgs\GetFilesMoreMascArgs.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IProgressBarHelper.cs" Link="_linked\SunamoInterfaces\Interfaces\IProgressBarHelper.cs" />
+    <Compile Include="..\SunamoEnums\Enums\FileExceptions.cs" Link="_linked\SunamoEnums\Enums\FileExceptions.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IUri.cs" Link="_linked\SunamoInterfaces\Interfaces\IUri.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IControlWithResultDebug.cs" Link="_linked\SunamoInterfaces\Interfaces\IControlWithResultDebug.cs" />
+    <Compile Include="..\SunamoData\Data\UploadFile.cs" Link="_linked\SunamoData\Data\UploadFile.cs" />
+    <Compile Include="..\SunamoArgs\GetFilesBaseArgs.cs" Link="_linked\SunamoArgs\GetFilesBaseArgs.cs" />
+    <Compile Include="..\SunamoInterfaces\Interfaces\IControlWithResult.cs" Link="_linked\SunamoInterfaces\Interfaces\IControlWithResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Diacritics" Version="3.3.27" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>

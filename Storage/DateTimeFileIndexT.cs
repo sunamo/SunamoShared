@@ -154,7 +154,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
         }
         catch (Exception ex)
         {
-            //ThisApp.Error(sess.i18n(XlfKeys.FileCannotBeDeleted) + AllStrings.space + SunamoExceptions.OnlyInSE.Exceptions.TextOfExceptions(ex));
+            //ThisApp.Error(sess.i18n(XlfKeys.FileCannotBeDeleted) + AllStrings.space + Exceptions.TextOfExceptions(ex));
         }
     }
     public string GetStorageFile(FileNameWithDateTime<StorageFolder, StorageFile> o)

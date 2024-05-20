@@ -339,7 +339,7 @@ public static partial class HttpRequestHelper
         {
             if (hrd.throwEx)
             {
-                result = SunamoExceptions.OnlyInSE.Exceptions.TextOfExceptions(ex) + AllStrings.space + request.RequestUri.ToString();
+                result = Exceptions.TextOfExceptions(ex) + AllStrings.space + request.RequestUri.ToString();
             }
         }
 
@@ -364,7 +364,7 @@ public static partial class HttpRequestHelper
         if (EqualityComparer<WebResponse>.Default.Equals(r, default(WebResponse)))
         {
             var before = ThrowEx.FullNameOfExecutedCode(type, Exc.CallingMethod());
-            ThisApp.Warning(SunamoExceptions.OnlyInSE.Exceptions.RepeatAfterTimeXTimesFailed(before, times, timeoutInMs, address, SharedAlgorithms.lastError));
+            ThisApp.Warning(Exceptions.RepeatAfterTimeXTimesFailed(before, times, timeoutInMs, address, SharedAlgorithms.lastError));
             return new byte[0];
         }
         else

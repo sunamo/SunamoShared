@@ -343,7 +343,7 @@ public class Symmetric
         }
         catch (CryptographicException ex)
         {
-            throw new Exception(sess.i18n(XlfKeys.UnableToDecryptDataTheProvidedKeyMayBeInvalid) + "." + SunamoExceptions.OnlyInSE.Exceptions.TextOfExceptions(ex));
+            throw new Exception(sess.i18n(XlfKeys.UnableToDecryptDataTheProvidedKeyMayBeInvalid) + "." + Exceptions.TextOfExceptions(ex));
         }
         finally
         {
