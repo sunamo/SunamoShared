@@ -9,6 +9,7 @@
     <Compile Include="..\SunamoExceptions\OnlyInSE\Exc.cs" Link="_linked\SunamoExceptions\OnlyInSE\Exc.cs" />
     <Compile Include="..\SunamoExceptions\OnlyInSE\Exceptions.cs" Link="_linked\SunamoExceptions\OnlyInSE\Exceptions.cs" />
     <Compile Include="..\SunamoExceptions\OnlyInSE\TranslateAble.cs" Link="_linked\SunamoExceptions\OnlyInSE\TranslateAble.cs" />
+    <Compile Include="..\SunamoExceptions\OnlyInSE\TypesDelegates.cs" Link="_linked\TypesDelegates.cs" />
     <Compile Include="..\SunamoExceptions\_AddedToAllCsproj\CASunamoExceptions.cs" Link="_linked\SunamoExceptions\_AddedToAllCsproj\CASunamoExceptions.cs" />
     <Compile Include="..\SunamoExceptions\_AddedToAllCsproj\FSSunamoExceptions.cs" Link="_linked\SunamoExceptions\_AddedToAllCsproj\FSSunamoExceptions.cs" />
     <Compile Include="..\SunamoExceptions\_AddedToAllCsproj\SHSunamoExceptions.cs" Link="_linked\SunamoExceptions\_AddedToAllCsproj\SHSunamoExceptions.cs" />
@@ -63,6 +64,21 @@
     <Compile Include="..\SunamoData\Data\UploadFile.cs" Link="_linked\SunamoData\Data\UploadFile.cs" />
     <Compile Include="..\SunamoArgs\GetFilesBaseArgs.cs" Link="_linked\SunamoArgs\GetFilesBaseArgs.cs" />
     <Compile Include="..\SunamoInterfaces\Interfaces\IControlWithResult.cs" Link="_linked\SunamoInterfaces\Interfaces\IControlWithResult.cs" />
+    <Compile Include="..\SunamoValues\Constants\HttpErrors.cs" Link="_linked\SunamoValues\Constants\HttpErrors.cs" />
+    <Compile Include="..\SunamoValues\Values\AllLists.cs" Link="_linked\SunamoValues\Values\AllLists.cs" />
+    <Compile Include="..\SunamoExceptions\OnlyInSE\Types.cs" Link="_linked\SunamoExceptions\OnlyInSE\Types.cs" />
+    <Compile Include="..\SunamoExceptions\OnlyInSE\TypesList.cs" Link="_linked\SunamoExceptions\OnlyInSE\TypesList.cs" />
+    <Compile Include="..\SunamoValues\Values\Emoticons.cs" Link="_linked\SunamoValues\Values\Emoticons.cs" />
+    <Compile Include="..\SunamoCollectionsGeneric\CAGConsts.cs" Link="_linked\SunamoCollectionsGeneric\CAGConsts.cs" />
+    <Compile Include="..\SunamoDelegates\VoidString.cs" Link="_linked\SunamoDelegates\VoidString.cs" />
+    <Compile Include="..\SunamoValues\Constants\CodeElementsConstants.cs" Link="_linked\SunamoValues\Constants\CodeElementsConstants.cs" />
+    <Compile Include="..\SunamoStringData\SHData.cs" Link="_linked\SunamoStringData\SHData.cs" />
+    <Compile Include="..\SunamoExceptions\SHSE.cs" Link="_linked\SunamoExceptions\SHSE.cs" />
+    <Compile Include="..\SunamoValues\Constants\NumConsts.cs" Link="_linked\SunamoValues\Constants\NumConsts.cs" />
+    <Compile Include="..\SunamoValues\Constants\RuntimeFrameworks.cs" Link="_linked\SunamoValues\Constants\RuntimeFrameworks.cs" />
+    <Compile Include="..\SunamoValues\Constants\HttpKnownHeaderNames.cs" Link="_linked\SunamoValues\Constants\HttpKnownHeaderNames.cs" />
+    <Compile Include="..\SunamoDelegates\VoidVoid.cs" Link="_linked\SunamoDelegates\VoidVoid.cs" />
+    <Compile Include="..\SunamoDelegates\TaskVoid.cs" Link="_linked\SunamoDelegates\TaskVoid.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Diacritics" Version="3.3.27" />

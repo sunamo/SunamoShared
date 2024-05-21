@@ -54,7 +54,7 @@ GetResponseText(string address, HttpMethod method, HttpRequestData hrd = null)
         {
             // Must be await, not AsyncHelper, not .Result, otherwise will be frozen
             //vr =  AsyncHelper.ci.GetResult<string>( response.Content.ReadAsStringAsync());
-            vr = AsyncHelper.ci.GetResult(response.Content.ReadAsStringAsync());
+            vr = response.Content.ReadAsStringAsync().Result;
         }
         return vr;
     }

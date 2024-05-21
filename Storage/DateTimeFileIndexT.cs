@@ -171,7 +171,8 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
     /// <param name="name"></param>
     public async Task<FileNameWithDateTime<StorageFolder, StorageFile>> SaveFileWithDate(string name, string content)
     {
-        throw new NotImplementedException();
+        ThrowEx.NotImplementedMethod();
+        return null;
 
         //        DateTime dt = DateTime.Now;
         //        DateTime today = DateTime.Today;

@@ -42,7 +42,7 @@ namespace SunamoShared;
 ////    / < param name="input"></param>
 ////    public static string CreateForGoogleMyMapsFromAddressRow(string appendCity, string input, bool allowEmptyCity = false)
 ////    {
-////        throw new NotImplementedException();
+////        ThrowEx.NotImplementedMethod();
 
 ////        if (string.IsNullOrEmpty(input))
 ////        {

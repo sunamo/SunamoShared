@@ -27,13 +27,20 @@ public partial class Timestamp
         return vr;
     }
 
+    
     public static string Get(DateTime dtTo4)
     {
-        return " T" + /*string.Join(*/MakeUpTo2NumbersToZero(AllChars.lowbar, dtTo4.Hour, dtTo4.Minute, dtTo4.Second);
+        // tady to musím dle místa užití
+        //return " T" + /*string.Join(*/MakeUpTo2NumbersToZero(AllStrings.lowbar, dtTo4.Hour, dtTo4.Minute, dtTo4.Second);
+        return null;
     }
 
-    private static char MakeUpTo2NumbersToZero(char lowbar, int hour, int minute, int second)
+    public static object MakeUpTo2NumbersToZero(int p)
     {
-        throw new NotImplementedException();
+        if (p.ToString().Length == 1)
+        {
+            return "0" + p;
+        }
+        return p;
     }
 }

@@ -325,7 +325,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
                 if (breakInCalculateSimilarity)
                 {
-                    Debugger.Break();
+                    System.Diagnostics.Debugger.Break();
                 }
 
                 if (result2 > result)
@@ -341,7 +341,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
         if (breakInCalculateSimilarity)
         {
-            Debugger.Break();
+            System.Diagnostics.Debugger.Break();
         }
 
         return result;

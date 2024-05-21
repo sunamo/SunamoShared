@@ -10,6 +10,8 @@ public static partial class HttpRequestHelper
     /// <summary>
     /// In earlier time return ext
     /// Now return whether was downloaded
+    /// 
+    /// Musím předávat Uri a ne string na A2 kvůli jiné metodě která na na A2 cacheFolder
     /// </summary>
     /// <param name="path"></param>
     /// <param name="uri"></param>
@@ -20,7 +22,7 @@ public static partial class HttpRequestHelper
 #else
     string
 #endif
- DownloadOrRead(string path, string uri, DownloadOrReadArgs a = null)
+ DownloadOrRead(string path, Uri uri, DownloadOrReadArgs a = null)
     {
         if (a == null)
         {
@@ -31,7 +33,7 @@ public static partial class HttpRequestHelper
 
         if (!File.Exists(path) || a.forceDownload)
         {
-            Download(uri, null, path);
+            Download(uri.ToString(), null, path);
         }
 
         html =
@@ -64,7 +66,7 @@ public static partial class HttpRequestHelper
 #else
     string
 #endif
- DownloadOrRead(/*ref string fn,*/ string uri, DownloadOrReadArgs a = null)
+ DownloadOrRead(/*ref string fn,*/ string uri, string cacheFolder, DownloadOrReadArgs a = null)
     {
         #region Část kódu kretá se používala když jsem vracel fn
         //var v = UH.GetFileNameWithoutExtension(uri);
@@ -74,7 +76,7 @@ public static partial class HttpRequestHelper
 
         var uriShort = ShortPathFromUri(uri);
 
-        var fn = Path.Combine(AppData.ci.GetFolder(AppFolders.Cache), SH.AppendIfDontEndingWith(uriShort, AllExtensions.html));
+        var fn = Path.Combine(cacheFolder, SH.AppendIfDontEndingWith(uriShort, AllExtensions.html));
         return
 #if ASYNC
     await
