@@ -1,11 +1,11 @@
 namespace SunamoShared;
 
 
-public class TWithSize<T>
+internal class TWithSize<T>
 {
-    public T t = default;
-    public long size = 0;
-    //public Rekord r = new
+    internal T t = default;
+    internal long size = 0;
+    //internal Rekord r = new
     //    // Rekord() { } 
     //    Rekord("first", "last");
     //void a()

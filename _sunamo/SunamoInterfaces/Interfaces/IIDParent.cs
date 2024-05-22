@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-public interface IIDParent
+internal interface IIDParent
 {
     int IDParent { get; set; }
 }

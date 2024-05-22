@@ -2,7 +2,7 @@ namespace SunamoShared;
 
 using System.Collections.Specialized;
 
-public class HttpUtilitySE
+internal class HttpUtilitySE
 {
     /// <summary>
     ///     Jsou tu 2 možnosti:
@@ -12,7 +12,7 @@ public class HttpUtilitySE
     /// </summary>
     /// <param name="queryString"></param>
     /// <returns></returns>
-    public static NameValueCollection ParseQueryString(string queryString)
+    internal static NameValueCollection ParseQueryString(string queryString)
     {
         NameValueCollection queryParameters = new();
         var querySegments = queryString.Split('&');

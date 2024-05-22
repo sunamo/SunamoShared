@@ -11,7 +11,7 @@ namespace SunamoShared;
 /// Applied to any control
 ///
 /// </summary>
-public interface IControlWithResult
+internal interface IControlWithResult
 {
     /// <summary>
     /// Null není pro zavření okna, null je pro 3. tlačítko

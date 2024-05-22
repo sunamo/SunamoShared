@@ -1,4 +1,4 @@
 namespace SunamoShared;
 
 
-public delegate void VoidString(string s);
+internal delegate void VoidString(string s);

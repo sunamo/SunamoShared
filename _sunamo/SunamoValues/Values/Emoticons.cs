@@ -2,14 +2,14 @@ namespace SunamoShared;
 
 
 /// <summary>
-/// all must be public due to object.GetFields()
+/// all must be internal due to object.GetFields()
 /// </summary>
-public class Emoticons
+internal class Emoticons
 {
     /// <summary>
     /// :3 - 10:30
     /// </summary>
-    public string happyFace = @":‑)
+    internal string happyFace = @":‑)
 :)	:-]
 :]	:-3
 :->
@@ -25,7 +25,7 @@ xD	X‑D
 XD
 =D
 =3	B^D";
-    public string frownSadAngryPouting = @":‑(
+    internal string frownSadAngryPouting = @":‑(
 :(	:‑c
 :c	:‑<
 :<	:‑[
@@ -34,18 +34,18 @@ XD
 :{
 :@
 >:(";
-    public string crying = @":'‑(
+    internal string crying = @":'‑(
 :'(";
-    public string tearsOfHappiness = @":'‑)
+    internal string tearsOfHappiness = @":'‑)
 :')";
-    public string horrorDisgustSadnessGreadDismay = @":‑O
+    internal string horrorDisgustSadnessGreadDismay = @":‑O
 :O	:‑o
 :o	:-0	8‑0
 >:O";
-    public string kiss = @":-*
+    internal string kiss = @":-*
 :*
 :×";
-    public string WinkSmirk = @";‑)
+    internal string WinkSmirk = @";‑)
 ;)	*-)
 *)	;‑]
 ;]	;^)	:‑,
@@ -53,7 +53,7 @@ XD
     /// <summary>
     /// XP, xp - name OS
     /// </summary>
-    public string tongueStickingOutCheekyPlayful = @":‑P
+    internal string tongueStickingOutCheekyPlayful = @":‑P
 :P	X‑P
 x‑p
 :‑p
@@ -67,35 +67,35 @@ d:
     * :/ - http://
     * :L - :Linux
     */
-    public string skepticalAnnoyedUndecidedUneasyHesitant = @":‑/
+    internal string skepticalAnnoyedUndecidedUneasyHesitant = @":‑/
 :‑.	>:\	>:/	:\	=/	=\		=L	:S";
-    public string indecision = @":‑|
+    internal string indecision = @":‑|
 :|";
-    public string embarrassedBlushing = @":$	://)
+    internal string embarrassedBlushing = @":$	://)
 ://3";
-    public string tongueTied = @":‑X
+    internal string tongueTied = @":‑X
 :X	:‑#
 :#	:‑&
 :&";
     /*
     * 0:3 - 10:30
     */
-    public string angelSaint = @"O:‑)
+    internal string angelSaint = @"O:‑)
 O:)	0:‑3
 0:‑)
 0:)	0;^)";
-    public string evil = @">:‑)
+    internal string evil = @">:‑)
 >:)	}:‑)
 }:)	3:‑)
 3:)
 >;)	>:3
 >;3";
-    public string tongueInCheek = ":‑J";
-    public string partiedAllNight = "#‑)";
-    public string drunk = @"%‑)
+    internal string tongueInCheek = ":‑J";
+    internal string partiedAllNight = "#‑)";
+    internal string drunk = @"%‑)
 %)";
-    public string beingSick = @":‑###..
+    internal string beingSick = @":‑###..
 :###..";
-    public string dunceLike = @"<:‑|";
-    public string disbelief = "',:-|	',:-l";
+    internal string dunceLike = @"<:‑|";
+    internal string disbelief = "',:-|	',:-l";
 }

@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-public class InvokeProcessArgs
+internal class InvokeProcessArgs
 {
-    public string workingDir = null;
+    internal string workingDir = null;
 }

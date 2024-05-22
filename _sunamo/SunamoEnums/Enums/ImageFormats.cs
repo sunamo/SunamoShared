@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-public enum ImageFormats
+internal enum ImageFormats
 {
     Jpg,
     Png,

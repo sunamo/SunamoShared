@@ -6,7 +6,7 @@ namespace SunamoShared;
 /// ale v sunamo zase není DispatcherObject
 /// 
 /// </summary>
-public interface IProgressBarHelper
+internal interface IProgressBarHelper
 {
     void Done();
     void DonePartially();
