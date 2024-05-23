@@ -1,7 +1,7 @@
 namespace SunamoShared;
-internal class SHJoin
+public class SHJoin
 {
-    internal static string JoinFromIndex(int dex, object delimiter2, IList parts)
+    public static string JoinFromIndex(int dex, object delimiter2, IList parts)
     {
         string delimiter = delimiter2.ToString();
         StringBuilder sb = new StringBuilder();

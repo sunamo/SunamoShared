@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-internal class EnumHelper
+public class EnumHelper
 {
-    internal static List<T> GetValues<T>()
+    public static List<T> GetValues<T>()
        where T : struct
     {
         return GetValues<T>(false, true);
@@ -17,7 +17,7 @@ internal class EnumHelper
     /// </summary>
     /// <typeparam name = "T"></typeparam>
     /// <param name = "type"></param>
-    internal static List<T> GetValues<T>(bool IncludeNope, bool IncludeShared)
+    public static List<T> GetValues<T>(bool IncludeNope, bool IncludeShared)
         where T : struct
     {
         var type = typeof(T);

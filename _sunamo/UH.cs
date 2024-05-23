@@ -5,29 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-internal class UH
+public class UH
 {
-    internal static string GetQueryAsHttpRequest(Uri uri)
+    public static string GetQueryAsHttpRequest(Uri uri)
     {
         return uri.Query;
     }
 
-    internal static string GetFileNameWithoutExtension(string p)
+    public static string GetFileNameWithoutExtension(string p)
     {
         return Path.GetFileNameWithoutExtension(GetFileName(p));
     }
 
-    internal static string GetFileName(string fn)
+    public static string GetFileName(string fn)
     {
         return Path.GetFileName(fn);
     }
 
-    internal static string UrlEncode(string co)
+    public static string UrlEncode(string co)
     {
         return WebUtility.UrlEncode(co.Trim());
     }
 
-    internal static string GetPageNameFromUri(Uri uri)
+    public static string GetPageNameFromUri(Uri uri)
     {
         int nt = uri.PathAndQuery.IndexOf(AllStrings.q);
         if (nt != -1)

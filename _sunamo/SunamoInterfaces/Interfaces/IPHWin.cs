@@ -15,7 +15,7 @@ namespace SunamoShared;
 /// ve win musím mít NS abych jej dokázal odlišit + Win.cs s metodou Init.
 ///
 /// </summary>
-internal interface IPHWin
+public interface IPHWin
 {
     void Code(string e);
 }

@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-internal class ConvertDateTimeToFileNamePostfix
+public class ConvertDateTimeToFileNamePostfix
 {
 }

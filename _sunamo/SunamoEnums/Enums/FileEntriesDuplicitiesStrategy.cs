@@ -4,7 +4,7 @@ namespace SunamoShared;
 /// <summary>
 /// Jak se má program zachovat pokud nalezne stejně pojmmenovanou složku nebo soubor
 /// </summary>
-internal enum FileEntriesDuplicitiesStrategy
+public enum FileEntriesDuplicitiesStrategy
 {
     /// <summary>
     /// Přidá sérii k souboru (1)

@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-internal interface IPath
+public interface IPath
 {
     string Path { get; set; }
 }

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-internal class sess
+public class sess
 {
-    internal static string i18n(string exponent)
+    public static string i18n(string exponent)
     {
         return exponent;
     }

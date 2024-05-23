@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-internal class CA
+public class CA
 {
-    internal static List<string> TrimStart(string backslash, List<string> s)
+    public static List<string> TrimStart(string backslash, List<string> s)
     {
         string methodName = "TrimStart";
 
@@ -25,14 +25,14 @@ internal class CA
         return s;
     }
 
-    internal static List<string> Trim(List<string> l)
+    public static List<string> Trim(List<string> l)
     {
         for (var i = 0; i < l.Count; i++) l[i] = l[i].Trim();
 
         return l;
     }
 
-    internal static List<string> TrimList(List<string> c)
+    public static List<string> TrimList(List<string> c)
     {
         for (int i = 0; i < c.Count; i++)
         {
@@ -41,7 +41,7 @@ internal class CA
         return c;
     }
 
-    internal static string ReplaceAll(string r, List<string> what, string forWhat)
+    public static string ReplaceAll(string r, List<string> what, string forWhat)
     {
         foreach (var item in what)
         {
@@ -50,7 +50,7 @@ internal class CA
 
         return r;
     }
-    internal static List<string> WithoutDiacritic(List<string> nazev)
+    public static List<string> WithoutDiacritic(List<string> nazev)
     {
         for (int i = 0; i < nazev.Count; i++)
         {
@@ -58,7 +58,7 @@ internal class CA
         }
         return nazev;
     }
-    internal static List<string> RemoveStringsEmpty(List<string> mySites)
+    public static List<string> RemoveStringsEmpty(List<string> mySites)
     {
         for (int i = mySites.Count - 1; i >= 0; i--)
         {
@@ -70,7 +70,7 @@ internal class CA
         return mySites;
     }
 
-    internal static bool IsThereAnotherIndex(char[] ch, int i)
+    public static bool IsThereAnotherIndex(char[] ch, int i)
     {
         if (ch.Length >= i)
         {
@@ -78,7 +78,7 @@ internal class CA
         }
         return false;
     }
-    internal static bool IsSomethingTheSame(string ext, IList<string> p1, ref string contained)
+    public static bool IsSomethingTheSame(string ext, IList<string> p1, ref string contained)
     {
         foreach (var item in p1)
         {
@@ -90,7 +90,7 @@ internal class CA
         }
         return false;
     }
-    internal static List<byte> JoinBytesArray(byte[] pass, byte[] salt)
+    public static List<byte> JoinBytesArray(byte[] pass, byte[] salt)
     {
         List<byte> lb = new List<byte>(pass.Length + salt.Length);
         lb.AddRange(pass);

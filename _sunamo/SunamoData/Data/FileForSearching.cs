@@ -1,14 +1,14 @@
 namespace SunamoShared;
 
 
-internal class FileForSearching
+public class FileForSearching
 {
-    internal bool surelyNo = false;
-    internal List<int> foundedLines = new List<int>();
-    internal List<string> linesLower = null;
-    internal List<string> lines = null;
+    public bool surelyNo = false;
+    public List<int> foundedLines = new List<int>();
+    public List<string> linesLower = null;
+    public List<string> lines = null;
     string path = null;
-    internal FileForSearching(string path)
+    public FileForSearching(string path)
     {
         this.path = path;
     }

@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-internal class ConvertEveryWordLargeCharConvention
+public class ConvertEveryWordLargeCharConvention
 {
     private static bool IsSpecialChar(char item)
     {
         return new List<char>([AllChars.bs, AllChars.lb, AllChars.rb, AllChars.rsqb, AllChars.lsqb, AllChars.dot, AllChars.apostrophe]).Any(d => d == item); //CAGSH.IsEqualToAnyElement<char>(item, );
     }
 
-    internal static string ToConvention(string p)
+    public static string ToConvention(string p)
     {
         p = p.ToLower();
         StringBuilder sb = new StringBuilder();

@@ -1,12 +1,12 @@
 namespace SunamoShared;
-internal class DTHelper
+public class DTHelper
 {
-    internal static string DateToString(DateTime p, Langs l)
+    public static string DateToString(DateTime p, Langs l)
     {
         return DTHelperMulti.DateToString(p, l);
     }
 
-    internal static string DateTimeToString(DateTime d, Langs l, DateTime dtMinVal)
+    public static string DateTimeToString(DateTime d, Langs l, DateTime dtMinVal)
     {
         if (d == dtMinVal)
         {

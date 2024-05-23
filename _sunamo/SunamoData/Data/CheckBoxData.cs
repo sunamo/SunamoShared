@@ -1,14 +1,14 @@
 namespace SunamoShared;
 
 
-internal class CheckBoxData<T>
+public class CheckBoxData<T>
 {
     /// <summary>
     /// Set to IsChecked when TwoWayTable.DataCellWrapper == AddBeforeControl.CheckBox
     /// </summary>
-    internal bool? tick = false;
+    public bool? tick = false;
     /// <summary>
     /// Na to co se má zobrazit
     /// </summary>
-    internal T t = default;
+    public T t = default;
 }

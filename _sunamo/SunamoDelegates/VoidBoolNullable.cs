@@ -1,4 +1,4 @@
 namespace SunamoShared;
 
 
-internal delegate void VoidBoolNullable(bool? b);
+public delegate void VoidBoolNullable(bool? b);

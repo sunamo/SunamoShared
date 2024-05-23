@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-internal class RandomHelper
+public class RandomHelper
 {
     private static Random s_rnd = new Random(Guid.NewGuid().GetHashCode());
 
-    internal static byte[] RandomBytes(int kolik)
+    public static byte[] RandomBytes(int kolik)
     {
         byte[] b = new byte[kolik];
         for (int i = 0; i < kolik; i++)
