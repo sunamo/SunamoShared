@@ -33,7 +33,7 @@ Parse(string file, List<string> sections)
 #if ASYNC
 await
 #endif
-File.ReadAllLinesAsync(file)).ToList();
+File.ReadAllTextAsync(file)).ToList();
         CA.Trim(lines);
         List<string> listString = new List<string>();
 
