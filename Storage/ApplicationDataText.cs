@@ -29,7 +29,7 @@ Parse(string file, List<string> sections)
         // In value its values as lines below it
         Dictionary<string, List<string>> v = new Dictionary<string, List<string>>();
 
-        List<string> lines = (
+        List<string> lines = SHGetLines.GetLines(
 #if ASYNC
 await
 #endif

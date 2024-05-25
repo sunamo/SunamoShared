@@ -20,7 +20,7 @@ void
 #endif
         Init()
     {
-        lines = (
+        lines = SHGetLines.GetLines (
 #if ASYNC
 await
 #endif
