@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-public class FS
+internal class FS
 {
-    public static byte[] StreamToArrayBytes(System.IO.Stream stream)
+    internal static byte[] StreamToArrayBytes(System.IO.Stream stream)
     {
         if (stream == null)
         {
@@ -64,12 +64,12 @@ public class FS
             }
         }
     }
-    public static string GetTempFilePath()
+    internal static string GetTempFilePath()
     {
         return Path.Combine(System.IO.Path.GetTempPath(), System.IO.Path.GetTempFileName());
     }
 
-    public static void GetPathAndFileNameWithoutExtension(string fn, out string path, out string file, out string ext)
+    internal static void GetPathAndFileNameWithoutExtension(string fn, out string path, out string file, out string ext)
     {
         path = Path.GetDirectoryName(fn) + AllChars.bs;
         file = GetFileNameWithoutExtensions(fn);
@@ -78,7 +78,7 @@ public class FS
 
 
 
-    public static string GetFileNameWithoutExtensions(string item)
+    internal static string GetFileNameWithoutExtensions(string item)
     {
         while (Path.HasExtension(item))
         {
@@ -88,9 +88,9 @@ public class FS
     }
 
     //protected readonly static List<char> invalidFileNameChars = 
-    public static List<char> s_invalidFileNameChars = Path.GetInvalidFileNameChars().ToList();
+    internal static List<char> s_invalidFileNameChars = Path.GetInvalidFileNameChars().ToList();
 
-    public static string ReplaceInvalidFileNameChars(string filename, params char[] ch)
+    internal static string ReplaceInvalidFileNameChars(string filename, params char[] ch)
     {
         StringBuilder sb = new StringBuilder();
         foreach (var item in filename)
@@ -104,12 +104,12 @@ public class FS
     }
 
     #region MakeUncLongPath
-    public static string MakeUncLongPath(string path)
+    internal static string MakeUncLongPath(string path)
     {
         return MakeUncLongPath(ref path);
     }
 
-    public static string MakeUncLongPath(ref string path)
+    internal static string MakeUncLongPath(ref string path)
     {
         if (!path.StartsWith(Consts.UncLongPath))
         {
@@ -125,7 +125,7 @@ public class FS
     }
     #endregion
 
-    public static string InsertBetweenFileNameAndExtension(string orig, string whatInsert)
+    internal static string InsertBetweenFileNameAndExtension(string orig, string whatInsert)
     {
         //return InsertBetweenFileNameAndExtension<string, string>(orig, whatInsert, null);
 
@@ -146,12 +146,12 @@ public class FS
         return fn + whatInsert + e;
     }
 
-    public static void CreateUpfoldersPsysicallyUnlessThere(string nad)
+    internal static void CreateUpfoldersPsysicallyUnlessThere(string nad)
     {
         CreateFoldersPsysicallyUnlessThere(Path.GetDirectoryName(nad));
     }
 
-    public static void CreateFoldersPsysicallyUnlessThere(string nad)
+    internal static void CreateFoldersPsysicallyUnlessThere(string nad)
     {
         ThrowEx.IsNullOrEmpty("nad", nad);
         ThrowEx.IsNotWindowsPathFormat("nad", nad);
@@ -192,9 +192,9 @@ nad
         }
     }
 
-    public static Action<string> DeleteFileMaybeLocked;
+    internal static Action<string> DeleteFileMaybeLocked;
 
-    public static bool CopyMoveFilePrepare(ref string item, ref string fileTo, FileMoveCollisionOption co)
+    internal static bool CopyMoveFilePrepare(ref string item, ref string fileTo, FileMoveCollisionOption co)
     {
         //var fileTo = fileTo2.ToString();
         item = Consts.UncLongPath + item;
@@ -277,7 +277,7 @@ nad
         return true;
     }
 
-    public static void MoveFile(string item, string fileTo, FileMoveCollisionOption co)
+    internal static void MoveFile(string item, string fileTo, FileMoveCollisionOption co)
     {
         if (CopyMoveFilePrepare(ref item, ref fileTo, co))
         {
@@ -302,7 +302,7 @@ nad
         }
     }
 
-    public static string WithoutEndSlash(string v)
+    internal static string WithoutEndSlash(string v)
     {
         return WithoutEndSlash(ref v);
     }
@@ -310,13 +310,13 @@ nad
 
 
 
-    public static string WithoutEndSlash(ref string v)
+    internal static string WithoutEndSlash(ref string v)
     {
         v = v.TrimEnd(AllChars.bs);
         return v;
     }
 
-    public static string WithEndSlash(string v)
+    internal static string WithEndSlash(string v)
     {
         return WithEndSlash(ref v);
     }
@@ -326,7 +326,7 @@ nad
     /// </summary>
     /// <param name="v"></param>
     /// <returns></returns>
-    public static string WithEndSlash(ref string v)
+    internal static string WithEndSlash(ref string v)
     {
         if (v != string.Empty)
         {
@@ -337,7 +337,7 @@ nad
         return v;
     }
 
-    public static string DeleteWrongCharsInFileName(string filename, bool isPath)
+    internal static string DeleteWrongCharsInFileName(string filename, bool isPath)
     {
         return string.Concat(filename.Split(Path.GetInvalidFileNameChars()));
 
@@ -366,7 +366,7 @@ nad
         //return result;
     }
 
-    public static bool TryDeleteFile(string item)
+    internal static bool TryDeleteFile(string item)
     {
         // TODO: To all code message logging as here
 

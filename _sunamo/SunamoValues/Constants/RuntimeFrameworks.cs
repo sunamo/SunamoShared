@@ -1,9 +1,9 @@
 namespace SunamoShared;
 
 
-public class RuntimeFrameworks
+internal class RuntimeFrameworks
 {
-    public const string netCore = ".NET Core";
-    public const string netFramework = ".NET Framework";
-    public const string netNative = ".NET Native";
+    internal const string netCore = ".NET Core";
+    internal const string netFramework = ".NET Framework";
+    internal const string netNative = ".NET Native";
 }

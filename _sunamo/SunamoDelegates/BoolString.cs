@@ -1,4 +1,4 @@
 namespace SunamoShared;
 
 
-public delegate bool BoolString(string s);
+internal delegate bool BoolString(string s);

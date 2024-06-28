@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-public interface IUri
+internal interface IUri
 {
     string Uri { get; set; }
 }

@@ -7,16 +7,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-public class SH
+internal class SH
 {
     #region SH.FirstCharUpper
-    public static void FirstCharUpper(ref string nazevPP)
+    internal static void FirstCharUpper(ref string nazevPP)
     {
         nazevPP = FirstCharUpper(nazevPP);
     }
 
 
-    public static string FirstCharUpper(string nazevPP)
+    internal static string FirstCharUpper(string nazevPP)
     {
         if (nazevPP.Length == 1)
         {
@@ -28,7 +28,7 @@ public class SH
     }
     #endregion
 
-    public static List<char> ContainsAnyChar(/*T itemT,*/  /*IList<T> containsT,*/
+    internal static List<char> ContainsAnyChar(/*T itemT,*/  /*IList<T> containsT,*/
         string item, bool checkInCaseOnlyOneString, IList<char> contains)
     {
         List<char> founded = new List<char>();
@@ -50,7 +50,7 @@ public class SH
         return founded;
     }
 
-    public static bool ContainsBracket(string t, ref List<char> left, ref List<char> right, bool mustBeLeftAndRight = false)
+    internal static bool ContainsBracket(string t, ref List<char> left, ref List<char> right, bool mustBeLeftAndRight = false)
     {
         left = SH.ContainsAnyChar(t, false, AllLists.leftBrackets);
         right = SH.ContainsAnyChar(t, false, AllLists.leftBrackets);
@@ -100,7 +100,7 @@ public class SH
         }
     }
 
-    public static char ClosingBracketFor(char v)
+    internal static char ClosingBracketFor(char v)
     {
         foreach (var item in bracketsLeft)
         {
@@ -113,12 +113,12 @@ public class SH
         ThrowEx.IsNotAllowed(v + " as bracket");
         return char.MaxValue;
     }
-    public static string GetTextBetween(string p, char after, char before, bool throwExceptionIfNotContains = true /*cant have implicit value*/, object notAllowedInRanges = null /*cant have implicit value*/, bool endLastIndexOf = false)
+    internal static string GetTextBetween(string p, char after, char before, bool throwExceptionIfNotContains = true /*cant have implicit value*/, object notAllowedInRanges = null /*cant have implicit value*/, bool endLastIndexOf = false)
     {
         return GetTextBetweenTwoChars(p, after, before, throwExceptionIfNotContains, notAllowedInRanges, endLastIndexOf);
     }
 
-    public static bool NotAllowedInRanges(object o, int nt)
+    internal static bool NotAllowedInRanges(object o, int nt)
     {
         if (o is Func<int, bool>)
         {
@@ -137,7 +137,7 @@ public class SH
         return false;
     }
 
-    public static string GetTextBetweenTwoChars(string p, char beginS, char endS, bool throwExceptionIfNotContains = true, object notAllowedInRanges = null, bool endLastIndexOf = false)
+    internal static string GetTextBetweenTwoChars(string p, char beginS, char endS, bool throwExceptionIfNotContains = true, object notAllowedInRanges = null, bool endLastIndexOf = false)
     {
         int num = p.IndexOf(beginS);
         int num2 = -1;
@@ -174,7 +174,7 @@ public class SH
         return GetTextBetweenTwoCharsInts(p, num, num2);
     }
 
-    public static string GetTextBetweenTwoCharsInts(string p, int begin, int end)
+    internal static string GetTextBetweenTwoCharsInts(string p, int begin, int end)
     {
         if (end > begin)
             // a(1) - 1,3
@@ -183,18 +183,18 @@ public class SH
         //return p.Substring(begin+1, end - begin - 1);
         return p;
     }
-    public static string WrapWith(string value, string h)
+    internal static string WrapWith(string value, string h)
     {
         return h + value + h;
     }
 
-    public static string WrapWithQm(string value)
+    internal static string WrapWithQm(string value)
     {
         var h = "\"";
         return h + value + h;
     }
 
-    public static string AppendIfDontEndingWith(string text, string append)
+    internal static string AppendIfDontEndingWith(string text, string append)
     {
         if (text.EndsWith(append))
         {
@@ -203,7 +203,7 @@ public class SH
         return text + append;
     }
 
-    public static string TextWithoutDiacritic(string v)
+    internal static string TextWithoutDiacritic(string v)
     {
         return v.RemoveDiacritics();
     }

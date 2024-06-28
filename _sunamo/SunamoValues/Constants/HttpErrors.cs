@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-public class HttpErrors
+internal class HttpErrors
 {
-    public const string startingGeneralError = "The remote server returned an error: ";
+    internal const string startingGeneralError = "The remote server returned an error: ";
 }

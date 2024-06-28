@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-public class RH
+internal class RH
 {
     private static bool IsType(Type t1)
     {
@@ -13,7 +13,7 @@ public class RH
         return t1.FullName == "System.RuntimeType" || t1 == t2;
     }
 
-    public static List<FieldInfo> GetFields(object carSAuto)
+    internal static List<FieldInfo> GetFields(object carSAuto)
     {
         Type carSAutoType = null;
         var t1 = carSAuto.GetType();

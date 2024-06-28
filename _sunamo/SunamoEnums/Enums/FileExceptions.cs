@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-public enum FileExceptions
+internal enum FileExceptions
 {
     None,
     FileNotFound,

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-public class SHTrim
+internal class SHTrim
 {
-    public static bool TrimIfStartsWith(ref string s, string p)
+    internal static bool TrimIfStartsWith(ref string s, string p)
     {
         if (s.StartsWith(p))
         {

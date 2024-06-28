@@ -1,6 +1,6 @@
 namespace SunamoShared;
 
 
-public interface IInputDownload : IUri //IException,
+internal interface IInputDownload : IUri //IException,
 {
 }

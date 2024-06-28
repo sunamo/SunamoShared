@@ -1,15 +1,15 @@
 namespace SunamoShared;
 
 
-public class UploadFile
+internal class UploadFile
 {
-    public UploadFile()
+    internal UploadFile()
     {
         ContentType = "application/octet-stream";
     }
-    public string Name { get; set; }
-    public string Filename { get; set; }
-    public string ContentType { get; set; }
-    public Stream Stream { get; set; }
-    //public long ContentLength { get; set; }
+    internal string Name { get; set; }
+    internal string Filename { get; set; }
+    internal string ContentType { get; set; }
+    internal Stream Stream { get; set; }
+    //internal long ContentLength { get; set; }
 }

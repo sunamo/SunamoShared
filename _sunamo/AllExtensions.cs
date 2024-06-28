@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-public class AllExtensions
+internal class AllExtensions
 {
-    public static string html = ".html";
+    internal static string html = ".html";
 }

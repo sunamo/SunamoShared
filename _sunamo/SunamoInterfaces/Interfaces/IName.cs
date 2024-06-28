@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-public interface IName
+internal interface IName
 {
     string Name { get; set; }
 }

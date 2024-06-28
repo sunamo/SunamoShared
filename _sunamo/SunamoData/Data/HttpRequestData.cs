@@ -1,26 +1,26 @@
 namespace SunamoShared;
 
 
-public class HttpRequestData
+internal class HttpRequestData
 {
-    public Dictionary<string, string> headers = new Dictionary<string, string>();
-    public string contentType = null;
-    public string accept = null;
-    public Encoding encodingPostData;
-    //public int? timeout = null; // Není v třídě HttpKnownHeaderNames
-    public bool? keepAlive = null;
+    internal Dictionary<string, string> headers = new Dictionary<string, string>();
+    internal string contentType = null;
+    internal string accept = null;
+    internal Encoding encodingPostData;
+    //internal int? timeout = null; // Není v třídě HttpKnownHeaderNames
+    internal bool? keepAlive = null;
     /// <summary>
     /// Assign: StreamContent,ByteArrayContent,FormUrlEncodedContent,StringContent,MultipartContent,MultipartFormDataContent
     /// </summary>
-    public HttpContent content = null;
-    public int timeoutInS = 60;
+    internal HttpContent content = null;
+    internal int timeoutInS = 60;
     /// <summary>
     /// null for auto detect also when will be in headers available different value
     /// </summary>
-    public bool? forceEndoding = false;
+    internal bool? forceEndoding = false;
     /// <summary>
     /// Must be set also forceEndoding = true
     /// </summary>
-    public Encoding forcedEncoding = null;
-    public bool throwEx = true;
+    internal Encoding forcedEncoding = null;
+    internal bool throwEx = true;
 }

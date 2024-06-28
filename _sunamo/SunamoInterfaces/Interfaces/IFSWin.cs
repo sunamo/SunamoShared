@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-public interface IFSWin
+internal interface IFSWin
 {
     void DeleteFileMaybeLocked(string s);
     void DeleteFileOrFolderMaybeLocked(string p);

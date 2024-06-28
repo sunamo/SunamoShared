@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoShared;
-public class BTS
+internal class BTS
 {
-    public static bool IntToBool(int v)
+    internal static bool IntToBool(int v)
     {
         return Convert.ToBoolean(v);
     }
 
-    public static int ParseInt(string entry, int _default)
+    internal static int ParseInt(string entry, int _default)
     {
         //entry = SHSH.FromSpace160To32(entry);
         entry = entry.Replace(" ", string.Empty);

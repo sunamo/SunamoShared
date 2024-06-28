@@ -1,4 +1,4 @@
 namespace SunamoShared;
 
 
-public delegate void VoidT<T>(T t);
+internal delegate void VoidT<T>(T t);

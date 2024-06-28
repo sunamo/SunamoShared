@@ -1,8 +1,8 @@
 namespace SunamoShared;
 
 
-public class TypesList
+internal class TypesList
 {
-    public static readonly Type tLong = typeof(List<long>);
-    public static readonly Type tString = typeof(List<string>);
+    internal static readonly Type tLong = typeof(List<long>);
+    internal static readonly Type tString = typeof(List<string>);
 }
