@@ -1,14 +1,5 @@
 using System.Collections.Specialized;
 using System.Net;
-namespace
-#if SunamoDevCode
-SunamoDevCode
-#elif SunamoConverters
-SunamoConverters
-#else
-SunamoShared
-#endif
-;
 /// <summary>
 ///     Není ve sunamo, tím pádem nebudu dávat do NS
 ///     Třída byla vytvořena abych nemusel importovat System.Web pro metody jež nejsou v WebUtility
