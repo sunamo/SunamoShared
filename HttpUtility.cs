@@ -1,3 +1,5 @@
+
+namespace SunamoShared;
 using System.Collections.Specialized;
 using System.Net;
 /// <summary>

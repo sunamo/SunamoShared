@@ -1,3 +1,5 @@
+
+namespace SunamoShared;
 using System.Diagnostics;
 using System.Text;
 
