@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-internal class TWithSize<T>
+public class TWithSize<T>
 {
     internal T t = default;
     internal long size = 0;

@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-internal class WriteToJsonFileData
+public class WriteToJsonFileData
 {
     internal Newtonsoft.Json.Formatting formatting = Newtonsoft.Json.Formatting.None;
     internal bool append = false;

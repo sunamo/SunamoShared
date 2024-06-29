@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-internal class FileForSearching
+public class FileForSearching
 {
     internal bool surelyNo = false;
     internal List<int> foundedLines = new List<int>();
@@ -20,7 +20,7 @@ void
 #endif
         Init()
     {
-        lines = SHGetLines.GetLines (
+        lines = SHGetLines.GetLines(
 #if ASYNC
 await
 #endif

@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-internal enum FileMoveCollisionOptionShared
+public enum FileMoveCollisionOptionShared
 {
     AddSerie,
     AddFileSize,

@@ -19,7 +19,7 @@ public partial class RuntimeHelper
     {
     }
 
-    public static void EmptyDummyMethodLogMessage(TypeOfMessage t, string s, params string[] o)
+    public static void EmptyDummyMethodLogMessage(TypeOfMessageShared t, string s, params string[] o)
     {
     }
 }

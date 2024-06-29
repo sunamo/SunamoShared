@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-internal interface ISelectedT<T>
+public interface ISelectedT<T>
 {
     T SelectedItem { get; }
 }

@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-internal class GetFilesMoreMascArgs : GetFilesBaseArgs
+internal class GetFilesMoreMascArgs : GetFilesBaseArgsShared
 {
     internal bool LoadFromFileWhenDebug = false;
     internal string path;

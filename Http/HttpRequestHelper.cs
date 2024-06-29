@@ -6,7 +6,7 @@ namespace SunamoShared;
 /// </summary>
 public static partial class HttpRequestHelper
 {
-    public static IProgressBar clpb = null;
+    public static IProgressBarShared clpb = null;
 
     public static bool IsNotFound(object uri)
     {
@@ -34,7 +34,7 @@ public static partial class HttpRequestHelper
     /// <param name="folder2"></param>
     /// <param name="co"></param>
     /// <param name="ext"></param>
-    public static int DownloadAll(List<string> hrefs, BoolString DontHaveAllowedExtension, string folder2, FileMoveCollisionOptionShared co, string ext = "")
+    public static int DownloadAll(List<string> hrefs, Func<string, bool> DontHaveAllowedExtension, string folder2, FileMoveCollisionOptionShared co, string ext = "")
     {
         int reallyDownloaded = 0;
 
@@ -90,7 +90,7 @@ public static partial class HttpRequestHelper
     /// <param name = "folder2"></param>
     /// <param name = "fn"></param>
     /// <param name = "ext"></param>
-    public static async Task<bool> Download(string href, BoolString DontHaveAllowedExtension, string folder2, string fn, int timeoutInMs, string ext = null)
+    public static async Task<bool> Download(string href, Func<string, bool> DontHaveAllowedExtension, string folder2, string fn, int timeoutInMs, string ext = null)
     {
         // TODO: měl jsem tu arg , string fullPathForCompare
         // zkontrolovat zda se tu ta cesta skládá správně
@@ -182,7 +182,7 @@ public static partial class HttpRequestHelper
     /// <param name="DontHaveAllowedExtension"></param>
     /// <param name="path"></param>
     /// <returns></returns>
-    public static async Task<bool> Download(string uri, BoolString DontHaveAllowedExtension, string path)
+    public static async Task<bool> Download(string uri, Func<string, bool> DontHaveAllowedExtension, string path)
     {
         string p, fn, ext;
 

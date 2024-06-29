@@ -6,9 +6,9 @@ namespace SunamoShared;
 /// ale v sunamo zase není DispatcherObject
 /// 
 /// </summary>
-internal interface IProgressBarHelper
+public interface IProgressBarHelperShared
 {
     void Done();
     void DonePartially();
-    IProgressBarHelper CreateInstance(/*System.Windows.Controls.ProgressBar*/ object pb, double overall, /*DispatcherObject*/ object ui);
+    IProgressBarHelperShared CreateInstance(/*System.Windows.Controls.ProgressBar*/ object pb, double overall, /*DispatcherObject*/ object ui);
 }

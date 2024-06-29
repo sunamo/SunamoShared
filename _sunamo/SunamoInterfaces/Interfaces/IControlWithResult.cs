@@ -11,13 +11,13 @@ namespace SunamoShared;
 /// Applied to any control
 ///
 /// </summary>
-internal interface IControlWithResult
+public interface IControlWithResult
 {
     /// <summary>
     /// Null není pro zavření okna, null je pro 3. tlačítko
     /// Use for attaching AttachChangeDialogResult
     /// </summary>
-    event VoidBoolNullable ChangeDialogResult;
+    event Action<bool?> ChangeDialogResult;
     /// <summary>
     /// Do Set zapiš jen ChangeDialogResult(value);
     /// It is construction from WF apps and protect if handler will be null.

@@ -11,7 +11,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
     //SunamoDictionary<string, DateTime> dict = new SunamoDictionary<string, DateTime>();
     public List<FileNameWithDateTime<StorageFolder, StorageFile>> files = new List<FileNameWithDateTime<StorageFolder, StorageFile>>();
     private FileEntriesDuplicitiesStrategy _ds = FileEntriesDuplicitiesStrategy.Time;
-    private Langs _l = Langs.cs;
+    private LangsShared _l = LangsShared.cs;
     public string GetFullPath(FileNameWithDateTime<StorageFolder, StorageFile> o)
     {
         return null;
@@ -111,7 +111,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
         #endregion
         return add;
     }
-    private static string GetDisplayText(DateTime date, int? serie, Langs l)
+    private static string GetDisplayText(DateTime date, int? serie, LangsShared l)
     {
         string displayText;
         if (serie == null)

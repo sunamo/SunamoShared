@@ -1,16 +1,16 @@
 namespace SunamoShared;
 internal class DTHelper
 {
-    internal static string DateToString(DateTime p, Langs l)
+    internal static string DateToString(DateTime p, LangsShared l)
     {
         return DTHelperMulti.DateToString(p, l);
     }
 
-    internal static string DateTimeToString(DateTime d, Langs l, DateTime dtMinVal)
+    internal static string DateTimeToString(DateTime d, LangsShared l, DateTime dtMinVal)
     {
         if (d == dtMinVal)
         {
-            if (l == Langs.cs)
+            if (l == LangsShared.cs)
             {
                 return "ItWasNotMentioned";
             }
@@ -20,7 +20,7 @@ internal class DTHelper
             }
         }
 
-        if (l == Langs.cs)
+        if (l == LangsShared.cs)
         {
             // 21.6.1989 11:22 (fill zero)
             return d.Day + AllStrings.dot + d.Month + AllStrings.dot + d.Year + AllStrings.space + d.Hour.ToString("D2") + AllStrings.colon + d.Hour.ToString("D2");

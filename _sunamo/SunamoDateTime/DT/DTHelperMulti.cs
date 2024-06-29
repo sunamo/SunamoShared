@@ -1,9 +1,9 @@
 namespace SunamoShared;
 internal class DTHelperMulti
 {
-    internal static string DateToString(DateTime p, Langs l)
+    internal static string DateToString(DateTime p, LangsShared l)
     {
-        if (l == Langs.cs)
+        if (l == LangsShared.cs)
         {
             return p.Day + AllStrings.dot + p.Month + AllStrings.dot + p.Year;
         }

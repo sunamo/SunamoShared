@@ -5,39 +5,39 @@ internal class ThisApp
 {
     internal static string EventLogName;
     internal static string Name;
-    internal static Langs l;
+    internal static LangsShared l;
 
     internal static void Success(string v, params string[] o)
     {
-        SetStatus(TypeOfMessage.Success, v, o);
+        SetStatus(TypeOfMessageShared.Success, v, o);
     }
 
     internal static void Info(string v, params string[] o)
     {
-        SetStatus(TypeOfMessage.Information, v, o);
+        SetStatus(TypeOfMessageShared.Information, v, o);
     }
 
     internal static void Error(string v, params string[] o)
     {
-        SetStatus(TypeOfMessage.Error, v, o);
+        SetStatus(TypeOfMessageShared.Error, v, o);
     }
 
     internal static void Warning(string v, params string[] o)
     {
-        SetStatus(TypeOfMessage.Warning, v, o);
+        SetStatus(TypeOfMessageShared.Warning, v, o);
     }
 
     internal static void Ordinal(string v, params string[] o)
     {
-        SetStatus(TypeOfMessage.Ordinal, v, o);
+        SetStatus(TypeOfMessageShared.Ordinal, v, o);
     }
 
     internal static void Appeal(string v, params string[] o)
     {
-        SetStatus(TypeOfMessage.Appeal, v, o);
+        SetStatus(TypeOfMessageShared.Appeal, v, o);
     }
 
-    internal static void SetStatus(TypeOfMessage st, string status, params string[] args)
+    internal static void SetStatus(TypeOfMessageShared st, string status, params string[] args)
     {
         var format = /*string.Format*/ string.Format(status, args);
         if (format.Trim() != string.Empty)
@@ -54,5 +54,5 @@ internal class ThisApp
         }
     }
 
-    internal static event Action<TypeOfMessage, string> StatusSetted;
+    internal static event Action<TypeOfMessageShared, string> StatusSetted;
 }

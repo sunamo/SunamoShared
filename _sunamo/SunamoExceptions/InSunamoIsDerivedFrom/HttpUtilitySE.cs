@@ -2,7 +2,7 @@ namespace SunamoShared;
 
 using System.Collections.Specialized;
 
-internal class HttpUtilitySE
+public class HttpUtilitySE
 {
     /// <summary>
     ///     Jsou tu 2 možnosti:

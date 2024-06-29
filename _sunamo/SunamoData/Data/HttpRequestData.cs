@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-internal class HttpRequestData
+public class HttpRequestData
 {
     internal Dictionary<string, string> headers = new Dictionary<string, string>();
     internal string contentType = null;

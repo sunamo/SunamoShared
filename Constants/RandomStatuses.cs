@@ -2,14 +2,14 @@ namespace SunamoShared;
 
 public class RandomStatuses
 {
-    public void SetStatusOfType(TypeOfMessage type)
+    public void SetStatusOfType(TypeOfMessageShared type)
     {
         ThisApp.SetStatus(type, type.ToString());
     }
 
     public void SetAllTypes()
     {
-        foreach (var item in EnumHelper.GetValues<TypeOfMessage>())
+        foreach (var item in EnumHelper.GetValues<TypeOfMessageShared>())
         {
             SetStatusOfType(item);
         }

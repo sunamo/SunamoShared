@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-internal class UploadFile
+public class UploadFile
 {
     internal UploadFile()
     {

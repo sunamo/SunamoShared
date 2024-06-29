@@ -13,7 +13,7 @@ public partial class RL
     {
         public static byte lid = 1;
 
-        public static void Initialize(Langs l)
+        public static void Initialize(LangsShared l)
         {
             lid = (byte)l;
         }
@@ -23,7 +23,7 @@ public partial class RL
     /// Globální proměnná pro nastavení jazyka celé app
     /// Musí to být výčet protože aplikace může mít více jazyků
     /// </summary>
-    public static Langs l
+    public static LangsShared l
     {
         set
         {
@@ -40,10 +40,10 @@ public partial class RL
 
     static RL()
     {
-        s_langsLength = Enum.GetValues(typeof(Langs)).Length;
+        s_langsLength = Enum.GetValues(typeof(LangsShared)).Length;
     }
 
-    public static void Initialize(Langs l)
+    public static void Initialize(LangsShared l)
     {
         RL.l = l;
         AppLangHelperShared.currentCulture = new CultureInfo(l.ToString());
@@ -57,7 +57,7 @@ public partial class RL
     /// </summary>
     /// <param name="v"></param>
     /// <param name="cs"></param>
-    public static string GetStringByLang(string v, Langs cs)
+    public static string GetStringByLang(string v, LangsShared cs)
     {
         throw new Exception(sess.i18n(XlfKeys.InDesktopAppDontPassLangs));
         //if (l == Langs.en)

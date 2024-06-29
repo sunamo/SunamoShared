@@ -99,7 +99,7 @@ public partial class RuntimeHelper
     /// <param name = "controlWithResult"></param>
     /// <param name = "a"></param>
     /// <param name = "throwException"></param>
-    public static void AttachChangeDialogResult(IControlWithResultDebug controlWithResult, VoidBoolNullable a, bool throwException = true)
+    public static void AttachChangeDialogResult(IControlWithResultDebugShared controlWithResult, Action<bool?> a, bool throwException = true)
     {
         var count = controlWithResult.CountOfHandlersChangeDialogResult();
         if (count > 0)

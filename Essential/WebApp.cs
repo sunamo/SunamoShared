@@ -6,16 +6,16 @@ namespace SunamoShared;
 
 public class WebApp
 {
-    public static Langs l = Langs.en;
+    public static LangsShared l = LangsShared.en;
     public static ResourcesShared Resources;
     public static string Name;
     public static readonly bool initialized = false;
     public static string Namespace = "";
-    public static event Action<TypeOfMessage, string> StatusSetted;
+    public static event Action<TypeOfMessageShared, string> StatusSetted;
 
 
 
-    public static void SetStatus(TypeOfMessage st, string status, params string[] args)
+    public static void SetStatus(TypeOfMessageShared st, string status, params string[] args)
     {
         StatusSetted(st, string.Format(status, args));
     }
