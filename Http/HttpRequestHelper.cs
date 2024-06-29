@@ -34,7 +34,7 @@ public static partial class HttpRequestHelper
     /// <param name="folder2"></param>
     /// <param name="co"></param>
     /// <param name="ext"></param>
-    public static int DownloadAll(List<string> hrefs, BoolString DontHaveAllowedExtension, string folder2, FileMoveCollisionOption co, string ext = "")
+    public static int DownloadAll(List<string> hrefs, BoolString DontHaveAllowedExtension, string folder2, FileMoveCollisionOptionShared co, string ext = "")
     {
         int reallyDownloaded = 0;
 
@@ -52,13 +52,13 @@ public static partial class HttpRequestHelper
 
             switch (co)
             {
-                case FileMoveCollisionOption.AddSerie:
-                case FileMoveCollisionOption.AddFileSize:
-                case FileMoveCollisionOption.Overwrite:
-                case FileMoveCollisionOption.DiscardFrom:
-                case FileMoveCollisionOption.LeaveLarger:
+                case FileMoveCollisionOptionShared.AddSerie:
+                case FileMoveCollisionOptionShared.AddFileSize:
+                case FileMoveCollisionOptionShared.Overwrite:
+                case FileMoveCollisionOptionShared.DiscardFrom:
+                case FileMoveCollisionOptionShared.LeaveLarger:
                     break;
-                case FileMoveCollisionOption.DontManipulate:
+                case FileMoveCollisionOptionShared.DontManipulate:
                     if (File.Exists(to))
                     {
                         continue;
