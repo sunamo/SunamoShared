@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-internal enum AppFoldersShared
+public enum AppFoldersShared
 {
     #region Not backuped
     Logs,

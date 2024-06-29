@@ -1,7 +1,7 @@
 namespace SunamoShared;
 
 
-internal class CheckBoxData<T>
+public class CheckBoxDataShared<T>
 {
     /// <summary>
     /// Set to IsChecked when TwoWayTable.DataCellWrapper == AddBeforeControl.CheckBox

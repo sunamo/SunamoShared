@@ -241,10 +241,10 @@ public class FileIndex
     /// </summary>
     /// <param name="files"></param>
     /// <param name="relativeFilePathForEveryColumn"></param>
-    public static CheckBoxData<TWithSize<string>>[,] ExistsFilesOnDrive(Dictionary<string, FileIndex> files, Dictionary<string, int> relativeFilePathForEveryColumn)
+    public static CheckBoxDataShared<TWithSize<string>>[,] ExistsFilesOnDrive(Dictionary<string, FileIndex> files, Dictionary<string, int> relativeFilePathForEveryColumn)
     {
         int columns = relativeFilePathForEveryColumn.Count;
-        CheckBoxData<TWithSize<string>>[,] vr = new CheckBoxData<TWithSize<string>>[files.Count, columns];
+        CheckBoxDataShared<TWithSize<string>>[,] vr = new CheckBoxDataShared<TWithSize<string>>[files.Count, columns];
         int r = -1;
 
         // Process all rows
@@ -268,7 +268,7 @@ public class FileIndex
                 {
                     long l2 = new FileInfo(fullFilePath).Length;
                     // To result set CheckBoxData - full path and size
-                    vr[r, columnToInsert] = new CheckBoxData<TWithSize<string>> { t = new TWithSize<string> { t = fullFilePath, size = l2 } };
+                    vr[r, columnToInsert] = new CheckBoxDataShared<TWithSize<string>> { t = new TWithSize<string> { t = fullFilePath, size = l2 } };
                 }
                 else
                 {
@@ -287,7 +287,7 @@ public class FileIndex
     /// Check (or uncheck) all in columns by filesize
     /// </summary>
     /// <param name="allRows"></param>
-    public static CheckBoxData<TWithSize<string>>[,] CheckVertically(CheckBoxData<TWithSize<string>>[,] allRows)
+    public static CheckBoxDataShared<TWithSize<string>>[,] CheckVertically(CheckBoxDataShared<TWithSize<string>>[,] allRows)
     {
         int columns = allRows.GetLength(1);
         int rows = allRows.GetLength(0);
@@ -303,7 +303,7 @@ public class FileIndex
 
             for (int r = 0; r < rows; r++)
             {
-                CheckBoxData<TWithSize<string>> cbd = allRows[r, c];
+                CheckBoxDataShared<TWithSize<string>> cbd = allRows[r, c];
                 if (cbd != null)
                 {
                     fileSize.Add(r, cbd.t.size);
@@ -362,9 +362,9 @@ public class FileIndex
     /// <param name="min"></param>
     /// <param name="max"></param>
     /// <param name="forceToAll"></param>
-    private static void TickIfItIsForDelete(CheckBoxData<TWithSize<string>>[,] allRows, int row, int column, Dictionary<int, long> fileSize, long min, long max, bool? forceToAll)
+    private static void TickIfItIsForDelete(CheckBoxDataShared<TWithSize<string>>[,] allRows, int row, int column, Dictionary<int, long> fileSize, long min, long max, bool? forceToAll)
     {
-        CheckBoxData<TWithSize<string>> cbd = allRows[row, column];
+        CheckBoxDataShared<TWithSize<string>> cbd = allRows[row, column];
         if (cbd != null)
         {
             long filSiz = fileSize[row];

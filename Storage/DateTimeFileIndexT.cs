@@ -5,7 +5,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
 {
     static Type type = typeof(DateTimeFileIndex<StorageFolder, StorageFile>);
     public AbstractCatalogShared<StorageFolder, StorageFile> ac;
-    public event VoidT<List<FileNameWithDateTime<StorageFolder, StorageFile>>> InitComplete;
+    public event Action<List<FileNameWithDateTime<StorageFolder, StorageFile>>> InitComplete;
     private StorageFolder _folder = default;
     private string _ext = null;
     //SunamoDictionary<string, DateTime> dict = new SunamoDictionary<string, DateTime>();
