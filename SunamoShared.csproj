@@ -5,18 +5,9 @@
     <Description>Many code (222 code files to 1/9/2024) which is waiting for separated to standalone packages</Description>
   </PropertyGroup>
   <ItemGroup>
-    <Content Remove="C:\Users\r\.nuget\packages\sunamoxlf\23.12.9.1\contentFiles\any\net8.0\WinSec\Readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Diacritics" Version="3.3.27" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="MultilingualResources\sunamo.cs-CZ.min.xlf" />
-    <EmbeddedResource Include="MultilingualResources\sunamo.cs-CZ.xlf" />
-    <EmbeddedResource Include="MultilingualResources\sunamo.en-US.min.xlf" />
-    <EmbeddedResource Include="MultilingualResources\sunamo.en-US.xlf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />

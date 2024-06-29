@@ -26,7 +26,7 @@ internal class SunamoSize //: IParser
         Width = double.Parse(d[0]);
         Height = double.Parse(d[1]);
     }
-    internal override string ToString()
+    public override string ToString()
     {
         //return ParserTwoValues.ToString(AllStrings.comma, Width.ToString(), Height.ToString());
         return Width + "," + Height;

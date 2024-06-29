@@ -29,7 +29,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
     /// <param name="af"></param>
     /// <param name="ext"></param>
     /// <param name="ds"></param>
-    public void Initialize(AppFolders af, string ext, FileEntriesDuplicitiesStrategy ds, AbstractCatalogShared<StorageFolder, StorageFile> ac)
+    public void Initialize(AppFoldersShared af, string ext, FileEntriesDuplicitiesStrategy ds, AbstractCatalogShared<StorageFolder, StorageFile> ac)
     {
         this.ac = ac;
         _ds = ds;

@@ -16,7 +16,7 @@ namespace SunamoShared;
 //        }
 
 //        //ClipboardHelper.Instance = ClipboardHelperWinStdInstance();
-//        AppData.ci.CreateAppFoldersIfDontExists(new CreateAppFoldersIfDontExistsArgs());
+//        AppData.ci.CreateAppDirsIfDontExists(new CreateAppDirsIfDontExistsArgs());
 //        applyCryptData();
 
 //        XlfResourcesHSunamo.SaveResouresToRLSunamo(await LocalizationLanguagesLoader.Load());
