@@ -7,10 +7,10 @@ public interface IProgressBarShared
     int writeOnlyDividableBy { get; set; }
     void Init(IPercentCalculator pc);
     void Init(IPercentCalculator pc, bool isNotUt);
-    /// <summary>
-    ///     A1 is to increment done items after really finished async operation. Can be any.
-    /// </summary>
-    /// <param name="asyncResult"></param>
+    
+    
+    
+    
     void LyricsHelper_AnotherSong(object asyncResult);
     void LyricsHelper_AnotherSong();
     void LyricsHelper_AnotherSong(int i);

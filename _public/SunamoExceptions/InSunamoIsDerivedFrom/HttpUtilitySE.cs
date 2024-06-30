@@ -4,15 +4,15 @@ using System.Collections.Specialized;
 
 public class HttpUtilitySE
 {
-    /// <summary>
-    ///     Jsou tu 2 možnosti:
-    ///     1) tato metoda
-    ///     2) Microsoft.AspNet.WebApi.Client - https://stackoverflow.com/a/22167748
-    ///     Protože import balíčků, zvláště těch které s projektem vůbec nesouvisí může způsobit problémy, proto je ve SE
-    /// </summary>
-    /// <param name="queryString"></param>
-    /// <returns></returns>
-    internal static NameValueCollection ParseQueryString(string queryString)
+    
+    
+    
+    
+    
+    
+    
+    
+    public static NameValueCollection ParseQueryString(string queryString)
     {
         NameValueCollection queryParameters = new();
         var querySegments = queryString.Split('&');

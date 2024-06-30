@@ -13,6 +13,7 @@
     <Folder Include="Data\" />
     <Folder Include="Enums\" />
     <Folder Include="Helpers\FileSystem\" />
+    <Folder Include="List\" />
     <Folder Include="LoggerAbstract\" />
     <Folder Include="SE\Enums\" />
   </ItemGroup>
