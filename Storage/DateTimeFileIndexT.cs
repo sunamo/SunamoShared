@@ -5,14 +5,14 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
 {
     static Type type = typeof(DateTimeFileIndex<StorageFolder, StorageFile>);
     public AbstractCatalogShared<StorageFolder, StorageFile> ac;
-    public event Action<List<FileNameWithDateTime<StorageFolder, StorageFile>>> InitComplete;
+    public event Action<List<FileNameWithDateTimeTU<StorageFolder, StorageFile>>> InitComplete;
     private StorageFolder _folder = default;
     private string _ext = null;
     //SunamoDictionary<string, DateTime> dict = new SunamoDictionary<string, DateTime>();
-    public List<FileNameWithDateTime<StorageFolder, StorageFile>> files = new List<FileNameWithDateTime<StorageFolder, StorageFile>>();
+    public List<FileNameWithDateTimeTU<StorageFolder, StorageFile>> files = new List<FileNameWithDateTimeTU<StorageFolder, StorageFile>>();
     private FileEntriesDuplicitiesStrategy _ds = FileEntriesDuplicitiesStrategy.Time;
     private LangsShared _l = LangsShared.cs;
-    public string GetFullPath(FileNameWithDateTime<StorageFolder, StorageFile> o)
+    public string GetFullPath(FileNameWithDateTimeTU<StorageFolder, StorageFile> o)
     {
         return null;
         //ThrowEx.Custom
@@ -87,9 +87,9 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
             return FileEntriesDuplicitiesStrategy.Time;
         }
     }
-    public FileNameWithDateTime<StorageFolder, StorageFile> CreateObjectFileNameWithDateTime(string row1, string row2, string item, AbstractCatalogShared<StorageFolder, StorageFile> ac)
+    public FileNameWithDateTimeTU<StorageFolder, StorageFile> CreateObjectFileNameWithDateTime(string row1, string row2, string item, AbstractCatalogShared<StorageFolder, StorageFile> ac)
     {
-        FileNameWithDateTime<StorageFolder, StorageFile> add = new FileNameWithDateTime<StorageFolder, StorageFile>(row1, row2, ac);
+        FileNameWithDateTimeTU<StorageFolder, StorageFile> add = new FileNameWithDateTimeTU<StorageFolder, StorageFile>(row1, row2, ac);
         // Here must return c#
         string fnwoe = null; // Path.GetFileNameWithoutExtension<string, string>(item, null);
         #region Copy for inspire
@@ -130,9 +130,9 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
         }
         return displayText;
     }
-    private FileNameWithDateTime<StorageFolder, StorageFile> CreateObjectFileNameWithDateTime(string row1, string row2, DateTime date, int? serie, string postfix, string fnwoe)
+    private FileNameWithDateTimeTU<StorageFolder, StorageFile> CreateObjectFileNameWithDateTime(string row1, string row2, DateTime date, int? serie, string postfix, string fnwoe)
     {
-        FileNameWithDateTime<StorageFolder, StorageFile> add = new FileNameWithDateTime<StorageFolder, StorageFile>(row1, row2, ac);
+        FileNameWithDateTimeTU<StorageFolder, StorageFile> add = new FileNameWithDateTimeTU<StorageFolder, StorageFile>(row1, row2, ac);
         add.dt = date;
         add.serie = serie;
         add.name = postfix;
@@ -143,7 +143,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
     {
         return SHReplace.ReplaceAll(FS.DeleteWrongCharsInFileName(fnwoe, false), AllStrings.lowbar, AllStrings.space);
     }
-    public void DeleteFile(FileNameWithDateTime<StorageFolder, StorageFile> o)
+    public void DeleteFile(FileNameWithDateTimeTU<StorageFolder, StorageFile> o)
     {
         try
         {
@@ -157,7 +157,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
             //ThisApp.Error(sess.i18n(XlfKeys.FileCannotBeDeleted) + AllStrings.space + Exceptions.TextOfExceptions(ex));
         }
     }
-    public string GetStorageFile(FileNameWithDateTime<StorageFolder, StorageFile> o)
+    public string GetStorageFile(FileNameWithDateTimeTU<StorageFolder, StorageFile> o)
     {
         return null;
         //return FS.StorageFilePath<StorageFolder, StorageFile>(FS.GetStorageFile(_folder, o.fnwoe + _ext, ac), ac);
@@ -169,7 +169,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
     /// </summary>
     /// <param name="dt"></param>
     /// <param name="name"></param>
-    public async Task<FileNameWithDateTime<StorageFolder, StorageFile>> SaveFileWithDate(string name, string content)
+    public async Task<FileNameWithDateTimeTU<StorageFolder, StorageFile>> SaveFileWithDate(string name, string content)
     {
         ThrowEx.NotImplementedMethod();
         return null;

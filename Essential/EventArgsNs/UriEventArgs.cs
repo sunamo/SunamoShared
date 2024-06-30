@@ -1,7 +1,5 @@
 namespace SunamoShared;
 
-public delegate void UriEventHandler(object sender, UriEventArgs e);
-
 public class UriEventArgs : EventArgs
 {
     private Uri _uri = null;

@@ -1,13 +1,5 @@
 namespace SunamoShared;
 
-//public delegate void WaitCallback();
-public interface IThreadPool
-{
-    bool QueueUserWorkItem(WaitCallback callBack);
-    bool SetPoolSize(int size);
-    int PoolSize { get; }
-}
-
 /// <summary>
 /// MyThreadPool implements a simple thread pool, that allows for dynamic change of number
 /// of working threads.
