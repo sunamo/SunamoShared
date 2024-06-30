@@ -1,6 +1,6 @@
 namespace SunamoShared;
 
-public partial class YamlHelper
+public class YamlHelper
 {
     public static string DumpAsYaml(object o)
     {

@@ -1,7 +1,6 @@
 namespace SunamoShared;
 
-
-public partial class RuntimeHelper
+public class RuntimeHelper
 {
     static Type type = typeof(RuntimeHelper);
 
@@ -117,5 +116,31 @@ public partial class RuntimeHelper
         {
             controlWithResult.ChangeDialogResult += a;
         }
+    }
+
+    public static T CastToGeneric<T>(object o)
+    {
+        return (T)o;
+    }
+
+
+
+
+
+    public static void EmptyDummyMethod()
+    {
+    }
+
+    public static void EmptyDummyMethod(string s, params string[] o)
+    {
+    }
+
+    public static void EmptyDummyMethodLogMessage(TypeOfMessageShared t, string s, params string[] o)
+    {
+    }
+
+    public static bool IsAdminUser()
+    {
+        return Directory.Exists(@"E:\vs\sunamo\");
     }
 }

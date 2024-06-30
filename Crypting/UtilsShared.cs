@@ -1,6 +1,6 @@
 
 namespace SunamoShared;
-public partial class Utils
+public class Utils
 {
     public static string ToHex(List<byte> ba)
     {

@@ -3,7 +3,7 @@ namespace SunamoShared;
 
 
 
-public partial class ColorHelper
+public class ColorHelper
 {
     public static Color GetColorFromBytes(byte r, byte g, byte b)
     {

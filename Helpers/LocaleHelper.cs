@@ -1,6 +1,6 @@
 namespace SunamoShared;
 
-public partial class LocaleHelper
+public class LocaleHelper
 {
     public static void Init()
     {

@@ -1,5 +1,5 @@
 namespace SunamoShared;
-public partial class VpsHelperSunamo
+public class VpsHelperSunamo
 {
     #region For easy copy
     public static bool IsQ

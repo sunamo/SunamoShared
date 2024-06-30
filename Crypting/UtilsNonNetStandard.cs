@@ -2,7 +2,7 @@ namespace SunamoShared;
 /// <summary>
 /// Friend public class for shared utility methods used by multiple Encryption classes
 /// </summary>
-public partial class UtilsNonNetStandard
+public class UtilsNonNetStandard
 {
     /// <summary>
     /// retrieve an element from an XML string

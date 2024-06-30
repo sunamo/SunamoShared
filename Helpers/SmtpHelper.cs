@@ -1,5 +1,9 @@
 namespace SunamoShared;
 
-public partial class SmtpHelper
+public class SmtpHelper
 {
+    public static int ParsePort(string s)
+    {
+        return BTS.ParseInt(s, NumConsts.defaultPortIfCannotBeParsed);
+    }
 }
