@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Version>24.5.25.1</Version>
+    <Version>24.7.1.1</Version>
     <Description>Many code (222 code files to 1/9/2024) which is waiting for separated to standalone packages</Description>
   </PropertyGroup>
   <ItemGroup>

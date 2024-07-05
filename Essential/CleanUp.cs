@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Essential;
 
 public static class CleanUp
 {

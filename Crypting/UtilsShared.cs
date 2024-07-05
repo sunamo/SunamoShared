@@ -1,5 +1,5 @@
 
-namespace SunamoShared;
+namespace SunamoShared.Crypting;
 public class Utils
 {
     public static string ToHex(List<byte> ba)

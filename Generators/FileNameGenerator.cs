@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Generators;
 
 /// <summary>
 /// Working with SerieStyle enum

@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Crypting;
 
 /// <summary>
 /// Symmetric encryption uses a single key to encrypt and decrypt. 

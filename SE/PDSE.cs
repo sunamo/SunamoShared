@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.SE;
 /// < summary>
 ///     Preprocessor directives
 /// </summary>

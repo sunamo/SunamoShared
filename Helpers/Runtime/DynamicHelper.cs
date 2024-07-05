@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Helpers.Runtime;
 //using System.Web.Helpers;
 
 public class DynamicHelper

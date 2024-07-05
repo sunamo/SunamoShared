@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Threading;
 
 /// <summary>
 /// MyThreadPool implements a simple thread pool, that allows for dynamic change of number

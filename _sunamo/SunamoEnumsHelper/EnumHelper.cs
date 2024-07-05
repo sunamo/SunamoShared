@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoShared;
+namespace SunamoShared._sunamo.SunamoEnumsHelper;
 internal class EnumHelper
 {
     internal static List<T> GetValues<T>()

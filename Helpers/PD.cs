@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Helpers;
 //using System;
 //using System.Collections.Generic;
 //using System.Text;

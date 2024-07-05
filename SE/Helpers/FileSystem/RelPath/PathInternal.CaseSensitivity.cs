@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.SE.Helpers.FileSystem.RelPath;
 
 #region
 

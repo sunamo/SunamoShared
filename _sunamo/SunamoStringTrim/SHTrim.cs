@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoShared;
+namespace SunamoShared._sunamo.SunamoStringTrim;
 internal class SHTrim
 {
     internal static bool TrimIfStartsWith(ref string s, string p)

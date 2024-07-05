@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Values;
 
 public class GeoStates
 {

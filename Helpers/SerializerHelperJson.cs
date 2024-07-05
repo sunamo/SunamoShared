@@ -1,4 +1,4 @@
-﻿namespace SunamoShared;
+namespace SunamoShared.Helpers;
 
 /// <summary>
 /// SerializerHelper vyžaduje T a musel bych ho napsat do třídy aby se mi nabídli metody

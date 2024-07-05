@@ -1,4 +1,4 @@
-﻿namespace SunamoShared;
+namespace SunamoShared.Storage;
 
 public class FileNameWithDateTimeTU<StorageFolder, StorageFile>
 {

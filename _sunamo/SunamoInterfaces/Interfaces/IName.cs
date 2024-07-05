@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared._sunamo.SunamoInterfaces.Interfaces;
 
 
 internal interface IName

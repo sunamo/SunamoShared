@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Http;
 /// <summary>
 /// Can be only in shared coz is not available in standard
 /// </summary>

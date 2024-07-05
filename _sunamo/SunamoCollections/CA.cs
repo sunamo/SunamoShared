@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoShared;
+namespace SunamoShared._sunamo.SunamoCollections;
 internal class CA
 {
     internal static List<string> TrimStart(string backslash, List<string> s)

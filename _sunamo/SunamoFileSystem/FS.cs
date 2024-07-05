@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoShared;
+namespace SunamoShared._sunamo.SunamoFileSystem;
 internal class FS
 {
     internal static byte[] StreamToArrayBytes(System.IO.Stream stream)

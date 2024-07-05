@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Crypting;
 
 /// <summary>
 /// Hash functions are fundamental to modern cryptography. These functions map binary 

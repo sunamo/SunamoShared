@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Essential.EventArgsNs;
 
 public class UriEventArgs : EventArgs
 {

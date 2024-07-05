@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Value;
 
 public static class GeoCzechRegions
 {

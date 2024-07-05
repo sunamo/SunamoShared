@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.SE;
 public class ThreadHelper
 {
     #region

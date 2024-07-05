@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Entity;
 
 
 public class SongFromInternet : IEquatable<SongFromInternet>

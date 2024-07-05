@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Helpers;
 public class FormatHelper
 {
     static Type type = typeof(FormatHelper);

@@ -1,0 +1,1 @@
+﻿mám už Exceptions.cs, bilo by se to

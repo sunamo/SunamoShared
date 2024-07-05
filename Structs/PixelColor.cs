@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Structs;
 [StructLayout(LayoutKind.Sequential)]
 public struct PixelColor
 {

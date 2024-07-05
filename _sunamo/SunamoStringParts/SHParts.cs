@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoShared;
+namespace SunamoShared._sunamo.SunamoStringParts;
 internal class SHParts
 {
     internal static string RemoveAfterFirst(string t, char ch)

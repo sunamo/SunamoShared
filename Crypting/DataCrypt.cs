@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Crypting;
 
 /// <summary>
 /// represents Hex, Byte, Base64, or String data to encrypt/decrypt;

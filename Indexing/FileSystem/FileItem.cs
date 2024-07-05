@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Indexing.FileSystem;
 
 public class FileItem //: IFSItem
 {

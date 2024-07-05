@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared._public;
 
 public interface IResourceHelper
 {

@@ -1,4 +1,4 @@
-﻿namespace SunamoShared;
+namespace SunamoShared.Web;
 
 public static class YouTube
 {

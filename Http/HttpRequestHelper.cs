@@ -1,5 +1,5 @@
 
-namespace SunamoShared;
+namespace SunamoShared.Http;
 
 public static class HttpRequestHelper
 {

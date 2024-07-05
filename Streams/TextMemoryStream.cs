@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Streams;
 public class TextMemoryStream
 {
     public StringBuilder line = new StringBuilder();

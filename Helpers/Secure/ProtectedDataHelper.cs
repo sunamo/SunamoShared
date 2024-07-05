@@ -1,6 +1,6 @@
 using System.Security.Cryptography;
 
-namespace SunamoShared;
+namespace SunamoShared.Helpers.Secure;
 public static class ProtectedDataHelper
 {
     public static dynamic DataProtectionScope { get; private set; }

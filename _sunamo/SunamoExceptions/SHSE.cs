@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared._sunamo.SunamoExceptions;
 
 
 internal class SHSE

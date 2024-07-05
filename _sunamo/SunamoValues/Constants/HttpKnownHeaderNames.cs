@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared._sunamo.SunamoValues.Constants;
 
 
 internal static class HttpKnownHeaderNames

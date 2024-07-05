@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.BgWorkers;
 public class GetFilesEveryFolderBgWorker
 {
     BackgroundWorker bgWorker = null;

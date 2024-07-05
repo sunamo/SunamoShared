@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Helpers.Number;
 public static class HexHelper
 {
     /// <summary>

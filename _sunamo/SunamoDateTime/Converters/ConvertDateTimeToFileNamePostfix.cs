@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoShared;
+namespace SunamoShared._sunamo.SunamoDateTime.Converters;
 internal class ConvertDateTimeToFileNamePostfix
 {
 }

@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Crypting;
 
 public class HashHelper
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoShared;
+namespace SunamoShared._sunamo.SunamoLang.SunamoI18N;
 internal class sess
 {
     internal static string i18n(string exponent)

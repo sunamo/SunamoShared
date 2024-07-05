@@ -1,4 +1,4 @@
-namespace SunamoShared;
+namespace SunamoShared.Entity;
 
 public class Timestamp
 {
@@ -30,7 +30,7 @@ public class Timestamp
 
     public static string Get(DateTime dtTo4)
     {
-        // tady to musím dle místa užití
+        // tady to musï¿½m dle mï¿½sta uï¿½itï¿½
         //return " T" + /*string.Join(*/MakeUpTo2NumbersToZero(AllStrings.lowbar, dtTo4.Hour, dtTo4.Minute, dtTo4.Second);
         return null;
     }
