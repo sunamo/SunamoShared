@@ -1,5 +1,3 @@
-
-
 namespace SunamoShared._sunamo.SunamoStringSplit;
 internal class SHSplit
 {

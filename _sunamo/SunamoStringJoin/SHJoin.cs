@@ -19,4 +19,3 @@ internal class SHJoin
         //return SHSubstring.SubstringLength(vr, 0, vr.Length - 1);
     }
 }
-

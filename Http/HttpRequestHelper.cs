@@ -1,4 +1,3 @@
-
 namespace SunamoShared.Http;
 
 public static class HttpRequestHelper

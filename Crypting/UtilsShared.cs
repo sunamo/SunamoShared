@@ -1,4 +1,3 @@
-
 namespace SunamoShared.Crypting;
 public class Utils
 {

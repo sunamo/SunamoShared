@@ -1,5 +1,3 @@
-
-
 namespace SunamoShared._sunamo.SunamoThisApp;
 internal class ThisApp
 {

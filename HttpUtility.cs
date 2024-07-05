@@ -1,7 +1,4 @@
-
 namespace SunamoShared;
-using System.Collections.Specialized;
-using System.Net;
 /// <summary>
 ///     Není ve sunamo, tím pádem nebudu dávat do NS
 ///     Třída byla vytvořena abych nemusel importovat System.Web pro metody jež nejsou v WebUtility

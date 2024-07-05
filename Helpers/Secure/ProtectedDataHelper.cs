@@ -1,5 +1,3 @@
-using System.Security.Cryptography;
-
 namespace SunamoShared.Helpers.Secure;
 public static class ProtectedDataHelper
 {
