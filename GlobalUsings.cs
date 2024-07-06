@@ -107,3 +107,4 @@ global using SunamoShared.SE.Helpers.FileSystem.RelPath;
 global using SunamoShared._sunamo.SunamoInterfaces.Interfaces.SunamoPS;
 global using Diacritics.Extensions;
 global using System.Runtime.Serialization;
+global using SunamoShared.Errors;
