@@ -202,7 +202,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
         //        }
 
         //        var storageFile = default(StorageFile); //FS.GetStorageFile<StorageFolder, StorageFile>(_folder, DeleteWrongCharsInFileName(fnwoe) + _ext, ac);
-        //        //await File.WriteAllTextAsync<StorageFolder, StorageFile>(storageFile, content, ac);
+        //        //await File.WriteAllText<StorageFolder, StorageFile>(storageFile, content, ac);
         //#if DEBUG
         //        //DebugLogger.DebugWriteLine(storageFile.FullPath());
         //#endif

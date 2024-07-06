@@ -49,7 +49,7 @@ public static class SerializerHelperJson
         }
         else
         {
-            File.WriteAllTextAsync(path, contentsToWriteToFile);
+            File.WriteAllText(path, contentsToWriteToFile);
         }
 
         if (a.phWinCode != null)
