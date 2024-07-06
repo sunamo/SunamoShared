@@ -1,9 +1,9 @@
 namespace SunamoShared.Storage;
 
 
-public class DateTimeFileIndex<StorageFolder, StorageFile>
+public class DateTimeFileIndexT<StorageFolder, StorageFile>
 {
-    static Type type = typeof(DateTimeFileIndex<StorageFolder, StorageFile>);
+    static Type type = typeof(DateTimeFileIndexT<StorageFolder, StorageFile>);
     public AbstractCatalogShared<StorageFolder, StorageFile> ac;
     public event Action<List<FileNameWithDateTimeTU<StorageFolder, StorageFile>>> InitComplete;
     private StorageFolder _folder = default;
@@ -19,7 +19,7 @@ public class DateTimeFileIndex<StorageFolder, StorageFile>
         //return FS.StorageFilePath<StorageFolder, StorageFile>(FS.GetStorageFile<StorageFolder, StorageFile>(_folder, o.fnwoe + _ext, ac), ac);
     }
 
-    public DateTimeFileIndex()
+    public DateTimeFileIndexT()
     {
         //Initialize(af, _ext, _ds);
     }

@@ -2,7 +2,10 @@ namespace SunamoShared._public.SunamoXlfKeys;
 
 
 
-public class XlfKeys
+/// <summary>
+/// Nastaven na internal protože dle mě nemusí být public - opakuje se ve SunamoDotnetCmdBuilder, SunamoDictionary a SunamoValues
+/// </summary>
+internal class XlfKeys
 {
 #pragma warning disable SA1303 
     public const string GetOne = "GetOne";
@@ -3057,9 +3060,9 @@ public class XlfKeys
     public const string ThisAppHasBeenDisabled = "ThisAppHasBeenDisabled";
     public const string NewestVersion = "NewestVersion";
     public const string RecommendedVersion = "RecommendedVersion";
-    
-    
-    
+
+
+
     public const string App = "App";
     public const string NoAppImagesFound = "NoAppImagesFound";
     public const string PleaseSignInToVote = "PleaseSignInToVote";
