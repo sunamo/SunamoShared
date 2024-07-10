@@ -14,8 +14,8 @@ public class VpsHelperSunamo
 
     #region For easy copy
     /*
-Zkopíroval jsem z C:\repos\_\Projects\sunamoWithoutLocalDep.webWithoutDep\SunamoExceptions.web\_\Essential\VpsHelperSunamo.cs
-    nevím zda je to správný postup - NENÍ, pak je tu duplikátní s C:\repos\_\Projects\sunamoWithoutLocalDep\sunamo\Essential\VpsHelperSunExcSunamo.cs
+Zkopíroval jsem z C:\repos\_\Projects\PlatformIndependentNuGetPackages.webWithoutDep\SunamoExceptions.web\_\Essential\VpsHelperSunamo.cs
+    nevím zda je to správný postup - NENÍ, pak je tu duplikátní s C:\repos\_\Projects\PlatformIndependentNuGetPackages\sunamo\Essential\VpsHelperSunExcSunamo.cs
      */
     //public static bool IsQ
     //=> Environment.MachineName == Consts.qMachineName;
