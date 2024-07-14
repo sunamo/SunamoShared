@@ -1,4 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace SunamoShared.Essential;
+
 
 public class SharedAlgorithms
 {
@@ -7,7 +15,7 @@ public class SharedAlgorithms
     public static Out RepeatAfterTimeXTimes<Out>(int times, int timeoutMs, Func<Out> a)
     {
         lastError = -1;
-        Out result = default(Out);
+        Out result = default;
         bool ok = false;
 
         for (int i = 0; i < times; i++)
@@ -20,9 +28,9 @@ public class SharedAlgorithms
             catch (Exception ex)
             {
                 var m = ex.Message;
-                if (m.StartsWith(HttpErrors.startingGeneralError))
+                if (m.StartsWith("The remote server returned an error: "))
                 {
-                    var p = SHSplit.Split(SHReplace.ReplaceOnce(m, HttpErrors.startingGeneralError, string.Empty), AllStrings.space);
+                    var p = SHSplit.Split(SHReplace.ReplaceOnce(m, "The remote server returned an error: ", string.Empty), AllStrings.space);
                     var s = p[0].TrimEnd(AllChars.rb).TrimStart(AllChars.lb);
                     lastError = int.Parse(s);
                 }

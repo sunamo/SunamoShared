@@ -41,7 +41,6 @@ global using SunamoShared.Entity;
 global using SunamoShared.Essential;
 global using SunamoShared.Generators;
 global using SunamoShared.Helpers;
-global using SunamoShared.Http;
 global using SunamoShared.Lazy;
 global using SunamoShared.Properties;
 global using SunamoShared.RL;
