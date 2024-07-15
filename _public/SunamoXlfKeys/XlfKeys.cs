@@ -1,11 +1,9 @@
 namespace SunamoShared._public.SunamoXlfKeys;
 
-
-
 /// <summary>
-/// Nastaven na internal protože dle mě nemusí být public - opakuje se ve SunamoDotnetCmdBuilder, SunamoDictionary a SunamoValues
+/// Nastaven na public protože dle mě nemusí být public - opakuje se ve SunamoDotnetCmdBuilder, SunamoDictionary a SunamoValues
 /// </summary>
-internal class XlfKeys
+public class XlfKeys
 {
 #pragma warning disable SA1303 
     public const string GetOne = "GetOne";

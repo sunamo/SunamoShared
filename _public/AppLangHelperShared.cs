@@ -1,6 +1,7 @@
 namespace SunamoShared._public;
-internal class AppLangHelperShared
+
+public class AppLangHelperShared
 {
-    internal static CultureInfo currentCulture;
-    internal static CultureInfo currentUICulture;
+    public static CultureInfo currentCulture;
+    public static CultureInfo currentUICulture;
 }
