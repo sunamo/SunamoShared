@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace SunamoShared.Essential;
 
-
 public class SharedAlgorithms
 {
     public static int lastError = -1;
@@ -30,7 +29,7 @@ public class SharedAlgorithms
                 var m = ex.Message;
                 if (m.StartsWith("The remote server returned an error: "))
                 {
-                    var p = SHSplit.Split(SHReplace.ReplaceOnce(m, "The remote server returned an error: ", string.Empty), AllStrings.space);
+                    var p = SHSplit.SplitMore(SHReplace.ReplaceOnce(m, "The remote server returned an error: ", string.Empty), AllStrings.space);
                     var s = p[0].TrimEnd(AllChars.rb).TrimStart(AllChars.lb);
                     lastError = int.Parse(s);
                 }

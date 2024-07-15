@@ -1,6 +1,5 @@
 namespace SunamoShared.Entity;
 
-
 public class SongFromInternet : IEquatable<SongFromInternet>
 {
     List<string> nazev = new List<string>();
@@ -448,7 +447,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     private IList<string> SplitRemix(string u)
     {
         // comma - artists like Hm... or The Academy Is..
-        List<string> gg = SHSplit.Split(u, AllStrings.amp, AllStrings.space, AllStrings.comma, AllStrings.dash, AllStrings.lsqb, AllStrings.rsqb, AllStrings.lb, AllStrings.rb);
+        List<string> gg = SHSplit.SplitMore(u, AllStrings.amp, AllStrings.space, AllStrings.comma, AllStrings.dash, AllStrings.lsqb, AllStrings.rsqb, AllStrings.lb, AllStrings.rb);
         //gg.ForEach(g => g.ToLower());
         for (int i = 0; i < gg.Count; i++)
         {
@@ -459,7 +458,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     private IList<string> SplitNazevTitle(string u)
     {
-        List<string> gg = SHSplit.Split(u, AllStrings.amp, AllStrings.space, AllStrings.comma, AllStrings.dash);
+        List<string> gg = SHSplit.SplitMore(u, AllStrings.amp, AllStrings.space, AllStrings.comma, AllStrings.dash);
         //gg.ForEach(g => g.ToLower());
         for (int i = 0; i < gg.Count; i++)
         {
@@ -476,7 +475,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
         remix = remix.Trim(AllChars.dot);
         remix = remix.Trim();
 
-        var art = SHSplit.Split(remix, "&", " and ");
+        var art = SHSplit.SplitMore(remix, "&", " and ");
         return art;
     }
 

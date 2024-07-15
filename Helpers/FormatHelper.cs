@@ -1,4 +1,5 @@
 namespace SunamoShared.Helpers;
+
 public class FormatHelper
 {
     static Type type = typeof(FormatHelper);
@@ -8,7 +9,7 @@ public class FormatHelper
 
     public static string FormatEmail(string nameSurname, string postfix)
     {
-        var p = SHSplit.Split(nameSurname, AllStrings.space);
+        var p = SHSplit.SplitMore(nameSurname, AllStrings.space);
         if (p.Count != 2)
         {
             ThrowEx.WrongNumberOfElements(2, "p", p);

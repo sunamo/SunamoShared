@@ -48,7 +48,7 @@ public class ManageArtistDashTitle
             delimiter = AllStrings.dash;
         }
 
-        List<string> toks = SHSplit.Split(item, delimiter);
+        List<string> toks = SHSplit.SplitMore(item, delimiter);
         artist = song = "";
         if (toks.Count == 0)
         {
@@ -81,7 +81,7 @@ public class ManageArtistDashTitle
                     between = left[0] + between + right[0];
                     item = item.Replace(between, string.Empty);
                     item += " " + between;
-                    toks = SHSplit.Split(item, delimiter);
+                    toks = SHSplit.SplitMore(item, delimiter);
                     if (toks.Count > 0)
                     {
                         artist = toks[0].Trim();
@@ -162,7 +162,7 @@ public class ManageArtistDashTitle
     {
         // Path.GetFileNameWithoutExtension()
         var fnwoe = Path.GetFileNameWithoutExtension(item);
-        List<string> toks = SHSplit.Split(fnwoe, AllStrings.dash);
+        List<string> toks = SHSplit.SplitMore(fnwoe, AllStrings.dash);
         název = title = "";
         if (toks.Count == 0)
         {
@@ -257,10 +257,9 @@ public class ManageArtistDashTitle
         return title;
     }
 
-    /// <param name = "text"></param>
     public static string Reverse(string text)
     {
-        List<string> d = SHSplit.SplitChar(text, AllChars.dash);
+        List<string> d = SHSplit.SplitCharMore(text, AllChars.dash);
         string temp = d[0];
         d[0] = d[d.Count - 1];
         d[d.Count - 1] = temp;
