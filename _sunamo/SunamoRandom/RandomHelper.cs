@@ -1,4 +1,5 @@
 namespace SunamoShared._sunamo.SunamoRandom;
+
 internal class RandomHelper
 {
     private static Random s_rnd = new Random(Guid.NewGuid().GetHashCode());

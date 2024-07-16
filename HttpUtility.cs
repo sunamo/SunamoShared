@@ -1,14 +1,29 @@
 namespace SunamoShared;
+
 /// <summary>
 ///     Není ve sunamo, tím pádem nebudu dávat do NS
 ///     Třída byla vytvořena abych nemusel importovat System.Web pro metody jež nejsou v WebUtility
 /// </summary>
-public class HttpUtility : HttpUtilitySE
+public class HttpUtility
 {
-    public static NameValueCollection ParseQueryString(string responseContent)
+    public static NameValueCollection ParseQueryString(string queryString)
     {
-        return HttpUtilitySE.ParseQueryString(responseContent);
+        NameValueCollection queryParameters = new();
+        var querySegments = queryString.Split('&');
+        foreach (var segment in querySegments)
+        {
+            var parts = segment.Split('=');
+            if (parts.Length > 0)
+            {
+                var key = parts[0].Trim('?', ' ');
+                var val = parts[1].Trim();
+                queryParameters.Add(key, val);
+            }
+        }
+        return queryParameters;
     }
+
+
     public static string HtmlDecode(string v)
     {
         return WebUtility.HtmlDecode(v);

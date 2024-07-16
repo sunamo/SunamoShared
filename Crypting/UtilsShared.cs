@@ -1,4 +1,5 @@
 namespace SunamoShared.Crypting;
+
 public class Utils
 {
     public static string ToHex(List<byte> ba)
@@ -73,7 +74,7 @@ public class Utils
 
     /// <summary>
     /// converts from an array of bytes to a string Base64 representation
-    /// Pokud A1 null nebo L0, G SE. Jinak mi prevede na Base64
+    /// Pokud A1 null nebo L0, G . Jinak mi prevede na Base64
     /// </summary>
     public static string ToBase64(List<byte> b)
     {

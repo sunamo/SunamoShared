@@ -211,7 +211,7 @@ public class GeoStates
         statesFullNames.Add("SD", sess.i18n(XlfKeys.Sudan));
         statesFullNames.Add("SE", sess.i18n(XlfKeys.Sweden));
         statesFullNames.Add("SG", sess.i18n(XlfKeys.Singapore));
-        statesFullNames.Add("SH", sess.i18n(XlfKeys.SaintHelenaAscensionAndTristanDaCunha));
+        statesFullNames.Add("", sess.i18n(XlfKeys.SaintHelenaAscensionAndTristanDaCunha));
         statesFullNames.Add("SI", sess.i18n(XlfKeys.Slovenia));
         statesFullNames.Add("SJ", sess.i18n(XlfKeys.SvalbardAndJanMayen));
         statesFullNames.Add("SK", sess.i18n(XlfKeys.Slovakia));

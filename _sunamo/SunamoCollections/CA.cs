@@ -1,4 +1,5 @@
 namespace SunamoShared._sunamo.SunamoCollections;
+
 internal class CA
 {
     internal static List<string> TrimStart(string backslash, List<string> s)

@@ -1,6 +1,4 @@
-namespace SunamoShared.SE.Helpers.FileSystem.RelPath;
-
-#region
+namespace SunamoShared.Helpers.FileSystem.RelPath;
 
 public partial class PathInternal
 {
@@ -232,4 +230,3 @@ public partial class PathInternal
     }
 }
 
-#endregion

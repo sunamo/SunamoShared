@@ -1,4 +1,5 @@
 namespace SunamoShared;
+
 public class StringBuilderString
 {
     StringBuilder sb = null;

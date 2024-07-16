@@ -1,4 +1,5 @@
 namespace SunamoShared._sunamo.SunamoReflection;
+
 internal class RH
 {
     private static bool IsType(Type t1)

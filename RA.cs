@@ -1,6 +1,5 @@
 namespace SunamoShared;
 
-
 /// <summary>
 /// 
 /// </summary>

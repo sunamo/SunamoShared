@@ -1,7 +1,5 @@
 namespace SunamoShared.Indexing.FileSystem;
 
-
-
 /// <summary>
 /// Připomíná práci s databází - k označení složek se používají čísla int
 ///

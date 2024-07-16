@@ -1,4 +1,5 @@
 namespace SunamoShared._sunamo.SunamoDateTime.DT;
+
 internal class DTHelper
 {
     internal static string DateToString(DateTime p, LangsShared l)

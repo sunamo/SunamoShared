@@ -1,4 +1,5 @@
 namespace SunamoShared.Generators;
+
 public class ErrorMessageGenerator
 {
     private StringBuilder _vypis = new StringBuilder();

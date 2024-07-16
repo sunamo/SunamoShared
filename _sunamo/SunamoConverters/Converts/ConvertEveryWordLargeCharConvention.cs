@@ -1,9 +1,10 @@
 namespace SunamoShared._sunamo.SunamoConverters.Converts;
+
 internal class ConvertEveryWordLargeCharConvention
 {
     private static bool IsSpecialChar(char item)
     {
-        return new List<char>([AllChars.bs, AllChars.lb, AllChars.rb, AllChars.rsqb, AllChars.lsqb, AllChars.dot, AllChars.apostrophe]).Any(d => d == item); //CAGSH.IsEqualToAnyElement<char>(item, );
+        return new List<char>([AllChars.bs, AllChars.lb, AllChars.rb, AllChars.rsqb, AllChars.lsqb, AllChars.dot, AllChars.apostrophe]).Any(d => d == item); //CAG.IsEqualToAnyElement<char>(item, );
     }
 
     internal static string ToConvention(string p)

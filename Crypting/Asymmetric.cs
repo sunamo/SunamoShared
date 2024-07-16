@@ -1,7 +1,5 @@
 namespace SunamoShared.Crypting;
 
-
-
 /// <summary>
 /// Asymmetric encryption uses a pair of keys to encrypt and decrypt.
 /// There is a "public" key which is used to encrypt. Decrypting, on the other hand, 

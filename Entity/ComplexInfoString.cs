@@ -1,8 +1,4 @@
 namespace SunamoShared.Entity;
-/// <summary>
-/// 
-/// </summary>
-
 
 public class ComplexInfoString
 {

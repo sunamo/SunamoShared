@@ -1,4 +1,5 @@
 namespace SunamoShared.Crypting;
+
 public class CryptHelperAdvanced
 {
     #region Methods from Encryption
