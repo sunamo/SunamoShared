@@ -1,4 +1,4 @@
-//namespace SunamoShared._sunamo.SunamoString;
+namespace SunamoShared._sunamo.SunamoString;
 
 internal class SH
 {

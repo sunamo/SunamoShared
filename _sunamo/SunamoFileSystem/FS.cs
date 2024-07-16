@@ -1,4 +1,4 @@
-//namespace SunamoShared._sunamo.SunamoFileSystem;
+namespace SunamoShared._sunamo.SunamoFileSystem;
 
 internal class FS
 {
