@@ -25,6 +25,7 @@
     <Folder Include="List\" />
     <Folder Include="LoggerAbstract\" />
     <Folder Include="SE\Enums\" />
+    <Folder Include="_sunamo\SunamoExceptions\_AddedToAllCsproj\" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC;SunamoShared;SunamoShared.csproj</DefineConstants>

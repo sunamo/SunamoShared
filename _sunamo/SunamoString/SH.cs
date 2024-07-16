@@ -1,4 +1,4 @@
-namespace SunamoShared._sunamo.SunamoString;
+//namespace SunamoShared._sunamo.SunamoString;
 
 internal class SH
 {
@@ -89,7 +89,7 @@ internal class SH
     internal static string NullToStringOrDefault(object n, string v)
     {
         throw new Exception(
-        "Tahle metoda vypadala jinak ale jak idiot jsem ji změnil. Tím jak jsem poté přesouval metody tam zpět už je těžké se k tomu dostat.");
+            "Tahle metoda vypadala jinak ale jak idiot jsem ji změnil. Tím jak jsem poté přesouval metody tam zpět už je těžké se k tomu dostat.");
         return null;
         //return n == null ? " " + Consts.nulled : AllStrings.space + v.ToString();
     }
@@ -179,14 +179,14 @@ internal class SH
             bracketsLeft.Add(BracketsShared.Curly, '{');
             bracketsLeft.Add(BracketsShared.Square, '[');
             bracketsLeft.Add(BracketsShared.Normal, '(');
-            bracketsLeftList = bracketsLeft.Values.ToList();
+            bracketsLeftList = Enumerable.ToList<char>(bracketsLeft.Values);
 
             bracketsRight = new Dictionary<BracketsShared, char>();
             bracketsRight.Add(BracketsShared.Curly, '}');
             bracketsRight.Add(BracketsShared.Square, ']');
             bracketsRight.Add(BracketsShared.Normal, ')');
 
-            bracketsRightList = bracketsRight.Values.ToList();
+            bracketsRightList = Enumerable.ToList<char>(bracketsRight.Values);
 
         }
     }
@@ -298,4 +298,6 @@ internal class SH
     {
         return v.RemoveDiacritics();
     }
+
+
 }

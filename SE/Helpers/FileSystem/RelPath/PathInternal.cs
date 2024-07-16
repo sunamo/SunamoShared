@@ -1,4 +1,4 @@
-namespace SunamoShared.Helpers.FileSystem.RelPath;
+namespace SunamoShared.SE.Helpers.FileSystem.RelPath;
 
 public partial class PathInternal
 {
@@ -229,4 +229,3 @@ public partial class PathInternal
         return (value >= 'A' && value <= 'Z') || (value >= 'a' && value <= 'z');
     }
 }
-

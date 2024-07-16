@@ -1,4 +1,4 @@
-namespace SunamoShared._sunamo.SunamoFileSystem;
+//namespace SunamoShared._sunamo.SunamoFileSystem;
 
 internal class FS
 {
@@ -157,9 +157,9 @@ internal class FS
         }
 
         List<string> slozkyKVytvoreni = new List<string>
-{
-nad
-};
+        {
+            nad
+        };
 
         while (true)
         {
@@ -376,4 +376,5 @@ nad
             return false;
         }
     }
+
 }
