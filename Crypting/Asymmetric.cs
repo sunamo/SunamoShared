@@ -1,5 +1,5 @@
-namespace SunamoShared.Crypting;
 
+namespace SunamoShared.Crypting;
 /// <summary>
 /// Asymmetric encryption uses a pair of keys to encrypt and decrypt.
 /// There is a "public" key which is used to encrypt. Decrypting, on the other hand, 
@@ -32,8 +32,6 @@ public class Asymmetric
     private const string _ElementPrimeExponentP = "DP";
     private const string _ElementPrimeExponentQ = "DQ";
     private const string _ElementCoefficient = "InverseQ";
-
-
     private const string _ElementPrivateExponent = "D";
     #endregion
     // - http://forum.java.sun.com/thread.jsp?forum=9&thread=552022&tstart=0&trange=15 
@@ -45,10 +43,8 @@ public class Asymmetric
     private const string _KeyPrimeExponentP = "PrivateKey.DP";
     private const string _KeyPrimeExponentQ = "PrivateKey.DQ";
     private const string _KeyCoefficient = "PrivateKey.InverseQ";
-
     private const string _KeyPrivateExponent = "PrivateKey.D";
     #endregion
-
     #region "  " + sess.i18n(XlfKeys.PublicKeyClass)
     /// <summary>
     /// Represents a public encryption key. Intended to be shared, it 
@@ -58,7 +54,6 @@ public class Asymmetric
     public class PublicKey
     {
         public string Modulus;
-
         public string Exponent;
         /// <summary>
         /// IK
@@ -66,7 +61,6 @@ public class Asymmetric
         public PublicKey()
         {
         }
-
         /// <summary>
         /// EK. Nactu z XML A1 obsahy tagu Modulus a Exponent a ulozim je do stejne pojm. VV
         /// </summary>
@@ -75,7 +69,6 @@ public class Asymmetric
         {
             LoadFromXml(KeyXml);
         }
-
         /// <summary>
         /// Load public key from App.config or Web.config file
         /// Ulozim do PP z CM.AS
@@ -85,7 +78,6 @@ public class Asymmetric
             Modulus = UtilsNonNetStandard.GetConfigString(_KeyModulus, true);
             Exponent = UtilsNonNetStandard.GetConfigString(_KeyExponent, true);
         }
-
         /// <summary>
         /// Returns *.config file XML section representing this public key
         /// Vratim 2x tax Add s argumenty PP Modulus a Exponent
@@ -99,7 +91,6 @@ public class Asymmetric
             _with1.Append(UtilsNonNetStandard.WriteConfigKey(_KeyExponent, Exponent));
             return sb.ToString();
         }
-
         /// <summary>
         /// Writes the *.config file representation of this public key to a file
         /// Prepnu A1 2x tagem Add s argumenty PP Modulus a Exponent
@@ -110,7 +101,6 @@ public class Asymmetric
             sw.Write(ToConfigSection());
             sw.Close();
         }
-
         /// <summary>
         /// Loads the public key from its XML string
         /// Nactu z XML A1 obsahy tagu Modulus a Exponent a ulozim je do stejne pojm. VV
@@ -120,7 +110,6 @@ public class Asymmetric
             Modulus = UtilsNonNetStandard.GetXmlElement(keyXml, sess.i18n(XlfKeys.Modulus));
             Exponent = UtilsNonNetStandard.GetXmlElement(keyXml, sess.i18n(XlfKeys.Exponent));
         }
-
         /// <summary>
         /// Converts this public key to an RSAParameters object
         /// Vrati mi pp Modulus a Exponent v O RSAParameters
@@ -132,7 +121,6 @@ public class Asymmetric
             r.Exponent = Convert.FromBase64String(Exponent);
             return r;
         }
-
         /// <summary>
         /// Converts this public key to its XML string representation
         /// Vrati mi Tagy PP Modulus a Exponent v Tagu RSAKeyValue
@@ -149,7 +137,6 @@ public class Asymmetric
             _with2.Append(UtilsNonNetStandard.WriteXmlNode(_ElementParent, true));
             return sb.ToString();
         }
-
         /// <summary>
         /// Writes the Xml representation of this public key to a file
         /// Prepne A1 Tagy PP Modulus a Exponent v Tagu RSAKeyValue
@@ -160,12 +147,9 @@ public class Asymmetric
             sw.Write(ToXml());
             sw.Close();
         }
-
     }
     #endregion
-
     #region "  " + sess.i18n(XlfKeys.PrivateKeyClass)
-
     /// <summary>
     /// Represents a private encryption key. Not intended to be shared, as it 
     /// contains all the elements that make up the key.
@@ -182,14 +166,12 @@ public class Asymmetric
         public string Coefficient;
         public string PrivateExponent;
         #endregion
-
         /// <summary>
         /// IK
         /// </summary>
         public PrivateKey()
         {
         }
-
         /// <summary>
         /// Nactu z XML A1 obsahy tagu Modulus a Exponent a dalsi tagy a ulozim je do stejne pojm. VV
         /// </summary>
@@ -198,7 +180,6 @@ public class Asymmetric
         {
             LoadFromXml(keyXml);
         }
-
         /// <summary>
         /// Load private key from App.config or Web.config file
         /// Ulozim do PPs z CM.AS
@@ -214,7 +195,6 @@ public class Asymmetric
             Coefficient = UtilsNonNetStandard.GetConfigString(_KeyCoefficient, true);
             PrivateExponent = UtilsNonNetStandard.GetConfigString(_KeyPrivateExponent, true);
         }
-
         /// <summary>
         /// Converts this private key to an RSAParameters object
         /// Prevedu PPs z Base64 a vlozim do O RSAParameter, ktere G 
@@ -232,7 +212,6 @@ public class Asymmetric
             r.D = Convert.FromBase64String(PrivateExponent);
             return r;
         }
-
         /// <summary>
         /// Returns *.config file XML section representing this private key
         /// Vratim xx tax Add s argumenty PP Modulus a Exponent
@@ -252,7 +231,6 @@ public class Asymmetric
             _with3.Append(UtilsNonNetStandard.WriteConfigKey(_KeyPrivateExponent, PrivateExponent));
             return sb.ToString();
         }
-
         /// <summary>
         /// Writes the *.config file representation of this private key to a file
         /// Prepnu A1 2x tagem Add s argumenty PP Modulus a Exponent a dalsi
@@ -263,7 +241,6 @@ public class Asymmetric
             sw.Write(ToConfigSection());
             sw.Close();
         }
-
         /// <summary>
         /// Loads the private key from its XML string
         /// Nactu z XML A1 obsahy tagu Modulus a Exponent a dalsi tagy a ulozim je do stejne pojm. VV
@@ -279,7 +256,6 @@ public class Asymmetric
             Coefficient = UtilsNonNetStandard.GetXmlElement(keyXml, "InverseQ");
             PrivateExponent = UtilsNonNetStandard.GetXmlElement(keyXml, "D");
         }
-
         /// <summary>
         /// Converts this private key to its XML string representation
         /// Vrati mi Tagy PP Modulus a Exponent a dalsi v Tagu RSAKeyValue
@@ -301,7 +277,6 @@ public class Asymmetric
             _with4.Append(UtilsNonNetStandard.WriteXmlNode(_ElementParent, true));
             return sb.ToString();
         }
-
         /// <summary>
         /// Writes the Xml representation of this private key to a file
         /// Prepte A1 Tagy PP Modulus a Exponent a dalsi v Tagu RSAKeyValue
@@ -312,17 +287,13 @@ public class Asymmetric
             sw.Write(ToXml());
             sw.Close();
         }
-
-
         public static string FromFile(string p)
         {
             throw new Exception(sess.i18n(XlfKeys.TheMethodOrOperationIsNotImplemented) + ".");
             return null;
         }
     }
-
     #endregion
-
     /// <summary>
     /// Instantiates a new asymmetric encryption session using the default key size; 
     /// this is usally 1024 bits
@@ -332,7 +303,6 @@ public class Asymmetric
     {
         _rsa = GetRSAProvider();
     }
-
     /// <summary>
     /// Instantiates a new asymmetric encryption session using a specific key size
     /// OOP A1 _KeySize a do _rsa vlozim provider M GetRSAProvider. Vytvorim instance pro novou asymetrickou krypt. session s velikostm klice A1
@@ -342,7 +312,6 @@ public class Asymmetric
         _KeySize = keySize;
         _rsa = GetRSAProvider();
     }
-
     /// <summary>
     /// Sets the name of the key container used to store this 
     /// key on disk; this is an 
@@ -359,7 +328,6 @@ public class Asymmetric
         get { return _KeyContainerName; }
         set { _KeyContainerName = value; }
     }
-
     /// <summary>
     /// Returns the current key size, in bits
     /// G akt. velikost klice
@@ -368,7 +336,6 @@ public class Asymmetric
     {
         get { return _rsa.KeySize; }
     }
-
     /// <summary>
     /// Returns the maximum supported key size, in bits
     /// Vratim max. velikost klice v bitech dle _rsa.LegalKeySizes[0]
@@ -377,7 +344,6 @@ public class Asymmetric
     {
         get { return _rsa.LegalKeySizes[0].MaxSize; }
     }
-
     /// <summary>
     /// Returns the minimum supported key size, in bits
     /// Vratim min. velikost klice v bitech dle _rsa.LegalKeySizes[0]
@@ -386,7 +352,6 @@ public class Asymmetric
     {
         get { return _rsa.LegalKeySizes[0].MinSize; }
     }
-
     /// <summary>
     /// Returns valid key step sizes, in bits
     /// Vratim  velikost kroku v bitech dle _rsa.LegalKeySizes[0]
@@ -395,7 +360,6 @@ public class Asymmetric
     {
         get { return _rsa.LegalKeySizes[0].SkipSize; }
     }
-
     /// <summary>
     /// Returns the default public key as stored in the *.config file
     /// Vratim PublicKey z CM.AS a G
@@ -409,7 +373,6 @@ public class Asymmetric
             return pubkey;
         }
     }
-
     /// <summary>
     /// Returns the default private key as stored in the *.config file
     /// Vratim PrivateKey z CM.AS a G
@@ -423,7 +386,6 @@ public class Asymmetric
             return privkey;
         }
     }
-
     /// <summary>
     /// Generates a new public/private key pair as objects
     /// VO RSA a vlozim do As verejne a privitni klic, ktere vygeneruji v teto ttide.
@@ -437,7 +399,6 @@ public class Asymmetric
         publicKey = new PublicKey(PublicKeyXML);
         privateKey = new PrivateKey(PrivateKeyXML);
     }
-
     /// <summary>
     /// Generates a new public/private key pair as XML strings
     /// VO RSA a vlozim do As veeejne a privatni klic, ktery vygeneruji v teto tride.
@@ -448,7 +409,6 @@ public class Asymmetric
         publicKeyXML = rsa.ToXmlString(false);
         privateKeyXML = rsa.ToXmlString(true);
     }
-
     /// <summary>
     /// Encrypts data using the default public key
     /// Zakryptuje A1 klicem v DefaultPublicKey 
@@ -458,7 +418,6 @@ public class Asymmetric
         PublicKey PublicKey = DefaultPublicKey;
         return Encrypt(d, PublicKey);
     }
-
     /// <summary>
     /// Encrypts data using the provided public key
     /// Prevede A2 na parametr, ktery vlozi do _rsa a zasifruje A2.
@@ -468,7 +427,6 @@ public class Asymmetric
         _rsa.ImportParameters(publicKey.ToParameters());
         return EncryptPrivate(d);
     }
-
     /// <summary>
     /// Encrypts data using the provided public key as XML
     /// Nacte z xml A2 klic a zasifruje A1
@@ -478,7 +436,6 @@ public class Asymmetric
         LoadKeyXml(publicKeyXML, false);
         return EncryptPrivate(d);
     }
-
     /// <summary>
     /// Dekryptuje A1, VV pri nezdaru.
     /// </summary>
@@ -494,7 +451,6 @@ public class Asymmetric
             if (ex.Message.ToLower().IndexOf("bad length") > -1)
             {
                 throw new Exception(sess.i18n(XlfKeys.YourDataIsTooLargeRSAEncryptionIsDesignedToEncryptRelativelySmallAmountsOfDataTheExactByteLimitDependsOnTheKeySizeToEncryptMoreDataUseSymmetricEncryptionAndThenEncryptThatSymmetricKeyWithAsymmetricRSAEncryption) + ".");
-
             }
             else
             {
@@ -503,9 +459,7 @@ public class Asymmetric
         }
         return null;
     }
-
     static Type type = typeof(Asymmetric);
-
     /// <summary>
     /// Decrypts data using the default private key
     /// Nacte klic z CM.AS a dekryptuje A1 s timto klicem.
@@ -516,7 +470,6 @@ public class Asymmetric
         PrivateKey.LoadFromConfig();
         return Decrypt(encryptedDataCrypt, PrivateKey);
     }
-
     /// <summary>
     /// Decrypts data using the provided private key
     /// Importuji klic A2 jako parametr do _rsa
@@ -527,7 +480,6 @@ public class Asymmetric
         _rsa.ImportParameters(PrivateKey.ToParameters());
         return DecryptPrivate(encryptedDataCrypt);
     }
-
     /// <summary>
     /// Decrypts data using the provided private key as XML
     /// Nacte klic z xml A2 - pouziva interni .net metodu.
@@ -538,7 +490,6 @@ public class Asymmetric
         LoadKeyXml(PrivateKeyXML, true);
         return DecryptPrivate(encryptedDataCrypt);
     }
-
     /// <summary>
     /// Nactu do O _rsa ze XML A1 net metodou. A2 slouzi k tomu aby se vypsalo ve vyjimce jaky klic se nezdariloi nacist. 
     /// </summary>
@@ -562,10 +513,8 @@ public class Asymmetric
                 s = "public";
             }
             throw new Exception(string.Format(sess.i18n(XlfKeys.TheProvided0EncryptionKeyXMLDoesNotAppearToBeValid) + ".", s));
-
         }
     }
-
     /// <summary>
     /// Dekryptuje data v A1 pomoci RSA
     /// </summary>
@@ -574,7 +523,6 @@ public class Asymmetric
     {
         return new DataCrypt(_rsa.Decrypt(encryptedDataCrypt.Bytes, false));
     }
-
     /// <summary>
     /// gets the default RSA provider using the specified key size; 
     /// note that Microsoft's CryptoAPI has an underlying file system dependency that is unavoidable
@@ -623,5 +571,4 @@ public class Asymmetric
         }
         return null;
     }
-
 }

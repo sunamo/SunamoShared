@@ -1,18 +1,13 @@
 
 namespace SunamoShared.Essential;
-using System;
-using System.Threading;
-
 public class SharedAlgorithms
 {
     public static int lastError = -1;
-
     public static Out RepeatAfterTimeXTimes<Out>(int times, int timeoutMs, Func<Out> a)
     {
         lastError = -1;
         Out result = default;
         bool ok = false;
-
         for (int i = 0; i < times; i++)
         {
             try
@@ -36,13 +31,11 @@ public class SharedAlgorithms
                 //The remote server returned an error: (404) Not Found.
                 Thread.Sleep(timeoutMs);
             }
-
             if (ok)
             {
                 break;
             }
         }
-
         return result;
     }
 }

@@ -1,5 +1,5 @@
-namespace SunamoShared.Crypting;
 
+namespace SunamoShared.Crypting;
 /// <summary>
 /// represents Hex, Byte, Base64, or String data to encrypt/decrypt;
 /// use the .Text property to set/get a string representation
@@ -13,9 +13,7 @@ public class DataCrypt
     private byte[] _b;
     private int _MaxBytes = 0;
     private int _MinBytes = 0;
-
     private int _StepBytes = 0;
-
     /// <summary>
     /// Determines the default text encoding across ALL DataCrypt instances
     /// </summary>
@@ -24,16 +22,13 @@ public class DataCrypt
     /// Determines the default text encoding for this DataCrypt instance (get & set)
     /// </summary>
     public Encoding Encoding = DefaultEncoding;
-
     public DataCrypt()
     {
     }
-
     public DataCrypt(byte[] b)
     {
         _b = b;
     }
-
     /// <summary>
     /// Creates new encryption data with the specified string;
     /// will be converted to byte array using default encoding
@@ -42,7 +37,6 @@ public class DataCrypt
     {
         Text = s;
     }
-
     /// <summary>
     /// Creates new encryption data using the specified string and the
     /// specified encoding to convert the string to a byte array.
@@ -53,7 +47,6 @@ public class DataCrypt
         Encoding = encoding;
         Text = s;
     }
-
     /// <summary>
     /// returns true if no data is present
     /// get whether is _b N nebo L0
@@ -73,7 +66,6 @@ public class DataCrypt
             return false;
         }
     }
-
     /// <summary>
     /// allowed step interval, in bytes, for this data; if 0, no limit
     /// IUN, pouze se do ni jednou uklada
@@ -83,7 +75,6 @@ public class DataCrypt
         get { return _StepBytes; }
         set { _StepBytes = value; }
     }
-
     /// <summary>
     /// allowed step interval, in bits, for this data; if 0, no limit
     /// IUN, pouze se do ni jednou uklada
@@ -93,7 +84,6 @@ public class DataCrypt
         get { return _StepBytes * 8; }
         set { _StepBytes = value / 8; }
     }
-
     /// <summary>
     /// minimum number of bytes allowed for this data; if 0, no limit
     /// Minimimalni pocet bajtu v tomto O - PP _b
@@ -103,7 +93,6 @@ public class DataCrypt
         get { return _MinBytes; }
         set { _MinBytes = value; }
     }
-
     /// <summary>
     /// minimum number of bits allowed for this data; if 0, no limit
     /// Minimalni pocet bytu v teto PP.
@@ -113,7 +102,6 @@ public class DataCrypt
         get { return _MinBytes * 8; }
         set { _MinBytes = value / 8; }
     }
-
     /// <summary>
     /// maximum number of bytes allowed for this data; if 0, no limit
     /// Maximalni pocet bytu v teto PP.
@@ -123,7 +111,6 @@ public class DataCrypt
         get { return _MaxBytes; }
         set { _MaxBytes = value; }
     }
-
     /// <summary>
     /// maximum number of bits allowed for this data; if 0, no limit
     /// Maximalni pocet bitu v teto PP.
@@ -133,7 +120,6 @@ public class DataCrypt
         get { return _MaxBytes * 8; }
         set { _MaxBytes = value / 8; }
     }
-
     /// <summary>
     /// Returns the byte representation of the data;
     /// This will be padded to MinBytes and trimmed to MaxBytes as necessary!
@@ -166,7 +152,6 @@ public class DataCrypt
         }
         set { _b = value; }
     }
-
     /// <summary>
     /// Sets or returns text representation of bytes using the default text encoding
     /// Pri S prevedu do bajtu PP _b
@@ -195,7 +180,6 @@ public class DataCrypt
         }
         set { _b = Encoding.GetBytes(value); }
     }
-
     /// <summary>
     /// Sets or returns Hex string representation of this data
     /// Prevede z/na PP _b
@@ -205,7 +189,6 @@ public class DataCrypt
         get { return Utils.ToHex(_b.ToList()); }
         set { _b = Utils.FromHex(value).ToArray(); }
     }
-
     /// <summary>
     /// Sets or returns Base64 string representation of this data
     /// Prevede z/na PP _b
@@ -215,7 +198,6 @@ public class DataCrypt
         get { return Utils.ToBase64(_b.ToList()); }
         set { _b = Utils.FromBase64(value); }
     }
-
     /// <summary>
     /// Returns text representation of bytes using the default text encoding
     /// G PP Text
@@ -224,7 +206,6 @@ public class DataCrypt
     {
         return Text;
     }
-
     /// <summary>
     /// returns Base64 string representation of this data
     /// G PP Base64
@@ -233,7 +214,6 @@ public class DataCrypt
     {
         return Base64;
     }
-
     /// <summary>
     /// returns Hex string representation of this data
     /// G PP Hex
@@ -242,8 +222,6 @@ public class DataCrypt
     {
         return Hex;
     }
-
-
     public static
 #if ASYNC
 async Task<DataCrypt>

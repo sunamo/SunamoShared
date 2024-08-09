@@ -1,6 +1,5 @@
 namespace SunamoShared;
 
-
 public enum FileMoveCollisionOptionShared
 {
     AddSerie,

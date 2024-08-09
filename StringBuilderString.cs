@@ -2,9 +2,9 @@ namespace SunamoShared;
 
 public class StringBuilderString
 {
-    StringBuilder sb = null;
-    string s = null;
-    bool isString = false;
+    private readonly bool isString;
+    private readonly string s;
+    private readonly StringBuilder sb;
 
     public StringBuilderString(string argValue2)
     {
@@ -24,34 +24,22 @@ public class StringBuilderString
         get
         {
             if (isString)
-            {
                 return s[i];
-            }
-            else
-            {
-                return sb[i];
-            }
+            return sb[i];
         }
         set
         {
             if (isString)
-            {
                 ThrowEx.NotSupported();
-                //s[i] = value;
-            }
+            //s[i] = value;
             else
-            {
                 sb[i] = value;
-            }
         }
     }
 
     public bool IsNullOrWhiteSpace()
     {
-        if (isString)
-        {
-            return string.IsNullOrWhiteSpace(s);
-        }
+        if (isString) return string.IsNullOrWhiteSpace(s);
         return sb != null && sb.ToString().Trim() != string.Empty;
     }
 }
