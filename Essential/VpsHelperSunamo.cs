@@ -9,9 +9,6 @@ public class VpsHelperSunamo
     public const string ip = "46.36.38.72";
     public const string ipMyPoda = "85.135.38.18";
 
-    public static bool IsVps => VpsHelperXlf.IsVps;
-    public static string path => VpsHelperXlf.path;
-
     #region For easy copy
     /*
 Zkopíroval jsem z C:\repos\_\Projects\PlatformIndependentNuGetPackages.webWithoutDep\SunamoExceptions.web\_\Essential\VpsHelperSunamo.cs
@@ -33,26 +30,12 @@ Zkopíroval jsem z C:\repos\_\Projects\PlatformIndependentNuGetPackages.webWitho
 
     public static string SunamoSln()
     {
-        if (IsVps)
-        {
-            return @"C:\_\sunamo\";
-        }
-        else
-        {
-            return BasePathsHelperShared.vs + @"sunamo\";
-        }
+        return BasePathsHelperShared.vs + @"sunamo\";
     }
 
     public static string SunamoCzSln()
     {
-        if (IsVps)
-        {
-            return @"C:\_\sunamo.cz\";
-        }
-        else
-        {
-            return BasePathsHelperShared.vs + @"sunamo.cz\";
-        }
+        return BasePathsHelperShared.vs + @"sunamo.cz\";
     }
 
     public static string SunamoProject()
