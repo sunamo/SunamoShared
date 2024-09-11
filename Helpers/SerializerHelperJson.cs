@@ -23,7 +23,7 @@ public static class SerializerHelperJson
     /// <param name="append">If false the file will be overwritten if it already exists. If true the contents will be appended to the file.</param>
     public static
 #if ASYNC
-    async Task
+    async Task<string>
 #else
     void  
 #endif
@@ -45,17 +45,14 @@ public static class SerializerHelperJson
 
         if (a.append)
         {
-            File.AppendAllTextAsync(path, contentsToWriteToFile);
+            await File.AppendAllTextAsync(path, contentsToWriteToFile);
         }
         else
         {
-            File.WriteAllText(path, contentsToWriteToFile);
+            await File.WriteAllTextAsync(path, contentsToWriteToFile);
         }
 
-        if (a.phWinCode != null)
-        {
-            a.phWinCode.Invoke(path);
-        }
+        return path;
     }
 
     /// <summary>
