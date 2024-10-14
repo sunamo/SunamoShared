@@ -2,6 +2,9 @@ namespace SunamoShared._public.SunamoXlfKeys;
 
 /// <summary>
 /// Nastaven na public protože dle mě nemusí být public - opakuje se ve SunamoDotnetCmdBuilder, SunamoDictionary a SunamoValues
+/// 
+/// Musí tu zůstat - v SunamoShared jsou stovky výskytů
+/// V dalších app potom dalších stovky
 /// </summary>
 public class XlfKeys
 {

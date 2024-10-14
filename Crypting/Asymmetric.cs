@@ -25,8 +25,8 @@ public class Asymmetric
     private int _KeySize = 1024;
     #region Nazvy elementu pro ukladani do XML
     private const string _ElementParent = "RSAKeyValue";
-    private const string _ElementModulus = XlfKeys.Modulus;
-    private const string _ElementExponent = XlfKeys.Exponent;
+    private const string _ElementModulus = "Modulus";
+    private const string _ElementExponent = "Exponent";
     private const string _ElementPrimeP = "P";
     private const string _ElementPrimeQ = "Q";
     private const string _ElementPrimeExponentP = "DP";

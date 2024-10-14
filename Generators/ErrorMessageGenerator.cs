@@ -1,10 +1,8 @@
 namespace SunamoShared.Generators;
-
 public class ErrorMessageGenerator
 {
     private StringBuilder _vypis = new StringBuilder();
     private StringBuilder _triTecky = new StringBuilder();
-
     public string Visible
     {
         get
@@ -12,7 +10,6 @@ public class ErrorMessageGenerator
             return _vypis.ToString();
         }
     }
-
     public string Collapse
     {
         get
@@ -20,7 +17,6 @@ public class ErrorMessageGenerator
             return _triTecky.ToString();
         }
     }
-
     public ErrorMessageGenerator(List<string> chybneSoubory, List<FileExceptions> chyby, int i)
     {
         if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "cs")
@@ -31,7 +27,6 @@ public class ErrorMessageGenerator
         {
             _vypis.AppendLine(sess.i18n(XlfKeys.InTheseFilesTheFollowingErrorsOccurred) + ": ");
         }
-
         if (chybneSoubory.Count < i)
         {
             i = chybneSoubory.Count;
@@ -42,7 +37,6 @@ public class ErrorMessageGenerator
             string em = GetErrorMessage(chyby[y]);
             _vypis.AppendLine(chybneSoubory[y] + AllStrings.swda + em);
         }
-
         string priChybe = null;
         if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "cs")
         {
@@ -52,7 +46,6 @@ public class ErrorMessageGenerator
         {
             priChybe = sess.i18n(XlfKeys.IfYouThinkThatThisIsApplicationErrorPleaseSendMeAnEmailAtTheAddressThatIsListedInTheAboutApp);
         }
-
         if (y == chybneSoubory.Count)
         {
             _triTecky.AppendLine(priChybe);
@@ -67,9 +60,7 @@ public class ErrorMessageGenerator
             _triTecky.AppendLine(priChybe);
         }
     }
-
     static Type type = typeof(ErrorMessageGenerator);
-
     private string GetErrorMessage(FileExceptions fileExceptions)
     {
         if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "cs")
@@ -108,8 +99,6 @@ public class ErrorMessageGenerator
                     return null;
             }
         }
-
-
         return "";
     }
 }

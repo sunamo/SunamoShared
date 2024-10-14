@@ -60,7 +60,6 @@ global using System.Runtime.Serialization;
 global using SunamoShared._sunamo.SunamoCollections;
 global using SunamoShared._sunamo.SunamoFileSystem;
 global using SunamoShared._sunamo.SunamoString;
-global using SunamoShared._public.SunamoXlfKeys;
 global using SunamoShared._sunamo;
 global using SunamoShared;
 global using SunamoShared.Args;
@@ -96,3 +95,5 @@ global using SunamoShared._sunamo.SunamoStringParts;
 global using SunamoShared._sunamo.SunamoStringTrim;
 global using SunamoShared.SE.Helpers.FileSystem.RelPath;
 global using SunamoShared._sunamo.SunamoInterfaces.Interfaces.SunamoPS;
+
+global using SunamoShared._public.SunamoXlfKeys;

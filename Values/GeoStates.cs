@@ -1,18 +1,14 @@
 namespace SunamoShared.Values;
-
 public class GeoStates
 {
     public Dictionary<string, string> statesFullNames = null;
-
     public GeoStates()
     {
     }
-
     public Dictionary<string, string> Init()
     {
         #region MyRegion
         statesFullNames = new Dictionary<string, string>();
-
         statesFullNames.Add("AD", sess.i18n(XlfKeys.Andorra));
         statesFullNames.Add("AE", sess.i18n(XlfKeys.UnitedArabEmirates));
         statesFullNames.Add("AF", sess.i18n(XlfKeys.Afghanistan));
@@ -262,10 +258,7 @@ public class GeoStates
         statesFullNames.Add("ZA", sess.i18n(XlfKeys.SouthAfrica));
         statesFullNames.Add("ZM", sess.i18n(XlfKeys.Zambia));
         statesFullNames.Add("ZW", sess.i18n(XlfKeys.Zimbabwe));
-
         #endregion
-
-
         return statesFullNames;
     }
 }

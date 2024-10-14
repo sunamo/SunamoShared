@@ -1,5 +1,4 @@
 namespace SunamoShared.Storage;
-
 public class DateTimeFileIndexT<StorageFolder, StorageFile>
 {
     static Type type = typeof(DateTimeFileIndexT<StorageFolder, StorageFile>);
@@ -17,7 +16,6 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         //ThrowEx.Custom
         //return FS.StorageFilePath<StorageFolder, StorageFile>(FS.GetStorageFile<StorageFolder, StorageFile>(_folder, o.fnwoe + _ext, ac), ac);
     }
-
     public DateTimeFileIndexT()
     {
         //Initialize(af, _ext, _ds);
@@ -33,7 +31,6 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         this.ac = ac;
         _ds = ds;
         //_folder = FS.CiStorageFolder<StorageFolder, StorageFile>(AppData.ci.GetFolder(af), null);
-
         _ext = ext;
         string mask = "????_??_??_";
         if (ds == FileEntriesDuplicitiesStrategy.Serie)
@@ -172,7 +169,6 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
     {
         ThrowEx.NotImplementedMethod();
         return null;
-
         //        DateTime dt = DateTime.Now;
         //        DateTime today = DateTime.Today;
         //        string fnwoe = "";
@@ -199,7 +195,6 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         //        {
         //            // Zbytečné, kontroluje se již v konstruktoru
         //        }
-
         //        var storageFile = default(StorageFile); //FS.GetStorageFile<StorageFolder, StorageFile>(_folder, DeleteWrongCharsInFileName(fnwoe) + _ext, ac);
         //        //await File.WriteAllText<StorageFolder, StorageFile>(storageFile, content, ac);
         //#if DEBUG

@@ -1,5 +1,4 @@
 namespace SunamoShared.Crypting;
-
 /// <summary>
 /// Friend public class for shared utility methods used by multiple Encryption classes
 /// </summary>
@@ -17,10 +16,8 @@ public class UtilsNonNetStandard
         {
             throw new Exception(sess.i18n(XlfKeys.CouldNotFind) + " " + element + "></" + element + "  " + sess.i18n(XlfKeys.inProvidedPublicKeyXML) + ".");
         }
-
         return m.Groups["Element"].ToString();
     }
-
     /// <summary>
     /// Returns the specified string value from the application .config file
     /// G retezec z ConfigurationManager.AppSettings klice A1. Pokud se nepodari ziskat a A2, VV
@@ -45,9 +42,7 @@ public class UtilsNonNetStandard
             return s;
         }
     }
-
     static Type type = typeof(Utils);
-
     /// <summary>
     /// Vrati mi retezec <add key =  \ " A1 \ " value  =  \ " A2 \ "/>
     /// </summary>
@@ -58,7 +53,6 @@ public class UtilsNonNetStandard
         string s = "<add key=\"{0}\" value=\"{1}\" />" + Environment.NewLine;
         return string.Format(s, key, value);
     }
-
     /// <summary>
     /// G element A1 s hodnotou A2
     /// </summary>
@@ -69,7 +63,6 @@ public class UtilsNonNetStandard
         string s = "<{0}>{1}</{0}>" + Environment.NewLine;
         return string.Format(s, element, value);
     }
-
     /// <summary>
     /// Pokud A2, vrati mi ukon. tag A1, jinak poc. tag A1.
     /// </summary>
@@ -86,7 +79,6 @@ public class UtilsNonNetStandard
         {
             s = "<{0}>" + Environment.NewLine;
         }
-
         return string.Format(s, element);
     }
 }
