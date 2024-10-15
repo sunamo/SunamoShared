@@ -31,7 +31,7 @@ public class PlatformInteropHelper
             }
             catch (Exception ex)
             {
-                ThrowEx.DummyNotThrow(ex);
+                ThrowEx.Custom(ex);
             }
 
             if (types != null)

@@ -1,4 +1,3 @@
-
 namespace SunamoShared.Essential;
 public class SharedAlgorithms
 {

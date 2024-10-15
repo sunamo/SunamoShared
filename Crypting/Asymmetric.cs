@@ -1,4 +1,3 @@
-
 namespace SunamoShared.Crypting;
 /// <summary>
 /// Asymmetric encryption uses a pair of keys to encrypt and decrypt.
