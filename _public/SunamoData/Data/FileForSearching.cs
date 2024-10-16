@@ -20,11 +20,9 @@ void
 #endif
         Init()
     {
-        lines = SHGetLines.GetLines(
-#if ASYNC
-await
-#endif
-File.ReadAllTextAsync(path)).ToList();
+        lines = (
+ await
+File.ReadAllLinesAsync(path)).ToList();
         linesLower = new List<string>(lines.Count);
         foreach (var item in lines)
         {
