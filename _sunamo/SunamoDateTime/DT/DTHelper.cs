@@ -24,12 +24,12 @@ internal class DTHelper
         if (l == LangsShared.cs)
         {
             // 21.6.1989 11:22 (fill zero)
-            return d.Day + AllStrings.dot + d.Month + AllStrings.dot + d.Year + AllStrings.space + d.Hour.ToString("D2") + AllStrings.colon + d.Hour.ToString("D2");
+            return d.Day + "." + d.Month + "." + d.Year + "" + d.Hour.ToString("D2") + ":" + d.Hour.ToString("D2");
         }
         else
         {
             // 6/21/1989 11:22 (fill zero)
-            return d.Month + AllStrings.slash + d.Day + AllStrings.slash + d.Year + AllStrings.space + d.Hour.ToString("D2") + AllStrings.colon + d.Minute.ToString("D2");
+            return d.Month + "/" + d.Day + "/" + d.Year + "" + d.Hour.ToString("D2") + ":" + d.Minute.ToString("D2");
         }
     }
 }

@@ -11,7 +11,7 @@ public class UtilsNonNetStandard
     public static string GetXmlElement(string xml, string element)
     {
         Match m = null;
-        m = Regex.Match(xml, AllStrings.lt + element + ">(?<Element>[^>]*)</" + element + AllStrings.gt, RegexOptions.IgnoreCase);
+        m = Regex.Match(xml, "<" + element + ">(?<Element>[^>]*)</" + element + ">", RegexOptions.IgnoreCase);
         if (m == null)
         {
             throw new Exception(sess.i18n(XlfKeys.CouldNotFind) + " " + element + "></" + element + "  " + sess.i18n(XlfKeys.inProvidedPublicKeyXML) + ".");

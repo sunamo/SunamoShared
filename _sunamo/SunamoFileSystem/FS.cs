@@ -65,7 +65,7 @@ internal class FS
 
     internal static void GetPathAndFileNameWithoutExtension(string fn, out string path, out string file, out string ext)
     {
-        path = Path.GetDirectoryName(fn) + AllChars.bs;
+        path = Path.GetDirectoryName(fn) + '\\';
         file = GetFileNameWithoutExtensions(fn);
         ext = Path.GetExtension(fn);
     }
@@ -105,13 +105,13 @@ internal class FS
 
     internal static string MakeUncLongPath(ref string path)
     {
-        if (!path.StartsWith(Consts.UncLongPath))
+        if (!path.StartsWith(@"\\?\"))
         {
             // V ASP.net mi vrátilo u každé directory.exists false. Byl jsem pod ApplicationPoolIdentity v IIS a bylo nastaveno Full Control pro IIS AppPool\DefaultAppPool
 #if !ASPNET
             //  asp.net / vps nefunguje, ve windows store apps taktéž, NECHAT TO TRVALE ZAKOMENTOVANÉ
             // v asp.net toto způsobí akorát zacyklení, IIS začne vyhazovat 0xc00000fd, pak už nejde načíst jediná stránka
-            //path = Consts.UncLongPath + path;
+            //path = @"\\?\" + path;
 #endif
         }
 
@@ -131,7 +131,7 @@ internal class FS
         string fn = Path.GetFileNameWithoutExtension(origS);
         string e = Path.GetExtension(origS);
 
-        if (origS.Contains(AllChars.slash) || origS.Contains(AllChars.bs))
+        if (origS.Contains('/') || origS.Contains('\\'))
         {
             string p = Path.GetDirectoryName(origS);
 
@@ -191,7 +191,7 @@ internal class FS
     internal static bool CopyMoveFilePrepare(ref string item, ref string fileTo, FileMoveCollisionOptionShared co)
     {
         //var fileTo = fileTo2.ToString();
-        item = Consts.UncLongPath + item;
+        item = @"\\?\" + item;
         MakeUncLongPath(ref fileTo);
         FS.CreateUpfoldersPsysicallyUnlessThere(fileTo);
 
@@ -200,7 +200,7 @@ internal class FS
         {
             if (co == FileMoveCollisionOptionShared.AddFileSize)
             {
-                var newFn = FS.InsertBetweenFileNameAndExtension(fileTo, AllStrings.space + new FileInfo(item).Length);
+                var newFn = FS.InsertBetweenFileNameAndExtension(fileTo, "" + new FileInfo(item).Length);
                 if (File.Exists(newFn))
                 {
                     File.Delete(item);
@@ -213,7 +213,7 @@ internal class FS
                 int serie = 1;
                 while (true)
                 {
-                    var newFn = FS.InsertBetweenFileNameAndExtension(fileTo, " (" + serie + AllStrings.rb);
+                    var newFn = FS.InsertBetweenFileNameAndExtension(fileTo, " (" + serie + ")");
                     if (!File.Exists(newFn))
                     {
                         fileTo = newFn;
@@ -306,7 +306,7 @@ internal class FS
 
     internal static string WithoutEndSlash(ref string v)
     {
-        v = v.TrimEnd(AllChars.bs);
+        v = v.TrimEnd('\\');
         return v;
     }
 
@@ -324,7 +324,7 @@ internal class FS
     {
         if (v != string.Empty)
         {
-            v = v.TrimEnd(AllChars.bs) + AllChars.bs;
+            v = v.TrimEnd('\\') + '\\';
         }
 
         SH.FirstCharUpper(ref v);

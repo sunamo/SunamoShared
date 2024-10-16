@@ -4,19 +4,19 @@ public class GuidHelper
 {
     public static string RemoveDashes(string e)
     {
-        return e.Replace(AllStrings.dash, "");
+        return e.Replace("-", "");
     }
 
     public static string AddDashes(string e)
     {
-        if (e.Contains(AllStrings.dash))
+        if (e.Contains("-"))
         {
             return e;
         }
-        e = e.Insert(8, AllStrings.dash);
-        e = e.Insert(13, AllStrings.dash);
-        e = e.Insert(18, AllStrings.dash);
-        e = e.Insert(23, AllStrings.dash);
+        e = e.Insert(8, "-");
+        e = e.Insert(13, "-");
+        e = e.Insert(18, "-");
+        e = e.Insert(23, "-");
         return e;
     }
 

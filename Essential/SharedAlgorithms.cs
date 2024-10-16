@@ -19,8 +19,8 @@ public class SharedAlgorithms
                 var m = ex.Message;
                 if (m.StartsWith("The remote server returned an error: "))
                 {
-                    var p = SHSplit.SplitMore(SHReplace.ReplaceOnce(m, "The remote server returned an error: ", string.Empty), AllStrings.space);
-                    var s = p[0].TrimEnd(AllChars.rb).TrimStart(AllChars.lb);
+                    var p = SHSplit.SplitMore(SHReplace.ReplaceOnce(m, "The remote server returned an error: ", string.Empty), "");
+                    var s = p[0].TrimEnd(')').TrimStart('(');
                     lastError = int.Parse(s);
                 }
                 if (lastError == 404)

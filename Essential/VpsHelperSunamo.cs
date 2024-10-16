@@ -3,7 +3,7 @@ public class VpsHelperSunamo
 {
     #region For easy copy
     public static bool IsQ
-    => Environment.MachineName == Consts.qMachineName;
+    => Environment.MachineName == "NRJANCIK";
     #endregion
 
     public const string ip = "46.36.38.72";
@@ -15,7 +15,7 @@ Zkopíroval jsem z C:\repos\_\Projects\PlatformIndependentNuGetPackages.webWitho
     nevím zda je to správný postup - NENÍ, pak je tu duplikátní s C:\repos\_\Projects\PlatformIndependentNuGetPackages\sunamo\Essential\VpsHelperSunExcSunamo.cs
      */
     //public static bool IsQ
-    //=> Environment.MachineName == Consts.qMachineName;
+    //=> Environment.MachineName == "NRJANCIK";
     #endregion
 
     public static string LocationOfSqlBackup(string s)

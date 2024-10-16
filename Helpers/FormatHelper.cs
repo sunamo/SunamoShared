@@ -9,7 +9,7 @@ public class FormatHelper
 
     public static string FormatEmail(string nameSurname, string postfix)
     {
-        var p = SHSplit.SplitMore(nameSurname, AllStrings.space);
+        var p = SHSplit.SplitMore(nameSurname, "");
         if (p.Count != 2)
         {
             ThrowEx.WrongNumberOfElements(2, "p", p);
@@ -21,6 +21,6 @@ public class FormatHelper
 
     public static string FormatEmail(string name, string surname, string postfix)
     {
-        return SH.TextWithoutDiacritic(name.ToLower()) + AllStrings.dot + SH.TextWithoutDiacritic(surname.ToLower()) + AllStrings.commat + postfix.TrimStart(AllChars.commat);
+        return SH.TextWithoutDiacritic(name.ToLower()) + "." + SH.TextWithoutDiacritic(surname.ToLower()) + "@" + postfix.TrimStart('@');
     }
 }

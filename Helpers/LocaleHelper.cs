@@ -21,7 +21,7 @@ public class LocaleHelper
         lang = lang.ToLower();
         foreach (var item in CultureInfo.GetCultures(CultureTypes.AllCultures))
         {
-            var p = SHSplit.SplitMore(item.Name, AllStrings.dash);
+            var p = SHSplit.SplitMore(item.Name, "-");
             if (p.Count > 1)
             {
                 if (p[0] == lang)

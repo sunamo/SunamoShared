@@ -41,11 +41,11 @@ public class ManageArtistDashTitle
     public static Tuple<string, string, string> GetArtistTitleRemix(string item)
     {
         string artist; string song; string remix;
-        string delimiter = SH.WrapWith(AllStrings.dash, AllStrings.space);
+        string delimiter = SH.WrapWith("-", "");
 
         if (!item.Contains(delimiter))
         {
-            delimiter = AllStrings.dash;
+            delimiter = "-";
         }
 
         List<string> toks = SHSplit.SplitMore(item, delimiter);
@@ -95,7 +95,7 @@ public class ManageArtistDashTitle
                 sb.Append(toks[i]);
             }
 
-            VratTitleRemix(sb.ToString().TrimEnd(AllChars.dash), out song, out remix);
+            VratTitleRemix(sb.ToString().TrimEnd('-'), out song, out remix);
         }
         return new Tuple<string, string, string>(artist, song, remix);
     }
@@ -110,8 +110,8 @@ public class ManageArtistDashTitle
     {
         title = p;
         remix = "";
-        int firstHranata = p.IndexOf(AllChars.rsqb);
-        int firstNormal = p.IndexOf(AllChars.lb);
+        int firstHranata = p.IndexOf(']');
+        int firstNormal = p.IndexOf('(');
         if (firstHranata == -1 && firstNormal != -1)
         {
             VratRozdeleneByVcetne(p, firstNormal, out title, out remix);
@@ -162,7 +162,7 @@ public class ManageArtistDashTitle
     {
         // Path.GetFileNameWithoutExtension()
         var fnwoe = Path.GetFileNameWithoutExtension(item);
-        List<string> toks = SHSplit.SplitMore(fnwoe, AllStrings.dash);
+        List<string> toks = SHSplit.SplitMore(fnwoe, "-");
         název = title = "";
         if (toks.Count == 0)
         {
@@ -179,15 +179,15 @@ public class ManageArtistDashTitle
             StringBuilder sb = new StringBuilder();
             for (int i = 1; i < toks.Count; i++)
             {
-                sb.Append(toks[i] + AllStrings.dash);
+                sb.Append(toks[i] + "-");
             }
 
-            title = sb.ToString().TrimEnd(AllChars.dash);
+            title = sb.ToString().TrimEnd('-');
         }
     }
 
     /// <summary>
-    /// První písmeno, písmena po AllChars.space a AllStrings.dash budou velkým.
+    /// První písmeno, písmena po ' ' a "-" budou velkým.
     /// </summary>
     /// <param name = "názevSouboru"></param>
     /// <param name = "p"></param>
@@ -199,28 +199,28 @@ public class ManageArtistDashTitle
         ch[dex + 1] = char.ToUpper(ch[dex + 1]);
         for (int i = 1; i < ch.Length; i++)
         {
-            if (ch[i] == AllChars.space)
+            if (ch[i] == ' ')
             {
                 if (CA.IsThereAnotherIndex(ch, i))
                 {
                     ch[i + 1] = char.ToUpper(ch[i + 1]);
                 }
             }
-            else if (ch[i] == AllChars.dash)
+            else if (ch[i] == '-')
             {
                 if (CA.IsThereAnotherIndex(ch, i))
                 {
                     ch[i + 1] = char.ToUpper(ch[i + 1]);
                 }
             }
-            else if (ch[i] == AllChars.rsqb)
+            else if (ch[i] == ']')
             {
                 if (CA.IsThereAnotherIndex(ch, i))
                 {
                     ch[i + 1] = char.ToUpper(ch[i + 1]);
                 }
             }
-            else if (ch[i] == AllChars.lb)
+            else if (ch[i] == '(')
             {
                 if (CA.IsThereAnotherIndex(ch, i))
                 {
@@ -238,10 +238,10 @@ public class ManageArtistDashTitle
     /// <param name = "cimNahradit"></param>
     public static string ReplaceAllHyphensExceptTheFirst(string p, string cimNahradit)
     {
-        int dex = p.IndexOf(AllChars.dash);
-        p = p.Replace(AllChars.dash, AllChars.space);
+        int dex = p.IndexOf('-');
+        p = p.Replace('-', ' ');
         char[] j = p.ToCharArray();
-        j[dex] = AllChars.dash;
+        j[dex] = '-';
         return new string(j);
     }
 
@@ -259,16 +259,16 @@ public class ManageArtistDashTitle
 
     public static string Reverse(string text)
     {
-        List<string> d = SHSplit.SplitCharMore(text, AllChars.dash);
+        List<string> d = SHSplit.SplitCharMore(text, '-');
         string temp = d[0];
         d[0] = d[d.Count - 1];
         d[d.Count - 1] = temp;
         StringBuilder sb = new StringBuilder();
         foreach (string item in d)
         {
-            sb.Append(item + AllStrings.dash);
+            sb.Append(item + "-");
         }
 
-        return sb.ToString().TrimEnd(AllChars.dash);
+        return sb.ToString().TrimEnd('-');
     }
 }

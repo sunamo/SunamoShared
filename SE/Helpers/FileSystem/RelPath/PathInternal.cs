@@ -98,14 +98,14 @@ public partial class PathInternal
     }
 
     /// <summary>
-    ///     Returns true if the path uses the canonical form of extended syntax ("\\?\" or "\??\"). If the
+    ///     Returns true if the path uses the canonical form of extended syntax (@"\\?\" or "\??\"). If the
     ///     path matches exactly (cannot use alternate directory separators) Windows will skip normalization
     ///     and path length checks.
     /// </summary>
     public static bool IsExtended(ReadOnlySpan<char> path)
     {
         // While paths like "//?/C:/" will work, they're treated the same as "\\.\" paths.
-        // Skipping of normalization will *only* occur if back slashes ('\') are used.
+        // Skipping of normalization will *only* occur if back slashes ('\'') are used.
         return path.Length >= DevicePrefixLength
                && path[0] == '\\'
                && (path[1] == '\\' || path[1] == '?')
@@ -114,7 +114,7 @@ public partial class PathInternal
     }
 
     /// <summary>
-    ///     Returns true if the path uses any of the DOS device path syntaxes. ("\\.\", "\\?\", or "\??\")
+    ///     Returns true if the path uses any of the DOS device path syntaxes. ("\\.\", @"\\?\", or "\??\")
     /// </summary>
     public static bool IsDevice(ReadOnlySpan<char> path)
     {

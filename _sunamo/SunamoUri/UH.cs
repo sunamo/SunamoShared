@@ -23,7 +23,7 @@ internal class UH
 
     internal static string GetPageNameFromUri(Uri uri)
     {
-        int nt = uri.PathAndQuery.IndexOf(AllStrings.q);
+        int nt = uri.PathAndQuery.IndexOf("?");
         if (nt != -1)
         {
             return uri.PathAndQuery.Substring(0, nt);

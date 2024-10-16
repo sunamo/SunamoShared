@@ -12,7 +12,7 @@ public class GridHelperSunamo
         var d = 100d / columns;
         for (int i = 0; i < columns; i++)
         {
-            result.Add(d + AllStrings.asterisk);
+            result.Add(d + "*");
         }
 
         return result;

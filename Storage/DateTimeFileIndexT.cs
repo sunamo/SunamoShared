@@ -45,7 +45,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         {
             throw new Exception(sess.i18n(XlfKeys.NotSupportedStrategyOfSavingFiles) + ".");
         }
-        mask += AllStrings.asterisk + ext;
+        mask += "*" + ext;
         List<StorageFile> files2 = null; // Directory.GetFilesInterop(_folder, mask, false, ac);
         foreach (var item in files2)
         {
@@ -68,18 +68,18 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         minute = hour = 0;
         if (fnwoe[11] == 'S')
         {
-            var parts = SHSplit.SplitMore(fnwoe, AllStrings.lowbar);
+            var parts = SHSplit.SplitMore(fnwoe, "_");
             serie = int.Parse(parts[4]);
-            postfix = SHJoin.JoinFromIndex(5, AllStrings.lowbar, parts);
+            postfix = SHJoin.JoinFromIndex(5, "_", parts);
             return FileEntriesDuplicitiesStrategy.Serie;
         }
         else
         {
             string t = fnwoe.Substring(11, 5);
-            var parts = SHSplit.SplitMore(t, AllStrings.lowbar);
+            var parts = SHSplit.SplitMore(t, "_");
             hour = int.Parse(parts[0]);
             minute = int.Parse(parts[1]);
-            postfix = SHJoin.JoinFromIndex(5, AllStrings.lowbar, parts);
+            postfix = SHJoin.JoinFromIndex(5, "_", parts);
             return FileEntriesDuplicitiesStrategy.Time;
         }
     }
@@ -112,7 +112,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         string displayText;
         if (serie == null)
         {
-            displayText = DTHelper.DateTimeToString(date, l, Consts.DateTimeMinVal);
+            displayText = DTHelper.DateTimeToString(date, l, new(1900, 1, 1));
         }
         else
         {
@@ -120,7 +120,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
             string addSer = "";
             if (ser != 0)
             {
-                addSer = " (" + ser + AllStrings.rb;
+                addSer = " (" + ser + ")";
             }
             displayText = DTHelper.DateToString(date, l) + addSer;
         }
@@ -137,7 +137,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
     }
     private string DeleteWrongCharsInFileName(string fnwoe)
     {
-        return SHReplace.ReplaceAll(FS.DeleteWrongCharsInFileName(fnwoe, false), AllStrings.lowbar, AllStrings.space);
+        return SHReplace.ReplaceAll(FS.DeleteWrongCharsInFileName(fnwoe, false), "_", "");
     }
     public void DeleteFile(FileNameWithDateTimeTU<StorageFolder, StorageFile> o)
     {
@@ -150,7 +150,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         }
         catch (Exception ex)
         {
-            //ThisApp.Error(sess.i18n(XlfKeys.FileCannotBeDeleted) + AllStrings.space + Exceptions.TextOfExceptions(ex));
+            //ThisApp.Error(sess.i18n(XlfKeys.FileCannotBeDeleted) + "" + Exceptions.TextOfExceptions(ex));
         }
     }
     public string GetStorageFile(FileNameWithDateTimeTU<StorageFolder, StorageFile> o)
@@ -189,7 +189,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         //            {
         //                max = 1;
         //            }
-        //            fnwoe = DTHelper.DateTimeToFileName(dt, false) + "_S_" + max.Value + AllStrings.lowbar + name;
+        //            fnwoe = DTHelper.DateTimeToFileName(dt, false) + "_S_" + max.Value + "_" + name;
         //        }
         //        else
         //        {

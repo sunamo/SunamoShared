@@ -5,8 +5,8 @@ internal class DTHelperMulti
     {
         if (l == LangsShared.cs)
         {
-            return p.Day + AllStrings.dot + p.Month + AllStrings.dot + p.Year;
+            return p.Day + "." + p.Month + "." + p.Year;
         }
-        return p.Month + AllStrings.slash + p.Day + AllStrings.slash + p.Year;
+        return p.Month + "/" + p.Day + "/" + p.Year;
     }
 }

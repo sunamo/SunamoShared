@@ -1,16 +1,20 @@
 namespace SunamoShared._sunamo.SunamoStringSplit;
 
+
 internal class SHSplit
 {
-    
+
     internal static List<string> SplitByWhiteSpaces(string innerText)
     {
-        return innerText.Split(AllChars.whiteSpacesChars.ToArray(), StringSplitOptions.RemoveEmptyEntries).ToList();
+        WhitespaceCharService whitespaceChar = new WhitespaceCharService();
+        return innerText.Split(whitespaceChar.whiteSpaceChars.ToArray(), StringSplitOptions.RemoveEmptyEntries).ToList();
     }
 
+    [Obsolete("Pou��v� SHData.s_spaceAndPuntactionCharsAndWhiteSpaces")]
     internal static List<string> SplitBySpaceAndPunctuationCharsAndWhiteSpaces(string s)
     {
-        return s.Split(SHData.s_spaceAndPuntactionCharsAndWhiteSpaces).ToList();
+        //return s.Split(SHData.s_spaceAndPuntactionCharsAndWhiteSpaces).ToList();
+        return null;
     }
 
     internal static List<string> SplitCharMore(string v1, params char[] v2)

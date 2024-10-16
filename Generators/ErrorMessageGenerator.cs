@@ -35,7 +35,7 @@ public class ErrorMessageGenerator
         for (; y < i; y++)
         {
             string em = GetErrorMessage(chyby[y]);
-            _vypis.AppendLine(chybneSoubory[y] + AllStrings.swda + em);
+            _vypis.AppendLine(chybneSoubory[y] + "-" + em);
         }
         string priChybe = null;
         if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "cs")
@@ -55,7 +55,7 @@ public class ErrorMessageGenerator
             for (; y < chybneSoubory.Count; y++)
             {
                 string em = GetErrorMessage(chyby[y]);
-                _triTecky.AppendLine(chybneSoubory[i] + AllStrings.swda + em);
+                _triTecky.AppendLine(chybneSoubory[i] + "-" + em);
             }
             _triTecky.AppendLine(priChybe);
         }

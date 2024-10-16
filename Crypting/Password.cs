@@ -1,5 +1,7 @@
 namespace SunamoShared.Crypting;
 
+using SunamoShared._sunamo;
+
 public class Password
 {
     public static string CreateRandomStrongPassword()
@@ -9,10 +11,14 @@ public class Password
         int countCharsNumbers = 3;
         int countCharsSpecial = 1;
         int PasswordLength = countCharsLower + countCharsUpper + countCharsNumbers + countCharsSpecial;
-        List<char> allowedCharsLower = AllChars.lowerChars;
-        List<char> allowedCharsUpper = AllChars.upperChars;
-        List<char> allowedCharsNumbers = AllChars.numericChars;
-        List<char> allowedCharsSpecial = AllChars.specialChars;
+
+        LetterAndDigitCharService letterAndDigitChar = new LetterAndDigitCharService();
+        SpecialCharsService specialChars = new();
+
+        List<char> allowedCharsLower = letterAndDigitChar.lowerChars;
+        List<char> allowedCharsUpper = letterAndDigitChar.upperChars;
+        List<char> allowedCharsNumbers = letterAndDigitChar.numericChars;
+        List<char> allowedCharsSpecial = specialChars.specialChars;
         Byte[] randomBytes = new Byte[3];
         RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
         StringBuilder vr = new StringBuilder(PasswordLength);

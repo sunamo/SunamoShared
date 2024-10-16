@@ -4,7 +4,7 @@ internal class ConvertEveryWordLargeCharConvention
 {
     private static bool IsSpecialChar(char item)
     {
-        return new List<char>([AllChars.bs, AllChars.lb, AllChars.rb, AllChars.rsqb, AllChars.lsqb, AllChars.dot, AllChars.apostrophe]).Any(d => d == item); //CAG.IsEqualToAnyElement<char>(item, );
+        return new List<char>(['\\', '(', ')', ']', '[', '.', '\'']).Any(d => d == item); //CAG.IsEqualToAnyElement<char>(item, );
     }
 
     internal static string ToConvention(string p)
@@ -19,7 +19,7 @@ internal class ConvertEveryWordLargeCharConvention
                 if (char.IsUpper(item))
                 {
                     dalsiVelke = false;
-                    sb.Append(AllChars.space);
+                    sb.Append(' ');
                     sb.Append(item);
                     continue;
                 }
@@ -30,7 +30,7 @@ internal class ConvertEveryWordLargeCharConvention
                     {
                         if (!IsSpecialChar(sb[sb.Length - 1]))
                         {
-                            sb.Append(AllChars.space);
+                            sb.Append(' ');
                         }
                     }
                     sb.Append(char.ToUpper(item));
@@ -48,7 +48,7 @@ internal class ConvertEveryWordLargeCharConvention
                 }
                 else
                 {
-                    sb.Append(AllChars.space);
+                    sb.Append(' ');
                     continue;
                 }
             }
@@ -56,7 +56,7 @@ internal class ConvertEveryWordLargeCharConvention
             {
                 if (!char.IsUpper(sb[sb.Length - 1]))
                 {
-                    sb.Append(AllChars.space);
+                    sb.Append(' ');
                 }
                 sb.Append(item);
             }
@@ -77,13 +77,13 @@ internal class ConvertEveryWordLargeCharConvention
             }
             else
             {
-                sb.Append(AllChars.space);
+                sb.Append(' ');
                 dalsiVelke = true;
             }
         }
         string vr = sb.ToString().Trim();
 
-        vr = vr.Replace("  ", " "); //SHReplace.ReplaceAll(vr, AllStrings.space, AllStrings.doubleSpace);
+        vr = vr.Replace("  ", " "); //SHReplace.ReplaceAll(vr, "", "");
         return vr;
     }
 }

@@ -319,7 +319,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
             feats = s.AlternateArtists();
             foreach (var item in feats)
             {
-                s = new SongFromInternet(item + AllStrings.dash + song);
+                s = new SongFromInternet(item + "-" + song);
                 result2 = CalculateSimilarity(s, true);
 
                 if (breakInCalculateSimilarity)
@@ -350,7 +350,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     public static bool breakInCalculateSimilarity = false;
     public string Artist()
     {
-        return string.Join(AllStrings.space, nazev);
+        return string.Join("", nazev);
     }
 
     public string ArtistInConvention()
@@ -360,7 +360,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     public string Title()
     {
-        return string.Join(AllStrings.space, title);
+        return string.Join("", title);
     }
 
     public string TitleInConvention()
@@ -370,7 +370,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     public string Remix()
     {
-        return string.Join(AllStrings.space, remix);
+        return string.Join("", remix);
     }
 
     public string RemixInConvention()
@@ -384,7 +384,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
         sb.Append(TitleInConvention());
         if (remix.Count != 0)
         {
-            sb.Append(AllStrings.lsqb + RemixInConvention() + AllStrings.rsqb);
+            sb.Append("[" + RemixInConvention() + "]");
         }
         return sb.ToString();
     }
@@ -425,10 +425,10 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     public override string ToString()
     {
         StringBuilder vr = new StringBuilder();
-        vr.Append(Artist() + AllStrings.dash + Title());
+        vr.Append(Artist() + "-" + Title());
         if (remix.Count != 0)
         {
-            vr.Append(" [" + Remix() + AllStrings.rsqb);
+            vr.Append(" [" + Remix() + "]");
         }
         return vr.ToString();
     }
@@ -436,10 +436,10 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     public string ToConventionString()
     {
         StringBuilder vr = new StringBuilder();
-        vr.Append(ArtistInConvention() + AllStrings.dash + TitleInConvention());
+        vr.Append(ArtistInConvention() + "-" + TitleInConvention());
         if (remix.Count != 0)
         {
-            vr.Append(" [" + RemixInConvention() + AllStrings.rsqb);
+            vr.Append(" [" + RemixInConvention() + "]");
         }
         return vr.ToString();
     }
@@ -447,7 +447,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     private IList<string> SplitRemix(string u)
     {
         // comma - artists like Hm... or The Academy Is..
-        List<string> gg = SHSplit.SplitMore(u, AllStrings.amp, AllStrings.space, AllStrings.comma, AllStrings.dash, AllStrings.lsqb, AllStrings.rsqb, AllStrings.lb, AllStrings.rb);
+        List<string> gg = SHSplit.SplitMore(u, "&", "", ",", "-", "[", "]", "(", ")");
         //gg.ForEach(g => g.ToLower());
         for (int i = 0; i < gg.Count; i++)
         {
@@ -458,7 +458,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     private IList<string> SplitNazevTitle(string u)
     {
-        List<string> gg = SHSplit.SplitMore(u, AllStrings.amp, AllStrings.space, AllStrings.comma, AllStrings.dash);
+        List<string> gg = SHSplit.SplitMore(u, "&", "", ",", "-");
         //gg.ForEach(g => g.ToLower());
         for (int i = 0; i < gg.Count; i++)
         {
@@ -472,7 +472,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
         var remix = Remix();
         remix = SHReplace.ReplaceAll(remix, "Ft", "ft",
             sess.i18n(XlfKeys.Feat), "feat");
-        remix = remix.Trim(AllChars.dot);
+        remix = remix.Trim('.');
         remix = remix.Trim();
 
         var art = SHSplit.SplitMore(remix, "&", " and ");

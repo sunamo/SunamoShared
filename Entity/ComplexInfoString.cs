@@ -1,5 +1,7 @@
 namespace SunamoShared.Entity;
 
+using SunamoShared._sunamo;
+
 public class ComplexInfoString
 {
     private int _quantityNumbers = 0;
@@ -57,25 +59,30 @@ public class ComplexInfoString
         foreach (char item in s)
         {
             int nt = item;
-            if (AllChars.lowerKeyCodes.Contains(nt))
+
+            LetterAndDigitKeyCodeService letterAndDigitChar = new();
+            SpecialKeyCodeServices specialChars = new();
+
+            if (letterAndDigitChar.lowerKeyCodes.Contains(nt))
             {
                 _quantityLowerChars++;
                 NumberLettersOrDigit++;
             }
-            else if (AllChars.upperKeyCodes.Contains(nt))
+            else if (letterAndDigitChar.upperKeyCodes.Contains(nt))
             {
                 _quantityUpperChars++;
                 NumberLettersOrDigit++;
             }
-            else if (AllChars.numericKeyCodes.Contains(nt))
+            else if (letterAndDigitChar.numericKeyCodes.Contains(nt))
             {
                 _quantityNumbers++;
                 NumberLettersOrDigit++;
             }
-            else if (AllChars.specialKeyCodes.Contains(nt))
+            else if (specialChars.specialKeyCodes.Contains(nt))
             {
                 _quantitySpecialChars++;
             }
+
 
             if (_znakyPocty.ContainsKey(item))
             {
