@@ -55,3 +55,4 @@ global using SunamoShared._sunamo.SunamoCollections;
 global using SunamoShared._sunamo.SunamoFileSystem;
 global using SunamoShared._sunamo.SunamoString;
 global using SunamoShared._public.SunamoXlfKeys;
+global using System.Diagnostics.CodeAnalysis;
