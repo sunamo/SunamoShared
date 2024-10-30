@@ -41,6 +41,13 @@ public static class SerializerHelperJson
         }
 
         var contentsToWriteToFile = JsonConvert.SerializeObject(objectToWrite, a.formatting);
+
+        if (a.TwoBackslashToSingle)
+        {
+            contentsToWriteToFile = contentsToWriteToFile.Replace(@"\\", "\\");
+        }
+
+
         var path = GetPath(fileNameWithoutExt);
 
         if (a.append)
