@@ -41,7 +41,7 @@ public class ManageArtistDashTitle
     public static Tuple<string, string, string> GetArtistTitleRemix(string item)
     {
         string artist; string song; string remix;
-        string delimiter = SH.WrapWith("-", "");
+        string delimiter = SH.WrapWith("-", " ");
 
         if (!item.Contains(delimiter))
         {

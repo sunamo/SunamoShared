@@ -103,7 +103,7 @@ internal class SH
     internal static string NullToStringOrDefault(object n)
     {
         //return NullToStringOrDefault(n, null);
-        return n == null ? " " + "(null)" : "" + n;
+        return n == null ? " " + "(null)" : " " + n;
     }
     /// <summary>
     ///     Usage: Exceptions.MoreCandidates

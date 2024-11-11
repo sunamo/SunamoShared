@@ -32,7 +32,7 @@ public class FileNameWithDateTimeTU<StorageFolder, StorageFile>
     /// <param name="row2"></param>
     public FileNameWithDateTimeTU(string row1, string row2, AbstractCatalogShared<StorageFolder, StorageFile> ac)
     {
-        _displayText = row1 + "" + row2;
+        _displayText = row1 + " " + row2;
         _row1 = row1;
         _row2 = row2;
         this.ac = ac;

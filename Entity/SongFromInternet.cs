@@ -350,7 +350,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     public static bool breakInCalculateSimilarity = false;
     public string Artist()
     {
-        return string.Join("", nazev);
+        return string.Join(" ", nazev);
     }
 
     public string ArtistInConvention()
@@ -360,7 +360,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     public string Title()
     {
-        return string.Join("", title);
+        return string.Join(" ", title);
     }
 
     public string TitleInConvention()
@@ -370,7 +370,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     public string Remix()
     {
-        return string.Join("", remix);
+        return string.Join(" ", remix);
     }
 
     public string RemixInConvention()
@@ -447,7 +447,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     private IList<string> SplitRemix(string u)
     {
         // comma - artists like Hm... or The Academy Is..
-        List<string> gg = SHSplit.SplitMore(u, "&", "", ",", "-", "[", "]", "(", ")");
+        List<string> gg = SHSplit.SplitMore(u, "&", " ", ",", "-", "[", "]", "(", ")");
         //gg.ForEach(g => g.ToLower());
         for (int i = 0; i < gg.Count; i++)
         {
@@ -458,7 +458,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     private IList<string> SplitNazevTitle(string u)
     {
-        List<string> gg = SHSplit.SplitMore(u, "&", "", ",", "-");
+        List<string> gg = SHSplit.SplitMore(u, "&", " ", ",", "-");
         //gg.ForEach(g => g.ToLower());
         for (int i = 0; i < gg.Count; i++)
         {

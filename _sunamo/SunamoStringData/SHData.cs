@@ -1,7 +1,4 @@
-//
-
-//namespace SunamoShared._sunamo.SunamoStringData;
-
+namespace SunamoShared._sunamo.SunamoStringData;
 ///// <summary>
 ///// Zde musí být vše veřejné protože se to používá i v jiných třídách než je ve SH
 ///// A taky protože někdy od SHData dědit nemůžu ale hodilo by se např. od SHSH

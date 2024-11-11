@@ -200,7 +200,7 @@ internal class FS
         {
             if (co == FileMoveCollisionOptionShared.AddFileSize)
             {
-                var newFn = FS.InsertBetweenFileNameAndExtension(fileTo, "" + new FileInfo(item).Length);
+                var newFn = FS.InsertBetweenFileNameAndExtension(fileTo, " " + new FileInfo(item).Length);
                 if (File.Exists(newFn))
                 {
                     File.Delete(item);
