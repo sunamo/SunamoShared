@@ -44,7 +44,7 @@ public class Asymmetric
     private const string _KeyCoefficient = "PrivateKey.InverseQ";
     private const string _KeyPrivateExponent = "PrivateKey.D";
     #endregion
-    #region "  " + sess.i18n(XlfKeys.PublicKeyClass)
+    #region "  " + Translate.FromKey(XlfKeys.PublicKeyClass)
     /// <summary>
     /// Represents a public encryption key. Intended to be shared, it 
     /// contains only the Modulus and Exponent.
@@ -106,8 +106,8 @@ public class Asymmetric
         /// </summary>
         public void LoadFromXml(string keyXml)
         {
-            Modulus = UtilsNonNetStandard.GetXmlElement(keyXml, sess.i18n(XlfKeys.Modulus));
-            Exponent = UtilsNonNetStandard.GetXmlElement(keyXml, sess.i18n(XlfKeys.Exponent));
+            Modulus = UtilsNonNetStandard.GetXmlElement(keyXml, Translate.FromKey(XlfKeys.Modulus));
+            Exponent = UtilsNonNetStandard.GetXmlElement(keyXml, Translate.FromKey(XlfKeys.Exponent));
         }
         /// <summary>
         /// Converts this public key to an RSAParameters object
@@ -148,7 +148,7 @@ public class Asymmetric
         }
     }
     #endregion
-    #region "  " + sess.i18n(XlfKeys.PrivateKeyClass)
+    #region "  " + Translate.FromKey(XlfKeys.PrivateKeyClass)
     /// <summary>
     /// Represents a private encryption key. Not intended to be shared, as it 
     /// contains all the elements that make up the key.
@@ -246,8 +246,8 @@ public class Asymmetric
         /// </summary>
         public void LoadFromXml(string keyXml)
         {
-            Modulus = UtilsNonNetStandard.GetXmlElement(keyXml, sess.i18n(XlfKeys.Modulus));
-            Exponent = UtilsNonNetStandard.GetXmlElement(keyXml, sess.i18n(XlfKeys.Exponent));
+            Modulus = UtilsNonNetStandard.GetXmlElement(keyXml, Translate.FromKey(XlfKeys.Modulus));
+            Exponent = UtilsNonNetStandard.GetXmlElement(keyXml, Translate.FromKey(XlfKeys.Exponent));
             PrimeP = UtilsNonNetStandard.GetXmlElement(keyXml, "P");
             PrimeQ = UtilsNonNetStandard.GetXmlElement(keyXml, "Q");
             PrimeExponentP = UtilsNonNetStandard.GetXmlElement(keyXml, "DP");
@@ -288,7 +288,7 @@ public class Asymmetric
         }
         public static string FromFile(string p)
         {
-            throw new Exception(sess.i18n(XlfKeys.TheMethodOrOperationIsNotImplemented) + ".");
+            throw new Exception(Translate.FromKey(XlfKeys.TheMethodOrOperationIsNotImplemented) + ".");
             return null;
         }
     }
@@ -449,7 +449,7 @@ public class Asymmetric
         {
             if (ex.Message.ToLower().IndexOf("bad length") > -1)
             {
-                throw new Exception(sess.i18n(XlfKeys.YourDataIsTooLargeRSAEncryptionIsDesignedToEncryptRelativelySmallAmountsOfDataTheExactByteLimitDependsOnTheKeySizeToEncryptMoreDataUseSymmetricEncryptionAndThenEncryptThatSymmetricKeyWithAsymmetricRSAEncryption) + ".");
+                throw new Exception(Translate.FromKey(XlfKeys.YourDataIsTooLargeRSAEncryptionIsDesignedToEncryptRelativelySmallAmountsOfDataTheExactByteLimitDependsOnTheKeySizeToEncryptMoreDataUseSymmetricEncryptionAndThenEncryptThatSymmetricKeyWithAsymmetricRSAEncryption) + ".");
             }
             else
             {
@@ -511,7 +511,7 @@ public class Asymmetric
             {
                 s = "public";
             }
-            throw new Exception(string.Format(sess.i18n(XlfKeys.TheProvided0EncryptionKeyXMLDoesNotAppearToBeValid) + ".", s));
+            throw new Exception(string.Format(Translate.FromKey(XlfKeys.TheProvided0EncryptionKeyXMLDoesNotAppearToBeValid) + ".", s));
         }
     }
     /// <summary>
@@ -550,7 +550,7 @@ public class Asymmetric
         {
             if (ex.Message.ToLower().IndexOf("csp for this implementation could not be acquired") > -1)
             {
-                throw new Exception(sess.i18n(XlfKeys.UnableToObtainCryptographicServiceProvider) + ". " + sess.i18n(XlfKeys.EitherThePermissionsAreIncorrectOnThe) + " 'C:\\Documents and Settings\\All Users\\Application DataCrypt\\Microsoft\\Crypto\\RSA\\MachineKeys' folder, or the current security context '" + WindowsIdentity.GetCurrent().Name + "' does not have access to this folder.");
+                throw new Exception(Translate.FromKey(XlfKeys.UnableToObtainCryptographicServiceProvider) + ". " + Translate.FromKey(XlfKeys.EitherThePermissionsAreIncorrectOnThe) + " 'C:\\Documents and Settings\\All Users\\Application DataCrypt\\Microsoft\\Crypto\\RSA\\MachineKeys' folder, or the current security context '" + WindowsIdentity.GetCurrent().Name + "' does not have access to this folder.");
             }
             else
             {

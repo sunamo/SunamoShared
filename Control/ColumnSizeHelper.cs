@@ -13,7 +13,7 @@ public class ColumnSizeHelper
     {
         if (zmenaO == 0)
         {
-            throw new Exception(sess.i18n(XlfKeys.ParameterZmenaOOfMethodColumnSizeHelperCalculateWidthOfColumnsAgainHasValue) + " ");
+            throw new Exception(Translate.FromKey(XlfKeys.ParameterZmenaOOfMethodColumnSizeHelperCalculateWidthOfColumnsAgainHasValue) + " ");
         }
 
         zmenaO /= d.Count;

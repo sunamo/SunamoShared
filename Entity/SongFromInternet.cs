@@ -471,7 +471,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     {
         var remix = Remix();
         remix = SHReplace.ReplaceAll(remix, "Ft", "ft",
-            sess.i18n(XlfKeys.Feat), "feat");
+            Translate.FromKey(XlfKeys.Feat), "feat");
         remix = remix.Trim('.');
         remix = remix.Trim();
 

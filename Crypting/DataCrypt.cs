@@ -16,7 +16,7 @@ public class DataCrypt
     /// <summary>
     /// Determines the default text encoding across ALL DataCrypt instances
     /// </summary>
-    public static Encoding DefaultEncoding = Encoding.GetEncoding(sess.i18n(XlfKeys.Windows1252));
+    public static Encoding DefaultEncoding = Encoding.GetEncoding(Translate.FromKey(XlfKeys.Windows1252));
     /// <summary>
     /// Determines the default text encoding for this DataCrypt instance (get & set)
     /// </summary>

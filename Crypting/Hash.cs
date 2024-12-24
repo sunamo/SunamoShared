@@ -138,7 +138,7 @@ public class Hash
         return _HashValue;
     }
 
-    #region "  " + sess.i18n(XlfKeys.CRC32HashAlgorithm)
+    #region "  " + Translate.FromKey(XlfKeys.CRC32HashAlgorithm)
     /// <summary>
     /// Vlastni trida pro pocitani CRC32 Hashe
     /// </summary>

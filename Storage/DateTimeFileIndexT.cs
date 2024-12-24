@@ -43,7 +43,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         }
         else
         {
-            throw new Exception(sess.i18n(XlfKeys.NotSupportedStrategyOfSavingFiles) + ".");
+            throw new Exception(Translate.FromKey(XlfKeys.NotSupportedStrategyOfSavingFiles) + ".");
         }
         mask += "*" + ext;
         List<StorageFile> files2 = null; // Directory.GetFilesInterop(_folder, mask, false, ac);
@@ -150,7 +150,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         }
         catch (Exception ex)
         {
-            //ThisApp.Error(sess.i18n(XlfKeys.FileCannotBeDeleted) + "" + Exceptions.TextOfExceptions(ex));
+            //ThisApp.Error(Translate.FromKey(XlfKeys.FileCannotBeDeleted) + "" + Exceptions.TextOfExceptions(ex));
         }
     }
     public string GetStorageFile(FileNameWithDateTimeTU<StorageFolder, StorageFile> o)

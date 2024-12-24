@@ -25,7 +25,7 @@ public class ErrorMessageGenerator
         }
         else
         {
-            _vypis.AppendLine(sess.i18n(XlfKeys.InTheseFilesTheFollowingErrorsOccurred) + ": ");
+            _vypis.AppendLine(Translate.FromKey(XlfKeys.InTheseFilesTheFollowingErrorsOccurred) + ": ");
         }
         if (chybneSoubory.Count < i)
         {
@@ -44,7 +44,7 @@ public class ErrorMessageGenerator
         }
         else
         {
-            priChybe = sess.i18n(XlfKeys.IfYouThinkThatThisIsApplicationErrorPleaseSendMeAnEmailAtTheAddressThatIsListedInTheAboutApp);
+            priChybe = Translate.FromKey(XlfKeys.IfYouThinkThatThisIsApplicationErrorPleaseSendMeAnEmailAtTheAddressThatIsListedInTheAboutApp);
         }
         if (y == chybneSoubory.Count)
         {
@@ -71,7 +71,7 @@ public class ErrorMessageGenerator
                     // Žádná chyba
                     break;
                 case FileExceptions.FileNotFound:
-                    return sess.i18n(XlfKeys.FileNotFound);
+                    return Translate.FromKey(XlfKeys.FileNotFound);
                 case FileExceptions.UnauthorizedAccess:
                     return "Program z\u0159ejm\u011B nem\u00E1 p\u0159\u00EDstup k souboru";
                 case FileExceptions.General:
@@ -89,13 +89,13 @@ public class ErrorMessageGenerator
                     // Žádná chyba
                     break;
                 case FileExceptions.FileNotFound:
-                    return sess.i18n(XlfKeys.FileNotFound);
+                    return Translate.FromKey(XlfKeys.FileNotFound);
                 case FileExceptions.UnauthorizedAccess:
-                    return sess.i18n(XlfKeys.TheProgramDoesNotHaveAccessToTheFile);
+                    return Translate.FromKey(XlfKeys.TheProgramDoesNotHaveAccessToTheFile);
                 case FileExceptions.General:
-                    return sess.i18n(XlfKeys.UnknownOrGeneralError);
+                    return Translate.FromKey(XlfKeys.UnknownOrGeneralError);
                 default:
-                    throw new Exception(sess.i18n(XlfKeys.NotImplementedCase));
+                    throw new Exception(Translate.FromKey(XlfKeys.NotImplementedCase));
                     return null;
             }
         }

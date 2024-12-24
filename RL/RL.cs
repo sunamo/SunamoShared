@@ -60,10 +60,10 @@ public class RL
     /// <param name="cs"></param>
     public static string GetStringByLang(string v, LangsShared cs)
     {
-        throw new Exception(sess.i18n(XlfKeys.InDesktopAppDontPassLangs));
+        throw new Exception(Translate.FromKey(XlfKeys.InDesktopAppDontPassLangs));
         //if (l == Langs.en)
         //{
-        //    return sess.i18n(k];
+        //    return Translate.FromKey(k];
         //}
         //return RLData.cs[k];
         return null;

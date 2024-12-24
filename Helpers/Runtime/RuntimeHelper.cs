@@ -83,7 +83,7 @@ public class RuntimeHelper
         {
             if (throwException)
             {
-                throw new Exception(sess.i18n(XlfKeys.ChangeDialogResultHasAlredyRegisteredHandler));
+                throw new Exception(Translate.FromKey(XlfKeys.ChangeDialogResultHasAlredyRegisteredHandler));
             }
             else
             {
