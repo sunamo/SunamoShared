@@ -108,8 +108,5 @@ public class RuntimeHelper
     public static void EmptyDummyMethodLogMessage(TypeOfMessageShared t, string s, params string[] o)
     {
     }
-    public static bool IsAdminUser()
-    {
-        return Directory.Exists(@"E:\vs\sunamo\");
-    }
+
 }

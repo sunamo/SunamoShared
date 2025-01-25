@@ -18,13 +18,13 @@ Zkopíroval jsem z C:\repos\_\Projects\PlatformIndependentNuGetPackages.webWitho
     //=> Environment.MachineName == "NRJANCIK";
     #endregion
 
-    public static string LocationOfSqlBackup(string s)
+    public static string LocationOfSqlBackup(string s, string mssqllserverPath)
     {
-        var p = string.Empty;
+        //var mssqllserverPath = string.Empty;
         //p = @"C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\";
-        p = @"C:\mssqllserver\";
+        //mssqllserverPath = @"C:\mssqllserver\";
 
-        var r = p += @"Backup\" + s + ".bak";
+        var r = mssqllserverPath += @"Backup\" + s + ".bak";
         return r;
     }
 
