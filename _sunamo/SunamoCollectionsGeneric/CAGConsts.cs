@@ -3,10 +3,6 @@ namespace SunamoShared._sunamo.SunamoCollectionsGeneric;
 
 internal class CAGConsts
 {
-    internal static T[] ToArrayT<T>(params T[] aB)
-    {
-        return aB;
-    }
     /// <summary>
     /// Tady to musí být, SunamoValues nemůže dědit od SunamoCollectionGeneric - vzniklo by Cycle detected
     /// Těch pár řádků mě snad nezabije.

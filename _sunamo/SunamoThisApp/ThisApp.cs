@@ -5,35 +5,11 @@ internal class ThisApp
     internal static string Name;
     internal static LangsShared l;
 
-    internal static void Success(string v, params string[] o)
-    {
-        SetStatus(TypeOfMessageShared.Success, v, o);
-    }
 
-    internal static void Info(string v, params string[] o)
-    {
-        SetStatus(TypeOfMessageShared.Information, v, o);
-    }
 
-    internal static void Error(string v, params string[] o)
-    {
-        SetStatus(TypeOfMessageShared.Error, v, o);
-    }
 
-    internal static void Warning(string v, params string[] o)
-    {
-        SetStatus(TypeOfMessageShared.Warning, v, o);
-    }
 
-    internal static void Ordinal(string v, params string[] o)
-    {
-        SetStatus(TypeOfMessageShared.Ordinal, v, o);
-    }
 
-    internal static void Appeal(string v, params string[] o)
-    {
-        SetStatus(TypeOfMessageShared.Appeal, v, o);
-    }
 
     internal static void SetStatus(TypeOfMessageShared st, string status, params string[] args)
     {

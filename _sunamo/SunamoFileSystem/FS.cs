@@ -2,73 +2,7 @@ namespace SunamoShared._sunamo.SunamoFileSystem;
 
 internal class FS
 {
-    internal static byte[] StreamToArrayBytes(System.IO.Stream stream)
-    {
-        if (stream == null)
-        {
-            return new byte[0];
-        }
 
-        long originalPosition = 0;
-
-        if (stream.CanSeek)
-        {
-            originalPosition = stream.Position;
-            stream.Position = 0;
-        }
-
-        try
-        {
-            byte[] readBuffer = new byte[4096];
-
-            int totalBytesRead = 0;
-            int bytesRead;
-
-            while ((bytesRead = stream.Read(readBuffer, totalBytesRead, readBuffer.Length - totalBytesRead)) > 0)
-            {
-                totalBytesRead += bytesRead;
-
-                if (totalBytesRead == readBuffer.Length)
-                {
-                    int nextByte = stream.ReadByte();
-                    if (nextByte != -1)
-                    {
-                        byte[] temp = new byte[readBuffer.Length * 2];
-                        Buffer.BlockCopy(readBuffer, 0, temp, 0, readBuffer.Length);
-                        Buffer.SetByte(temp, totalBytesRead, (byte)nextByte);
-                        readBuffer = temp;
-                        totalBytesRead++;
-                    }
-                }
-            }
-
-            byte[] buffer = readBuffer;
-            if (readBuffer.Length != totalBytesRead)
-            {
-                buffer = new byte[totalBytesRead];
-                Buffer.BlockCopy(readBuffer, 0, buffer, 0, totalBytesRead);
-            }
-            return buffer;
-        }
-        finally
-        {
-            if (stream.CanSeek)
-            {
-                stream.Position = originalPosition;
-            }
-        }
-    }
-    internal static string GetTempFilePath()
-    {
-        return Path.Combine(System.IO.Path.GetTempPath(), System.IO.Path.GetTempFileName());
-    }
-
-    internal static void GetPathAndFileNameWithoutExtension(string fn, out string path, out string file, out string ext)
-    {
-        path = Path.GetDirectoryName(fn) + '\\';
-        file = GetFileNameWithoutExtensions(fn);
-        ext = Path.GetExtension(fn);
-    }
 
 
 
@@ -84,18 +18,6 @@ internal class FS
     //protected readonly static List<char> invalidFileNameChars = 
     internal static List<char> s_invalidFileNameChars = Path.GetInvalidFileNameChars().ToList();
 
-    internal static string ReplaceInvalidFileNameChars(string filename, params char[] ch)
-    {
-        StringBuilder sb = new StringBuilder();
-        foreach (var item in filename)
-        {
-            if (!s_invalidFileNameChars.Contains(item) || ch.Contains(item))
-            {
-                sb.Append(item);
-            }
-        }
-        return sb.ToString();
-    }
 
     #region MakeUncLongPath
     internal static string MakeUncLongPath(string path)
@@ -271,35 +193,7 @@ internal class FS
         return true;
     }
 
-    internal static void MoveFile(string item, string fileTo, FileMoveCollisionOptionShared co)
-    {
-        if (CopyMoveFilePrepare(ref item, ref fileTo, co))
-        {
-            try
-            {
-                item = FS.MakeUncLongPath(item);
-                fileTo = FS.MakeUncLongPath(fileTo);
 
-                if (co == FileMoveCollisionOptionShared.DontManipulate && File.Exists(fileTo))
-                {
-                    return;
-                }
-                File.Move(item, fileTo);
-            }
-            catch (Exception ex)
-            {
-                //ThisApp.Error(item + " : " + ex.Message);
-            }
-        }
-        else
-        {
-        }
-    }
-
-    internal static string WithoutEndSlash(string v)
-    {
-        return WithoutEndSlash(ref v);
-    }
 
 
 
@@ -310,10 +204,6 @@ internal class FS
         return v;
     }
 
-    internal static string WithEndSlash(string v)
-    {
-        return WithEndSlash(ref v);
-    }
 
     /// <summary>
     ///     Usage: Exceptions.FileWasntFoundInDirectory

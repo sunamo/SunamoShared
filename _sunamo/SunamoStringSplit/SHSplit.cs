@@ -4,11 +4,6 @@ namespace SunamoShared._sunamo.SunamoStringSplit;
 internal class SHSplit
 {
 
-    internal static List<string> SplitByWhiteSpaces(string innerText)
-    {
-        WhitespaceCharService whitespaceChar = new WhitespaceCharService();
-        return innerText.Split(whitespaceChar.whiteSpaceChars.ToArray(), StringSplitOptions.RemoveEmptyEntries).ToList();
-    }
 
     [Obsolete("Pou��v� SHData.s_spaceAndPuntactionCharsAndWhiteSpaces")]
     internal static List<string> SplitBySpaceAndPunctuationCharsAndWhiteSpaces(string s)

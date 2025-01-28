@@ -2,13 +2,6 @@ namespace SunamoShared._sunamo.SunamoCollections;
 
 internal class CA
 {
-    internal static bool IsListStringWrappedInArray<T>(List<T> v2)
-    {
-        var first = v2.First().ToString();
-        if (v2.Count == 1 && (first == "System.Collections.Generic.List`1[System.String]" ||
-                              first == "System.Collections.Generic.List`1[System.Object]")) return true;
-        return false;
-    }
 
 
     internal static List<string> TrimStart(string backslash, List<string> s)
@@ -35,14 +28,6 @@ internal class CA
         return l;
     }
 
-    internal static List<string> TrimList(List<string> c)
-    {
-        for (int i = 0; i < c.Count; i++)
-        {
-            c[i] = c[i].Trim();
-        }
-        return c;
-    }
 
     internal static string ReplaceAll(string r, List<string> what, string forWhat)
     {
