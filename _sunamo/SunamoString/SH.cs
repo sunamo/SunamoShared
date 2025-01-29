@@ -78,25 +78,6 @@ internal class SH
     protected static List<char> bracketsLeftList = null;
     protected static List<char> bracketsRightList = null;
 
-    protected static void Init()
-    {
-        if (bracketsLeft == null)
-        {
-            bracketsLeft = new Dictionary<BracketsShared, char>();
-            bracketsLeft.Add(BracketsShared.Curly, '{');
-            bracketsLeft.Add(BracketsShared.Square, '[');
-            bracketsLeft.Add(BracketsShared.Normal, '(');
-            bracketsLeftList = Enumerable.ToList<char>(bracketsLeft.Values);
-
-            bracketsRight = new Dictionary<BracketsShared, char>();
-            bracketsRight.Add(BracketsShared.Curly, '}');
-            bracketsRight.Add(BracketsShared.Square, ']');
-            bracketsRight.Add(BracketsShared.Normal, ')');
-
-            bracketsRightList = Enumerable.ToList<char>(bracketsRight.Values);
-
-        }
-    }
 
     internal static char ClosingBracketFor(char v)
     {

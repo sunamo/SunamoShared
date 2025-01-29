@@ -6,24 +6,12 @@ internal class FS
 
 
 
-    internal static string GetFileNameWithoutExtensions(string item)
-    {
-        while (Path.HasExtension(item))
-        {
-            item = Path.GetFileNameWithoutExtension(item);
-        }
-        return item;
-    }
 
     //protected readonly static List<char> invalidFileNameChars = 
     internal static List<char> s_invalidFileNameChars = Path.GetInvalidFileNameChars().ToList();
 
 
     #region MakeUncLongPath
-    internal static string MakeUncLongPath(string path)
-    {
-        return MakeUncLongPath(ref path);
-    }
 
     internal static string MakeUncLongPath(ref string path)
     {
@@ -110,117 +98,15 @@ internal class FS
 
     internal static Action<string> DeleteFileMaybeLocked;
 
-    internal static bool CopyMoveFilePrepare(ref string item, ref string fileTo, FileMoveCollisionOptionShared co)
-    {
-        //var fileTo = fileTo2.ToString();
-        item = @"\\?\" + item;
-        MakeUncLongPath(ref fileTo);
-        FS.CreateUpfoldersPsysicallyUnlessThere(fileTo);
-
-        // Toto tu je důležité, nevím který kokot to zakomentoval
-        if (File.Exists(fileTo))
-        {
-            if (co == FileMoveCollisionOptionShared.AddFileSize)
-            {
-                var newFn = FS.InsertBetweenFileNameAndExtension(fileTo, " " + new FileInfo(item).Length);
-                if (File.Exists(newFn))
-                {
-                    File.Delete(item);
-                    return true;
-                }
-                fileTo = newFn;
-            }
-            else if (co == FileMoveCollisionOptionShared.AddSerie)
-            {
-                int serie = 1;
-                while (true)
-                {
-                    var newFn = FS.InsertBetweenFileNameAndExtension(fileTo, " (" + serie + ")");
-                    if (!File.Exists(newFn))
-                    {
-                        fileTo = newFn;
-                        break;
-                    }
-                    serie++;
-                }
-            }
-            else if (co == FileMoveCollisionOptionShared.DiscardFrom)
-            {
-                // Cant delete from because then is file deleting
-                if (DeleteFileMaybeLocked != null)
-                {
-                    DeleteFileMaybeLocked(item);
-                }
-                else
-                {
-                    File.Delete(item);
-                }
-
-            }
-            else if (co == FileMoveCollisionOptionShared.Overwrite)
-            {
-                if (DeleteFileMaybeLocked != null)
-                {
-                    DeleteFileMaybeLocked(fileTo);
-                }
-                else
-                {
-                    File.Delete(fileTo);
-                }
-            }
-            else if (co == FileMoveCollisionOptionShared.LeaveLarger)
-            {
-                long fsFrom = new FileInfo(item).Length;
-                long fsTo = new FileInfo(fileTo).Length;
-                if (fsFrom > fsTo)
-                {
-                    File.Delete(fileTo);
-                }
-                else //if (fsFrom < fsTo)
-                {
-                    File.Delete(item);
-                }
-            }
-            else if (co == FileMoveCollisionOptionShared.DontManipulate)
-            {
-                if (File.Exists(fileTo))
-                {
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
 
 
 
 
 
 
-    internal static string WithoutEndSlash(ref string v)
-    {
-        v = v.TrimEnd('\\');
-        return v;
-    }
 
 
-    /// <summary>
-    ///     Usage: Exceptions.FileWasntFoundInDirectory
-    /// </summary>
-    /// <param name="v"></param>
-    /// <returns></returns>
-    internal static string WithEndSlash(ref string v)
-    {
-        if (v != string.Empty)
-        {
-            v = v.TrimEnd('\\') + '\\';
-        }
-
-        SH.FirstCharUpper(ref v);
-        return v;
-    }
-
+    
     internal static string DeleteWrongCharsInFileName(string filename, bool isPath)
     {
         return string.Concat(filename.Split(Path.GetInvalidFileNameChars()));
