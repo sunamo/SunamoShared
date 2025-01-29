@@ -13,47 +13,9 @@ internal class FS
 
     #region MakeUncLongPath
 
-    internal static string MakeUncLongPath(ref string path)
-    {
-        if (!path.StartsWith(@"\\?\"))
-        {
-            // V ASP.net mi vrátilo u každé directory.exists false. Byl jsem pod ApplicationPoolIdentity v IIS a bylo nastaveno Full Control pro IIS AppPool\DefaultAppPool
-#if !ASPNET
-            //  asp.net / vps nefunguje, ve windows store apps taktéž, NECHAT TO TRVALE ZAKOMENTOVANÉ
-            // v asp.net toto způsobí akorát zacyklení, IIS začne vyhazovat 0xc00000fd, pak už nejde načíst jediná stránka
-            //path = @"\\?\" + path;
-#endif
-        }
-
-        return path;
-    }
     #endregion
 
-    internal static string InsertBetweenFileNameAndExtension(string orig, string whatInsert)
-    {
-        //return InsertBetweenFileNameAndExtension<string, string>(orig, whatInsert, null);
 
-        // Cesta by se zde hodila kvůli FS.CiStorageFile
-        // nicméně StorageFolder nevím zda se používá, takže to bude umět i bez toho
-
-        var origS = orig.ToString();
-
-        string fn = Path.GetFileNameWithoutExtension(origS);
-        string e = Path.GetExtension(origS);
-
-        if (origS.Contains('/') || origS.Contains('\\'))
-        {
-            string p = Path.GetDirectoryName(origS);
-
-            return Path.Combine(p, fn + whatInsert + e);
-        }
-        return fn + whatInsert + e;
-    }
-
-    internal static void CreateUpfoldersPsysicallyUnlessThere(string nad)
-    {
-        CreateFoldersPsysicallyUnlessThere(Path.GetDirectoryName(nad));
-    }
 
     internal static void CreateFoldersPsysicallyUnlessThere(string nad)
     {

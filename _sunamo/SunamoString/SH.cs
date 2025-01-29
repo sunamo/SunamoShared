@@ -3,10 +3,6 @@ namespace SunamoShared._sunamo.SunamoString;
 internal class SH
 {
     #region SH.FirstCharUpper
-    internal static void FirstCharUpper(ref string nazevPP)
-    {
-        nazevPP = FirstCharUpper(nazevPP);
-    }
 
 
     internal static string FirstCharUpper(string nazevPP)
