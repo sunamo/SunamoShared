@@ -18,6 +18,7 @@
     <Compile Remove="_sunamo\SunamoExceptions\_AddedToAllCsproj\**" />
     <EmbeddedResource Remove="_sunamo\SunamoExceptions\_AddedToAllCsproj\**" />
     <None Remove="_sunamo\SunamoExceptions\_AddedToAllCsproj\**" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="*" Pack="True" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Diacritics" Version="3.3.29" />

@@ -1,7 +1,5 @@
 namespace SunamoShared.Entity;
 
-using SunamoShared._sunamo;
-
 public class ComplexInfoString
 {
     private int _quantityNumbers = 0;
@@ -9,7 +7,6 @@ public class ComplexInfoString
     private int _quantityLowerChars = 0;
     private int _quantitySpecialChars = 0;
     private Dictionary<char, int> _znakyPocty = new Dictionary<char, int>();
-
     public int this[char ch]
     {
         get
@@ -21,7 +18,6 @@ public class ComplexInfoString
             return 0;
         }
     }
-
     public int QuantityNumbers
     {
         get
@@ -29,7 +25,6 @@ public class ComplexInfoString
             return _quantityNumbers;
         }
     }
-
     public int QuantityLowerChars
     {
         get
@@ -37,7 +32,6 @@ public class ComplexInfoString
             return _quantityLowerChars;
         }
     }
-
     public int QuantitySpecialChars
     {
         get
@@ -45,7 +39,6 @@ public class ComplexInfoString
             return _quantitySpecialChars;
         }
     }
-
     public int QuantityUpperChars
     {
         get
@@ -53,16 +46,13 @@ public class ComplexInfoString
             return _quantityUpperChars;
         }
     }
-
     public ComplexInfoString(string s)
     {
         foreach (char item in s)
         {
             int nt = item;
-
             LetterAndDigitKeyCodeService letterAndDigitChar = new();
             SpecialKeyCodeServices specialChars = new();
-
             if (letterAndDigitChar.lowerKeyCodes.Contains(nt))
             {
                 _quantityLowerChars++;
@@ -82,8 +72,6 @@ public class ComplexInfoString
             {
                 _quantitySpecialChars++;
             }
-
-
             if (_znakyPocty.ContainsKey(item))
             {
                 _znakyPocty[item]++;
@@ -92,10 +80,8 @@ public class ComplexInfoString
             {
                 _znakyPocty.Add(item, 1);
             }
-
             if (CountOfNeededLettersOrDigit != int.MaxValue)
             {
-
                 if (NumberLettersOrDigit > CountOfNeededLettersOrDigit)
                 {
                     break;
@@ -103,7 +89,6 @@ public class ComplexInfoString
             }
         }
     }
-
     public int CountOfNeededLettersOrDigit = int.MaxValue;
     public int NumberLettersOrDigit = 0;
 }

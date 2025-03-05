@@ -1,7 +1,5 @@
 namespace SunamoShared.Crypting;
 
-using SunamoShared._sunamo;
-
 public class Password
 {
     public static string CreateRandomStrongPassword()
@@ -11,10 +9,8 @@ public class Password
         int countCharsNumbers = 3;
         int countCharsSpecial = 1;
         int PasswordLength = countCharsLower + countCharsUpper + countCharsNumbers + countCharsSpecial;
-
         LetterAndDigitCharService letterAndDigitChar = new LetterAndDigitCharService();
         SpecialCharsService specialChars = new();
-
         List<char> allowedCharsLower = letterAndDigitChar.lowerChars;
         List<char> allowedCharsUpper = letterAndDigitChar.upperChars;
         List<char> allowedCharsNumbers = letterAndDigitChar.numericChars;
@@ -24,33 +20,27 @@ public class Password
         StringBuilder vr = new StringBuilder(PasswordLength);
         rng.GetBytes(randomBytes);
         Random random = new Random();
-
         for (int y = 0; y < countCharsLower; y++)
         {
             vr.Insert(random.Next(0, vr.Length - 1), allowedCharsLower[(int)randomBytes[y] % allowedCharsLower.Count]);
         }
-
         rng.GetBytes(randomBytes);
         for (int y = 0; y < countCharsUpper; y++)
         {
             vr.Insert(random.Next(0, vr.Length - 1), allowedCharsUpper[(int)randomBytes[y] % allowedCharsUpper.Count]);
         }
-
         rng.GetBytes(randomBytes);
         for (int y = 0; y < countCharsNumbers; y++)
         {
             vr.Insert(random.Next(0, vr.Length - 1), allowedCharsNumbers[(int)randomBytes[y] % allowedCharsNumbers.Count]);
         }
-
         rng.GetBytes(randomBytes);
         for (int y = 0; y < countCharsSpecial; y++)
         {
             vr.Insert(random.Next(0, vr.Length - 1), allowedCharsSpecial[(int)randomBytes[y] % allowedCharsSpecial.Count]);
         }
-
         return vr.ToString();
     }
-
     private string _password;
     private int _salt;
     public Password(string strPassword, int nSalt)
@@ -58,7 +48,6 @@ public class Password
         _password = strPassword;
         _salt = nSalt;
     }
-
     public static string CreateRandomPassword(int PasswordLength)
     {
         String _allowedChars = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ23456789";
@@ -71,10 +60,8 @@ public class Password
         {
             chars[i] = _allowedChars[(int)randomBytes[i] % allowedCharCount];
         }
-
         return new string(chars);
     }
-
     public static int CreateRandomSalt()
     {
         Byte[] _saltBytes = new Byte[4];
@@ -82,7 +69,6 @@ public class Password
         rng.GetBytes(_saltBytes);
         return ((((int)_saltBytes[0]) << 24) + (((int)_saltBytes[1]) << 16) + (((int)_saltBytes[2]) << 8) + ((int)_saltBytes[3]));
     }
-
     public string ComputeSaltedHash()
     {
         // Create Byte array of password string

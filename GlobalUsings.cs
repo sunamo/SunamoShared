@@ -97,3 +97,8 @@ global using SunamoShared._SunamoExceptions.Attributes;
 global using SunamoShared._SunamoExceptions.Interfaces;
 global using SunamoShared._sunamo.SunamoDateTime.Converters;
 global using SunamoShared._sunamo.SunamoEnums.Enums;
+
+global using System.Runtime.Serialization;
+global using ILogger = Microsoft.Extensions.Logging.ILogger;
+global using Microsoft.Extensions.Logging;
+global using NullLogger = Microsoft.Extensions.Logging.Abstractions.NullLogger;
