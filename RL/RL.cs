@@ -1,5 +1,7 @@
 namespace SunamoShared.RL;
 
+using SunamoShared.Interfaces;
+
 /// <summary>
 /// Whole class copied from apps - want to use RL in any type of my apps
 /// </summary>
