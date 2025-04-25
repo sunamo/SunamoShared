@@ -5,7 +5,7 @@ public class Timestamp
     public static List<string> GetAllTimeStamps(string p)
     {
         List<string> vr = new List<string>();
-        var s = SHSplit.SplitCharMore(p, ' ', '.');
+        var s = SHSplit.SplitChar(p, ' ', '.');
         foreach (var item in s)
         {
             if (item.Length == 9)

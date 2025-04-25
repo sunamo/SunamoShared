@@ -1,4 +1,5 @@
 namespace SunamoShared.Storage;
+
 public class DateTimeFileIndexT<StorageFolder, StorageFile>
 {
     static Type type = typeof(DateTimeFileIndexT<StorageFolder, StorageFile>);
@@ -68,7 +69,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         minute = hour = 0;
         if (fnwoe[11] == 'S')
         {
-            var parts = SHSplit.SplitMore(fnwoe, "_");
+            var parts = SHSplit.Split(fnwoe, "_");
             serie = int.Parse(parts[4]);
             postfix = SHJoin.JoinFromIndex(5, "_", parts);
             return FileEntriesDuplicitiesStrategy.Serie;
@@ -76,7 +77,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
         else
         {
             string t = fnwoe.Substring(11, 5);
-            var parts = SHSplit.SplitMore(t, "_");
+            var parts = SHSplit.Split(t, "_");
             hour = int.Parse(parts[0]);
             minute = int.Parse(parts[1]);
             postfix = SHJoin.JoinFromIndex(5, "_", parts);

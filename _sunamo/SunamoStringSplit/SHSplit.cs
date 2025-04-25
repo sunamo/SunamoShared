@@ -1,6 +1,5 @@
 namespace SunamoShared._sunamo.SunamoStringSplit;
 
-
 internal class SHSplit
 {
 
@@ -12,7 +11,7 @@ internal class SHSplit
         return null;
     }
 
-    internal static List<string> SplitCharMore(string v1, params char[] v2)
+    internal static List<string> SplitChar(string v1, params char[] v2)
     {
         return v1.Split(v2).ToList();
     }

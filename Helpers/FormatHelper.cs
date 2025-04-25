@@ -9,7 +9,7 @@ public class FormatHelper
 
     public static string FormatEmail(string nameSurname, string postfix)
     {
-        var p = SHSplit.SplitMore(nameSurname, " ");
+        var p = SHSplit.Split(nameSurname, " ");
         if (p.Count != 2)
         {
             ThrowEx.WrongNumberOfElements(2, "p", p);
