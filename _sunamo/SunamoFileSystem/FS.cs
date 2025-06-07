@@ -28,34 +28,34 @@ internal class FS
 
 
 
-    
-    internal static string DeleteWrongCharsInFileName(string filename, bool isPath)
+
+    internal static string DeleteWrongCharsInFileName(string filenameOrPath, bool isPath)
     {
-        return string.Concat(filename.Split(Path.GetInvalidFileNameChars()));
+        //return string.Concat(filename.Split(Path.GetInvalidFileNameChars()));
 
-        //List<char> invalidFileNameChars2 = null;
+        List<char> invalidFileNameChars2 = null;
 
-        //if (isPath)
-        //{
-        //    invalidFileNameChars2 = SHData. s_invalidFileNameCharsWithoutDelimiterOfFolders;
-        //}
-        //else
-        //{
-        //    invalidFileNameChars2 = SHData.s_invalidFileNameChars;
-        //}
+        if (isPath)
+        {
+            invalidFileNameChars2 = Path.GetInvalidPathChars().ToList();
+        }
+        else
+        {
+            invalidFileNameChars2 = Path.GetInvalidFileNameChars().ToList();
+        }
 
-        //StringBuilder sb = new StringBuilder();
-        //foreach (char item in p)
-        //{
-        //    if (!invalidFileNameChars2.Contains(item))
-        //    {
-        //        sb.Append(item);
-        //    }
-        //}
+        StringBuilder sb = new StringBuilder();
+        foreach (char item in filenameOrPath)
+        {
+            if (!invalidFileNameChars2.Contains(item))
+            {
+                sb.Append(item);
+            }
+        }
 
-        //var result = sb.ToString();
-        //SH.FirstCharUpper(ref result);
-        //return result;
+        var result = sb.ToString();
+        SH.FirstCharUpper(ref result);
+        return result;
     }
 
     internal static bool TryDeleteFile(string item)

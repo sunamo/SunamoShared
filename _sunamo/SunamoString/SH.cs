@@ -7,10 +7,28 @@ internal class SH
 
     #endregion
 
+    public static string FirstCharUpper(ref string result)
+    {
+        result = SH.FirstCharUpper(result);
+
+        return result;
+    }
+
+    public static string FirstCharUpper(string nazevPP, bool only = false)
+    {
+        if (nazevPP != null)
+        {
+            var sb = nazevPP.Substring(1);
+            if (only) sb = sb.ToLower();
+
+            return nazevPP[0].ToString().ToUpper() + sb;
+        }
+
+        return null;
+    }
 
 
 
-                    
 
     internal static List<char> ContainsAnyChar(/*T itemT,*/  /*IList<T> containsT,*/
         string item, bool checkInCaseOnlyOneString, IList<char> contains)

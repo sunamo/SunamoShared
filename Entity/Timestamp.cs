@@ -28,12 +28,14 @@ public class Timestamp
     }
 
 
-    public static string Get(DateTime dtTo4)
-    {
-        // tady to mus�m dle m�sta u�it�
-        //return " T" + /*string.Join(*/MakeUpTo2NumbersToZero("_", dtTo4.Hour, dtTo4.Minute, dtTo4.Second);
-        return null;
-    }
+    //public static string Get(DateTime dtTo4)
+    //{
+    //    // tady to mus�m dle m�sta u�it�
+    //    return " T" + /*string.Join(*/MakeUpTo2NumbersToZero("_", dtTo4.Hour, dtTo4.Minute, dtTo4.Second);
+    //    return null;
+    //}
+
+
 
     public static object MakeUpTo2NumbersToZero(int p)
     {

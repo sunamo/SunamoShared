@@ -236,10 +236,10 @@ public class ManageArtistDashTitle
 
     /// <param name = "p"></param>
     /// <param name = "cimNahradit"></param>
-    public static string ReplaceAllHyphensExceptTheFirst(string p, string cimNahradit)
+    public static string ReplaceAllHyphensExceptTheFirst(string p, string cimNahradit = " ")
     {
         int dex = p.IndexOf('-');
-        p = p.Replace('-', ' ');
+        p = p.Replace("-", cimNahradit);
         char[] j = p.ToCharArray();
         j[dex] = '-';
         return new string(j);

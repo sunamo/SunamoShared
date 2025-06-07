@@ -286,11 +286,11 @@ public class Asymmetric
             sw.Write(ToXml());
             sw.Close();
         }
-        public static string FromFile(string p)
-        {
-            throw new Exception(Translate.FromKey(XlfKeys.TheMethodOrOperationIsNotImplemented) + ".");
-            return null;
-        }
+        //public static string FromFile(string p)
+        //{
+        //    throw new Exception(Translate.FromKey(XlfKeys.TheMethodOrOperationIsNotImplemented) + ".");
+        //    return null;
+        //}
     }
     #endregion
     /// <summary>

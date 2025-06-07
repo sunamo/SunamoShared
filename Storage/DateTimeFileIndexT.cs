@@ -11,12 +11,16 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
     public List<FileNameWithDateTimeTU<StorageFolder, StorageFile>> files = new List<FileNameWithDateTimeTU<StorageFolder, StorageFile>>();
     private FileEntriesDuplicitiesStrategy _ds = FileEntriesDuplicitiesStrategy.Time;
     private LangsShared _l = LangsShared.cs;
+
+#pragma warning disable
     public string GetFullPath(FileNameWithDateTimeTU<StorageFolder, StorageFile> o)
     {
         return null;
         //ThrowEx.Custom
         //return FS.StorageFilePath<StorageFolder, StorageFile>(FS.GetStorageFile<StorageFolder, StorageFile>(_folder, o.fnwoe + _ext, ac), ac);
     }
+#pragma warning restore
+
     public DateTimeFileIndexT()
     {
         //Initialize(af, _ext, _ds);
@@ -27,7 +31,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
     /// <param name="af"></param>
     /// <param name="ext"></param>
     /// <param name="ds"></param>
-    public void Initialize(AppFoldersShared af, string ext, FileEntriesDuplicitiesStrategy ds, AbstractCatalogShared<StorageFolder, StorageFile> ac)
+    public void Initialize(/*AppFoldersShared af, */string ext, FileEntriesDuplicitiesStrategy ds, AbstractCatalogShared<StorageFolder, StorageFile> ac)
     {
         this.ac = ac;
         _ds = ds;
@@ -84,7 +88,7 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
             return FileEntriesDuplicitiesStrategy.Time;
         }
     }
-    public FileNameWithDateTimeTU<StorageFolder, StorageFile> CreateObjectFileNameWithDateTime(string row1, string row2, string item, AbstractCatalogShared<StorageFolder, StorageFile> ac)
+    public FileNameWithDateTimeTU<StorageFolder, StorageFile> CreateObjectFileNameWithDateTime(string row1, string row2, AbstractCatalogShared<StorageFolder, StorageFile> ac)
     {
         FileNameWithDateTimeTU<StorageFolder, StorageFile> add = new FileNameWithDateTimeTU<StorageFolder, StorageFile>(row1, row2, ac);
         // Here must return c#
@@ -154,12 +158,16 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
             //ThisApp.Error(Translate.FromKey(XlfKeys.FileCannotBeDeleted) + "" + Exceptions.TextOfExceptions(ex));
         }
     }
+
+#pragma warning disable
     public string GetStorageFile(FileNameWithDateTimeTU<StorageFolder, StorageFile> o)
     {
         return null;
         //return FS.StorageFilePath<StorageFolder, StorageFile>(FS.GetStorageFile(_folder, o.fnwoe + _ext, ac), ac);
         //return Path.Combine(folder, o.fnwoe + ext);
     }
+#pragma warning restore
+
     /// <summary>
     /// Zapíše soubor FileEntriesDuplicitiesStrategy se strategií specifikovanou v konstruktoru
     /// Nepřidává do kolekce files, vrací objekt
@@ -168,41 +176,41 @@ public class DateTimeFileIndexT<StorageFolder, StorageFile>
     /// <param name="name"></param>
     public async Task<FileNameWithDateTimeTU<StorageFolder, StorageFile>> SaveFileWithDate(string name, string content)
     {
-        ThrowEx.NotImplementedMethod();
-        return null;
-        //        DateTime dt = DateTime.Now;
-        //        DateTime today = DateTime.Today;
-        //        string fnwoe = "";
-        //        int? max = null;
-        //        if (_ds == FileEntriesDuplicitiesStrategy.Time)
-        //        {
-        //            fnwoe = ConvertDateTimeToFileNamePostfix.ToConvention(name, dt, true);
-        //        }
-        //        else if (_ds == FileEntriesDuplicitiesStrategy.Serie)
-        //        {
-        //            IList<int?> ml = files.Where(u => u.dt == today).Select(s => s.serie).ToList();
-        //            max = ml.Count();
-        //            if (max != 0)
-        //            {
-        //                max = ml.Max() + 1;
-        //            }
-        //            if (!max.HasValue)
-        //            {
-        //                max = 1;
-        //            }
-        //            fnwoe = DTHelper.DateTimeToFileName(dt, false) + "_S_" + max.Value + "_" + name;
-        //        }
-        //        else
-        //        {
-        //            // Zbytečné, kontroluje se již v konstruktoru
-        //        }
-        //        var storageFile = default(StorageFile); //FS.GetStorageFile<StorageFolder, StorageFile>(_folder, DeleteWrongCharsInFileName(fnwoe) + _ext, ac);
-        //        //await File.WriteAllText<StorageFolder, StorageFile>(storageFile, content, ac);
-        //#if DEBUG
-        //        //DebugLogger.DebugWriteLine(storageFile.FullPath());
-        //#endif
-        //        var o = CreateObjectFileNameWithDateTime(GetDisplayText(dt, max, _l), name, dt, max, name, fnwoe);
-        //        files.Add(o);
-        //        return o;
+        //ThrowEx.NotImplementedMethod();
+        //return null;
+        DateTime dt = DateTime.Now;
+        DateTime today = DateTime.Today;
+        string fnwoe = "";
+        int? max = null;
+        if (_ds == FileEntriesDuplicitiesStrategy.Time)
+        {
+            fnwoe = ConvertDateTimeToFileNamePostfix.ToConvention(name, dt, true);
+        }
+        else if (_ds == FileEntriesDuplicitiesStrategy.Serie)
+        {
+            IList<int?> ml = files.Where(u => u.dt == today).Select(s => s.serie).ToList();
+            max = ml.Count();
+            if (max != 0)
+            {
+                max = ml.Max() + 1;
+            }
+            if (!max.HasValue)
+            {
+                max = 1;
+            }
+            fnwoe = DTHelper.DateTimeToFileName(dt, false) + "_S_" + max.Value + "_" + name;
+        }
+        else
+        {
+            // Zbytečné, kontroluje se již v konstruktoru
+        }
+        var storageFile = default(StorageFile); //FS.GetStorageFile<StorageFolder, StorageFile>(_folder, DeleteWrongCharsInFileName(fnwoe) + _ext, ac);
+                                                //await File.WriteAllText<StorageFolder, StorageFile>(storageFile, content, ac);
+#if DEBUG
+        //DebugLogger.DebugWriteLine(storageFile.FullPath());
+#endif
+        var o = CreateObjectFileNameWithDateTime(GetDisplayText(dt, max, _l), name, dt, max, name, fnwoe);
+        files.Add(o);
+        return o;
     }
 }

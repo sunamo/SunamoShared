@@ -7,10 +7,8 @@ public class DynamicHelper
         /*
 Zakomentoval jsem proto�e mi pou��val System.Web:         
 System.Web => ASP.NET; Microsoft.AspNetCore => ASP.NET Core. DON'T mix them up.
-
-
          */
-        throw new Exception();
+        ThrowEx.NotImplementedMethod();
 
         if (o is IList)
         {

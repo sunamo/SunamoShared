@@ -60,14 +60,14 @@ public class RL
     /// </summary>
     /// <param name="v"></param>
     /// <param name="cs"></param>
-    public static string GetStringByLang(string v, LangsShared cs)
-    {
-        throw new Exception(Translate.FromKey(XlfKeys.InDesktopAppDontPassLangs));
-        //if (l == Langs.en)
-        //{
-        //    return Translate.FromKey(k];
-        //}
-        //return RLData.cs[k];
-        return null;
-    }
+    //public static string GetStringByLang(string v, LangsShared cs)
+    //{
+    //    throw new Exception(Translate.FromKey(XlfKeys.InDesktopAppDontPassLangs));
+    //    //if (l == Langs.en)
+    //    //{
+    //    //    return Translate.FromKey(k];
+    //    //}
+    //    //return RLData.cs[k];
+    //    return null;
+    //}
 }

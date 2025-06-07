@@ -2,6 +2,19 @@ namespace SunamoShared._sunamo.SunamoDateTime.DT;
 
 internal class DTHelper
 {
+    public static string DateTimeToFileName(DateTime dt, bool time)
+    {
+        string dDate = "_";
+        string dSpace = "_";
+        string dTime = "_";
+        string vr = dt.Year + dDate + dt.Month.ToString("D2") + dDate + dt.Day.ToString("D2");
+        if (time)
+        {
+            vr += dSpace + dt.Hour.ToString("D2") + dTime + dt.Minute.ToString("D2");
+        }
+        return vr;
+    }
+
     internal static string DateToString(DateTime p, LangsShared l)
     {
         return DTHelperMulti.DateToString(p, l);
