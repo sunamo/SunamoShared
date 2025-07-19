@@ -2,7 +2,7 @@ namespace SunamoShared._sunamo.SunamoDateTime.DT;
 
 internal class DTHelper
 {
-    public static string DateTimeToFileName(DateTime dt, bool time)
+    internal static string DateTimeToFileName(DateTime dt, bool time)
     {
         string dDate = "_";
         string dSpace = "_";

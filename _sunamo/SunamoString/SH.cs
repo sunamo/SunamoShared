@@ -7,14 +7,14 @@ internal class SH
 
     #endregion
 
-    public static string FirstCharUpper(ref string result)
+    internal static string FirstCharUpper(ref string result)
     {
         result = SH.FirstCharUpper(result);
 
         return result;
     }
 
-    public static string FirstCharUpper(string nazevPP, bool only = false)
+    internal static string FirstCharUpper(string nazevPP, bool only = false)
     {
         if (nazevPP != null)
         {
