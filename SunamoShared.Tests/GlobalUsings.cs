@@ -1,0 +1,17 @@
+//global using SunamoCollectionsGeneric;
+//global using SunamoData.Data;
+//global using SunamoEnums.Enums;
+global using SunamoShared.Storage;
+global using SunamoShared.Tests._sunamo;
+//global using SunamoValues;
+//global using SunamoValues.Constants;
+global using System;
+global using System.Collections.Generic;
+global using System.IO;
+global using System.Linq;
+global using System.Net.Http;
+global using System.Text;
+global using System.Text.RegularExpressions;
+global using System.Threading.Tasks;
+global using System.Xml.Linq;
+global using Xunit;

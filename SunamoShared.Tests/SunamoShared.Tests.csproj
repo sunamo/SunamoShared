@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.12.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageReference Include="xunit" Version="2.7.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="*" Pack="True" />
+    <ProjectReference Include="..\SunamoShared\SunamoShared.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SunamoExceptions" Version="25.6.7.1" />
+    <PackageReference Include="SunamoShared" Version="24.2.7.3" />
+    <PackageReference Include="SunamoStringParts" Version="24.2.6.2" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
+    <NoWarn>CA1822;CS1573;CS1572;CS1570;CA1866;CA1865;CA1867;CS1998;CA1847;IDE0066</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
+    <NoWarn>CA1822;CS1573;CS1572;CS1570;CA1866;CA1865;CA1867;CS1998;CA1847;IDE0066</NoWarn>
+  </PropertyGroup>
+</Project>
