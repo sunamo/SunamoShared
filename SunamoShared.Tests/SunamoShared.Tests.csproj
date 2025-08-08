@@ -27,6 +27,12 @@
     <PackageReference Include="SunamoShared" Version="24.2.7.3" />
     <PackageReference Include="SunamoStringParts" Version="24.2.6.2" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\FileSystem\" />
+    <Folder Include="Helpers\Http\" />
+    <Folder Include="Helpers\Types\" />
+    <Folder Include="Html\" />
+  </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
     <NoWarn>CA1822;CS1573;CS1572;CS1570;CA1866;CA1865;CA1867;CS1998;CA1847;IDE0066</NoWarn>

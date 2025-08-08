@@ -1,3 +1,5 @@
+using SunamoShared.Web;
+
 public class YouTubeTests
 {
     [Fact]

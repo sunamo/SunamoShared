@@ -14,7 +14,7 @@ ParseTest()
         string testFile = @"D:\_Test\ConsoleApp1\ConsoleApp1\ApplicationDataText.txt";
 
         var headers = CA.ToListString("Copy", "Dont copy to");
-        CA.AddSuffix(headers, AllStrings.colon);
+        CA.AddSuffix(headers, ":");
 
         var value1 = CA.ToListString("Shared");
 
