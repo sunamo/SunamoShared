@@ -1,3 +1,4 @@
+// Instance variables refactored according to C# conventions
 namespace SunamoShared.Crypting;
 
 public class Password
@@ -41,12 +42,12 @@ public class Password
         }
         return vr.ToString();
     }
-    private string _password;
-    private int _salt;
+    private string password;
+    private int salt;
     public Password(string strPassword, int nSalt)
     {
-        _password = strPassword;
-        _salt = nSalt;
+        password = strPassword;
+        salt = nSalt;
     }
     public static string CreateRandomPassword(int PasswordLength)
     {
@@ -73,13 +74,13 @@ public class Password
     {
         // Create Byte array of password string
         ASCIIEncoding encoder = new ASCIIEncoding();
-        Byte[] _secretBytes = encoder.GetBytes((string)_password);
+        Byte[] _secretBytes = encoder.GetBytes((string)password);
         // Create a new salt
         Byte[] _saltBytes = new Byte[4];
-        _saltBytes[0] = (byte)(_salt >> 24);
-        _saltBytes[1] = (byte)(_salt >> 16);
-        _saltBytes[2] = (byte)(_salt >> 8);
-        _saltBytes[3] = (byte)(_salt);
+        _saltBytes[0] = (byte)(salt >> 24);
+        _saltBytes[1] = (byte)(salt >> 16);
+        _saltBytes[2] = (byte)(salt >> 8);
+        _saltBytes[3] = (byte)(salt);
         // append the two arrays
         Byte[] toHash = new Byte[_secretBytes.Length + _saltBytes.Length];
         Array.Copy(_secretBytes, 0, toHash, 0, _secretBytes.Length);

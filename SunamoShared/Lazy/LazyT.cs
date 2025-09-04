@@ -1,9 +1,10 @@
+// Instance variables refactored according to C# conventions
 namespace SunamoShared.Lazy;
 
 public class LazyT<T>
 {
     private Func<string, bool, T> getCommonSettings;
-    private string arg;
+    private string argument;
     T value = default;
 
     public T Value
@@ -12,7 +13,7 @@ public class LazyT<T>
         {
             if (EqualityComparer<T>.Default.Equals(value, default))
             {
-                value = getCommonSettings(arg, true);
+                value = getCommonSettings(argument, true);
             }
             return value;
         }
@@ -21,6 +22,6 @@ public class LazyT<T>
     public LazyT(Func<string, bool, T> getCommonSettings, string pwUsersScz)
     {
         this.getCommonSettings = getCommonSettings;
-        arg = pwUsersScz;
+        argument = pwUsersScz;
     }
 }

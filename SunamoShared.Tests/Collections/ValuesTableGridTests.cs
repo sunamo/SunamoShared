@@ -6,10 +6,10 @@
 //    public void IsAllInRow()
 //    {
 //        List<List<bool>> grid = new List<List<bool>>();
-//        grid.Add(CAG.ToList<bool>(true, true, true));
-//        grid.Add(CAG.ToList<bool>(false, false, false));
-//        grid.Add(CAG.ToList<bool>(true, false, true));
-//        grid.Add(CAG.ToList<bool>(false, true, true));
+//        grid.Add([true, true, true]);
+//        grid.Add([false, false, false]);
+//        grid.Add([true, false, true]);
+//        grid.Add([false, true, true]);
 
 //        ValuesTableGrid<bool> valuesTableGrid = new ValuesTableGrid<bool>(grid);
 

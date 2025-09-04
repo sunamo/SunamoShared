@@ -1,3 +1,4 @@
+// Instance variables refactored according to C# conventions
 namespace SunamoShared.Crypting;
 /// <summary>
 /// Asymmetric encryption uses a pair of keys to encrypt and decrypt.
@@ -13,7 +14,7 @@ public class Asymmetric
     /// <summary>
     /// Provider sifrovani RSA
     /// </summary>
-    private RSACryptoServiceProvider _rsa;
+    private RSACryptoServiceProvider rsaCryptoProvider;
     /// <summary>
     /// Vychozy jmeno kontejneru, ve kterem se bude uchovavat klic.
     /// </summary>
@@ -300,7 +301,7 @@ public class Asymmetric
     /// </summary>
     public Asymmetric()
     {
-        _rsa = GetRSAProvider();
+        rsaCryptoProvider = GetRSAProvider();
     }
     /// <summary>
     /// Instantiates a new asymmetric encryption session using a specific key size
@@ -309,7 +310,7 @@ public class Asymmetric
     public Asymmetric(int keySize)
     {
         _KeySize = keySize;
-        _rsa = GetRSAProvider();
+        rsaCryptoProvider = GetRSAProvider();
     }
     /// <summary>
     /// Sets the name of the key container used to store this 
@@ -333,7 +334,7 @@ public class Asymmetric
     /// </summary>
     public int KeySizeBits
     {
-        get { return _rsa.KeySize; }
+        get { return rsaCryptoProvider.KeySize; }
     }
     /// <summary>
     /// Returns the maximum supported key size, in bits
@@ -341,7 +342,7 @@ public class Asymmetric
     /// </summary>
     public int KeySizeMaxBits
     {
-        get { return _rsa.LegalKeySizes[0].MaxSize; }
+        get { return rsaCryptoProvider.LegalKeySizes[0].MaxSize; }
     }
     /// <summary>
     /// Returns the minimum supported key size, in bits
@@ -349,7 +350,7 @@ public class Asymmetric
     /// </summary>
     public int KeySizeMinBits
     {
-        get { return _rsa.LegalKeySizes[0].MinSize; }
+        get { return rsaCryptoProvider.LegalKeySizes[0].MinSize; }
     }
     /// <summary>
     /// Returns valid key step sizes, in bits
@@ -357,7 +358,7 @@ public class Asymmetric
     /// </summary>
     public int KeySizeStepBits
     {
-        get { return _rsa.LegalKeySizes[0].SkipSize; }
+        get { return rsaCryptoProvider.LegalKeySizes[0].SkipSize; }
     }
     /// <summary>
     /// Returns the default public key as stored in the *.config file
@@ -423,7 +424,7 @@ public class Asymmetric
     /// </summary>
     public DataCrypt Encrypt(DataCrypt d, PublicKey publicKey)
     {
-        _rsa.ImportParameters(publicKey.ToParameters());
+        rsaCryptoProvider.ImportParameters(publicKey.ToParameters());
         return EncryptPrivate(d);
     }
     /// <summary>
@@ -443,7 +444,7 @@ public class Asymmetric
     {
         try
         {
-            return new DataCrypt(_rsa.Encrypt(d.Bytes, false));
+            return new DataCrypt(rsaCryptoProvider.Encrypt(d.Bytes, false));
         }
         catch (CryptographicException ex)
         {
@@ -476,7 +477,7 @@ public class Asymmetric
     /// </summary>
     public DataCrypt Decrypt(DataCrypt encryptedDataCrypt, PrivateKey PrivateKey)
     {
-        _rsa.ImportParameters(PrivateKey.ToParameters());
+        rsaCryptoProvider.ImportParameters(PrivateKey.ToParameters());
         return DecryptPrivate(encryptedDataCrypt);
     }
     /// <summary>
@@ -498,7 +499,7 @@ public class Asymmetric
     {
         try
         {
-            _rsa.FromXmlString(keyXml);
+            rsaCryptoProvider.FromXmlString(keyXml);
         }
         catch (/*XmlSyntaxException*/ Exception ex)
         {
@@ -520,7 +521,7 @@ public class Asymmetric
     /// <param name="encryptedDataCrypt"></param>
     private DataCrypt DecryptPrivate(DataCrypt encryptedDataCrypt)
     {
-        return new DataCrypt(_rsa.Decrypt(encryptedDataCrypt.Bytes, false));
+        return new DataCrypt(rsaCryptoProvider.Decrypt(encryptedDataCrypt.Bytes, false));
     }
     /// <summary>
     /// gets the default RSA provider using the specified key size; 

@@ -1,3 +1,4 @@
+// Instance variables refactored according to C# conventions
 namespace SunamoShared.Crypting;
 
 /// <summary>
@@ -34,9 +35,9 @@ public class Symmetric
         TripleDES
     }
 
-    private DataCrypt _key;
-    private DataCrypt _iv;
-    private SymmetricAlgorithm _crypto;
+    private DataCrypt encryptionKey;
+    private DataCrypt initializationVector;
+    private SymmetricAlgorithm symmetricAlgorithm;
     /// <summary>
     /// IK
     /// </summary>
@@ -54,18 +55,18 @@ public class Symmetric
         switch (provider)
         {
             case Provider.DES:
-                _crypto = new DESCryptoServiceProvider();
+                symmetricAlgorithm = new DESCryptoServiceProvider();
                 break;
             case Provider.RC2:
-                _crypto = new RC2CryptoServiceProvider();
+                symmetricAlgorithm = new RC2CryptoServiceProvider();
                 break;
             case Provider.Rijndael:
-                _crypto = new RijndaelManaged();
-                _crypto.Mode = CipherMode.CBC;
+                symmetricAlgorithm = new RijndaelManaged();
+                symmetricAlgorithm.Mode = CipherMode.CBC;
 
                 break;
             case Provider.TripleDES:
-                _crypto = new TripleDESCryptoServiceProvider();
+                symmetricAlgorithm = new TripleDESCryptoServiceProvider();
                 break;
         }
 
@@ -89,11 +90,11 @@ public class Symmetric
     /// </summary>
     public int KeySizeBytes
     {
-        get { return _crypto.KeySize / 8; }
+        get { return symmetricAlgorithm.KeySize / 8; }
         set
         {
-            _crypto.KeySize = value * 8;
-            _key.MaxBytes = value;
+            symmetricAlgorithm.KeySize = value * 8;
+            encryptionKey.MaxBytes = value;
         }
     }
 
@@ -105,11 +106,11 @@ public class Symmetric
     /// </summary>
     public int KeySizeBits
     {
-        get { return _crypto.KeySize; }
+        get { return symmetricAlgorithm.KeySize; }
         set
         {
-            _crypto.KeySize = value;
-            _key.MaxBits = value;
+            symmetricAlgorithm.KeySize = value;
+            encryptionKey.MaxBits = value;
         }
     }
 
@@ -119,13 +120,13 @@ public class Symmetric
     /// </summary>
     public DataCrypt Key
     {
-        get { return _key; }
+        get { return encryptionKey; }
         set
         {
-            _key = value;
-            _key.MaxBytes = _crypto.LegalKeySizes[0].MaxSize / 8;
-            _key.MinBytes = _crypto.LegalKeySizes[0].MinSize / 8;
-            _key.StepBytes = _crypto.LegalKeySizes[0].SkipSize / 8;
+            encryptionKey = value;
+            encryptionKey.MaxBytes = symmetricAlgorithm.LegalKeySizes[0].MaxSize / 8;
+            encryptionKey.MinBytes = symmetricAlgorithm.LegalKeySizes[0].MinSize / 8;
+            encryptionKey.StepBytes = symmetricAlgorithm.LegalKeySizes[0].SkipSize / 8;
         }
     }
 
@@ -137,12 +138,12 @@ public class Symmetric
     /// </summary>
     public DataCrypt IntializationVector
     {
-        get { return _iv; }
+        get { return initializationVector; }
         set
         {
-            _iv = value;
-            _iv.MaxBytes = _crypto.BlockSize / 8;
-            _iv.MinBytes = _crypto.BlockSize / 8;
+            initializationVector = value;
+            initializationVector.MaxBytes = symmetricAlgorithm.BlockSize / 8;
+            initializationVector.MinBytes = symmetricAlgorithm.BlockSize / 8;
         }
     }
 
@@ -152,8 +153,8 @@ public class Symmetric
     /// </summary>
     public DataCrypt RandomInitializationVector()
     {
-        _crypto.GenerateIV();
-        DataCrypt d = new DataCrypt(_crypto.IV);
+        symmetricAlgorithm.GenerateIV();
+        DataCrypt d = new DataCrypt(symmetricAlgorithm.IV);
         return d;
     }
 
@@ -163,8 +164,8 @@ public class Symmetric
     /// </summary>
     public DataCrypt RandomKey()
     {
-        _crypto.GenerateKey();
-        DataCrypt d = new DataCrypt(_crypto.Key);
+        symmetricAlgorithm.GenerateKey();
+        DataCrypt d = new DataCrypt(symmetricAlgorithm.Key);
         return d;
     }
 
@@ -177,30 +178,30 @@ public class Symmetric
     /// </summary>
     private void ValidateKeyAndIv(bool isEncrypting)
     {
-        if (_key.IsEmpty)
+        if (encryptionKey.IsEmpty)
         {
             if (isEncrypting)
             {
-                _key = RandomKey();
+                encryptionKey = RandomKey();
             }
             else
             {
                 throw new Exception(Translate.FromKey(XlfKeys.NoKeyWasProvidedForTheDecryptionOperation) + "!");
             }
         }
-        if (_iv.IsEmpty)
+        if (initializationVector.IsEmpty)
         {
             if (isEncrypting)
             {
-                _iv = RandomInitializationVector();
+                initializationVector = RandomInitializationVector();
             }
             else
             {
                 throw new Exception(Translate.FromKey(XlfKeys.NoInitializationVectorWasProvidedForTheDecryptionOperation) + "!");
             }
         }
-        _crypto.Key = _key.Bytes;
-        _crypto.IV = _iv.Bytes;
+        symmetricAlgorithm.Key = encryptionKey.Bytes;
+        symmetricAlgorithm.IV = initializationVector.Bytes;
     }
 
     /// <summary>
@@ -224,7 +225,7 @@ public class Symmetric
 
         ValidateKeyAndIv(true);
 
-        CryptoStream cs = new CryptoStream(ms, _crypto.CreateEncryptor(), CryptoStreamMode.Write);
+        CryptoStream cs = new CryptoStream(ms, symmetricAlgorithm.CreateEncryptor(), CryptoStreamMode.Write);
         cs.Write(d.Bytes, 0, d.Bytes.Length);
         cs.Close();
         ms.Close();
@@ -265,7 +266,7 @@ public class Symmetric
 
         ValidateKeyAndIv(true);
 
-        CryptoStream cs = new CryptoStream(ms, _crypto.CreateEncryptor(), CryptoStreamMode.Write);
+        CryptoStream cs = new CryptoStream(ms, symmetricAlgorithm.CreateEncryptor(), CryptoStreamMode.Write);
         i = s.Read(b, 0, _BufferSize);
         while (i > 0)
         {
@@ -309,7 +310,7 @@ public class Symmetric
         byte[] b = new byte[_BufferSize + 1];
 
         ValidateKeyAndIv(false);
-        CryptoStream cs = new CryptoStream(encryptedStream, _crypto.CreateDecryptor(), CryptoStreamMode.Read);
+        CryptoStream cs = new CryptoStream(encryptedStream, symmetricAlgorithm.CreateDecryptor(), CryptoStreamMode.Read);
 
         int i = 0;
         i = cs.Read(b, 0, _BufferSize);
@@ -335,7 +336,7 @@ public class Symmetric
         byte[] b = new byte[encryptedDataCrypt.Bytes.Length];
 
         ValidateKeyAndIv(false);
-        CryptoStream cs = new CryptoStream(ms, _crypto.CreateDecryptor(), CryptoStreamMode.Read);
+        CryptoStream cs = new CryptoStream(ms, symmetricAlgorithm.CreateDecryptor(), CryptoStreamMode.Read);
 
         try
         {

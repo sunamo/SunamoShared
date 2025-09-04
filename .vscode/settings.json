@@ -1,0 +1,14 @@
+{
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}${separator}[Branch: master]",
+    "workbench.colorCustomizations": {
+        "tab.activeBackground": "#e3f2fd",
+        "tab.activeForeground": "#1565c0",
+        "tab.activeBorderTop": "#1976d2",
+        "tab.inactiveBackground": "#2d3748",
+        "tab.inactiveForeground": "#a0a0a0",
+        "tab.hoverBackground": "#4a5568",
+        "tab.hoverForeground": "#ffffff",
+        "editorGroup.border": "#1976d2",
+        "editorGroupHeader.tabsBorder": "#1976d2"
+    }
+}

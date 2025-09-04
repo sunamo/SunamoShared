@@ -1,3 +1,4 @@
+// Instance variables refactored according to C# conventions
 namespace SunamoShared.Crypting;
 
 /// <summary>
@@ -44,11 +45,11 @@ public class Hash
     /// <summary>
     /// Trida pro pocitani Hashe
     /// </summary>
-    private HashAlgorithm _Hash;
+    private HashAlgorithm hashAlgorithm;
     /// <summary>
     /// Naposledy vypocitani Hash
     /// </summary>
-    private DataCrypt _HashValue = new DataCrypt();
+    private DataCrypt hashValue = new DataCrypt();
 
     /// <summary>
     /// IK
@@ -65,22 +66,22 @@ public class Hash
         switch (p)
         {
             case Provider.CRC32:
-                _Hash = new CRC32();
+                hashAlgorithm = new CRC32();
                 break;
             case Provider.MD5:
-                _Hash = new MD5CryptoServiceProvider();
+                hashAlgorithm = new MD5CryptoServiceProvider();
                 break;
             case Provider.SHA1:
-                _Hash = new SHA1Managed();
+                hashAlgorithm = new SHA1Managed();
                 break;
             case Provider.SHA256:
-                _Hash = new SHA256Managed();
+                hashAlgorithm = new SHA256Managed();
                 break;
             case Provider.SHA384:
-                _Hash = new SHA384Managed();
+                hashAlgorithm = new SHA384Managed();
                 break;
             case Provider.SHA512:
-                _Hash = new SHA512Managed();
+                hashAlgorithm = new SHA512Managed();
                 break;
         }
     }
@@ -91,7 +92,7 @@ public class Hash
     /// </summary>
     public DataCrypt Value
     {
-        get { return _HashValue; }
+        get { return hashValue; }
     }
 
     /// <summary>
@@ -100,8 +101,8 @@ public class Hash
     /// </summary>
     public DataCrypt Calculate(ref Stream s)
     {
-        _HashValue.Bytes = _Hash.ComputeHash(s);
-        return _HashValue;
+        hashValue.Bytes = hashAlgorithm.ComputeHash(s);
+        return hashValue;
     }
 
     /// <summary>
@@ -134,8 +135,8 @@ public class Hash
     /// </summary>
     private DataCrypt CalculatePrivate(byte[] b)
     {
-        _HashValue.Bytes = _Hash.ComputeHash(b);
-        return _HashValue;
+        hashValue.Bytes = hashAlgorithm.ComputeHash(b);
+        return hashValue;
     }
 
     #region "  " + Translate.FromKey(XlfKeys.CRC32HashAlgorithm)

@@ -1,3 +1,4 @@
+// Instance variables refactored according to C# conventions
 namespace SunamoShared.Crypting;
 
 public class Utils
