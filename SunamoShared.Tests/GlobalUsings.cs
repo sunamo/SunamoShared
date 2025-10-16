@@ -15,3 +15,5 @@ global using System.Text.RegularExpressions;
 global using System.Threading.Tasks;
 global using System.Xml.Linq;
 global using Xunit;
+
+global using SunamoShared;
