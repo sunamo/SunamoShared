@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared._sunamo.SunamoString;
 
 internal class SH
@@ -18,10 +21,10 @@ internal class SH
     {
         if (nazevPP != null)
         {
-            var sb = nazevPP.Substring(1);
-            if (only) sb = sb.ToLower();
+            var substring = nazevPP.Substring(1);
+            if (only) substring = substring.ToLower();
 
-            return nazevPP[0].ToString().ToUpper() + sb;
+            return nazevPP[0].ToString().ToUpper() + substring;
         }
 
         return null;
@@ -52,10 +55,10 @@ internal class SH
         return founded;
     }
 
-    internal static bool ContainsBracket(string t, ref List<char> left, ref List<char> right, bool mustBeLeftAndRight = false)
+    internal static bool ContainsBracket(string temp, ref List<char> left, ref List<char> right, bool mustBeLeftAndRight = false)
     {
-        left = SH.ContainsAnyChar(t, false, AllLists.leftBrackets);
-        right = SH.ContainsAnyChar(t, false, AllLists.leftBrackets);
+        left = SH.ContainsAnyChar(temp, false, AllLists.leftBrackets);
+        right = SH.ContainsAnyChar(temp, false, AllLists.leftBrackets);
         if (mustBeLeftAndRight)
         {
             if (left.Count > 0 && right.Count > 0)
@@ -105,15 +108,15 @@ internal class SH
     {
         if (o is Func<int, bool>)
         {
-            var t = (Func<int, bool>)o;
-            return t(nt);
+            var temp = (Func<int, bool>)o;
+            return temp(nt);
         }
 
         // nemůže tu být protože SunamoData musí dědit od SunamoStringShared - hodně metod *. 
         //if (o is FromToList)
         //{
-        //    var r = (FromToList)o;
-        //    return r.IsInRange(nt);
+        //    var result = (FromToList)o;
+        //    return result.IsInRange(nt);
         //}
 
         ThrowEx.NotImplementedCase("NotAllowedInRanges: " + o);

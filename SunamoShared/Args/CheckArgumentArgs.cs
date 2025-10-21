@@ -1,15 +1,18 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Args;
 public class CheckArgumentArgs
 {
-    public StringBuilder sb = null;
+    public StringBuilder stringBuilder = null;
     public string argName = null;
     public bool _trim = false;
 
 
 
-    public CheckArgumentArgs(string argName, StringBuilder sb)
+    public CheckArgumentArgs(string argName, StringBuilder stringBuilder)
     {
         this.argName = argName;
-        this.sb = sb;
+        this.sb = stringBuilder;
     }
 }

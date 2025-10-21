@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Helpers.Runtime;
 
 public class DynamicHelper
@@ -31,11 +34,11 @@ System.Web => ASP.NET; Microsoft.AspNetCore => ASP.NET Core. DON'T mix them up.
         }
 
         List<dynamic> d = new List<dynamic>();
-        var t = (Type)o.GetType();
+        var temp = (Type)o.GetType();
         //var vf = RH.GetValueOfField ("_values");
         //var vfv = vf.GetValue(o);
 
-        //var vfv = RH.GetValueOfField("_values", t, o, false);
+        //var vfv = RH.GetValueOfField("_values", temp, o, false);
 
 
         return null;

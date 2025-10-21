@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Helpers;
 
 public class FormatHelper
@@ -9,14 +12,14 @@ public class FormatHelper
 
     public static string FormatEmail(string nameSurname, string postfix)
     {
-        var p = SHSplit.Split(nameSurname, " ");
-        if (p.Count != 2)
+        var parameter = SHSplit.Split(nameSurname, " ");
+        if (parameter.Count != 2)
         {
-            ThrowEx.WrongNumberOfElements(2, "p", p);
+            ThrowEx.WrongNumberOfElements(2, "p", parameter);
         }
-        parsedName = p[0];
-        parsedSurname = p[1];
-        return FormatEmail(p[0], p[1], postfix);
+        parsedName = parameter[0];
+        parsedSurname = parameter[1];
+        return FormatEmail(parameter[0], parameter[1], postfix);
     }
 
     public static string FormatEmail(string name, string surname, string postfix)

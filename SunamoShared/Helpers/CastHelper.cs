@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Helpers;
 
 public class CastHelper
@@ -6,12 +9,12 @@ public class CastHelper
 
     public static string ToString(object l)
     {
-        var t = l.GetType();
-        if (t == typeof(string))
+        var temp = l.GetType();
+        if (temp == typeof(string))
         {
             return l.ToString();
         }
-        else if (t == typeof(List<string>))
+        else if (temp == typeof(List<string>))
         {
             return string.Join(Environment.NewLine, (List<string>)l);
         }

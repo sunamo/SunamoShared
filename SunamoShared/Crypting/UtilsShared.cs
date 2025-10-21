@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 // Instance variables refactored according to C# conventions
 namespace SunamoShared.Crypting;
 
@@ -11,13 +14,13 @@ public class Utils
         }
 
         const string HexFormat = "{0:X2}";
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         foreach (byte b in ba)
         {
-            sb.Append(/*SHFormat.Format4*/ string.Format(HexFormat, b));
+            stringBuilder.Append(/*SHFormat.Format4*/ string.Format(HexFormat, b));
         }
 
-        return sb.ToString();
+        return stringBuilder.ToString();
     }
 
     /// <summary>

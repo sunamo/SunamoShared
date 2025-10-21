@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Helpers;
 
 public class DaySegmentsHelper
@@ -17,8 +20,8 @@ public class DaySegmentsHelper
         var dt2 = new DateTime(1, 1, 1, dt.Hour, dt.Minute, dt.Second);
 
         var oc = (dt2 - DtMinVal).TotalSeconds;
-        var d = oc / SecondsInOneSegment;
-        return (int)d;
+        var data = oc / SecondsInOneSegment;
+        return (int)data;
     }
 
 }

@@ -1,4 +1,4 @@
-// zakomentováno, musel bych importovat nuget
+// zakomentovï¿½no, musel bych importovat nuget
 
 //using System.CodeDom.Compiler;
 

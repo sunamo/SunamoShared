@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Entity;
 
 public class Timestamp
@@ -5,8 +8,8 @@ public class Timestamp
     public static List<string> GetAllTimeStamps(string p)
     {
         List<string> vr = new List<string>();
-        var s = SHSplit.SplitChar(p, ' ', '.');
-        foreach (var item in s)
+        var text = SHSplit.SplitChar(p, ' ', '.');
+        foreach (var item in text)
         {
             if (item.Length == 9)
             {

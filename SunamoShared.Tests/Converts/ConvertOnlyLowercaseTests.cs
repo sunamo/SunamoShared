@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 public class ConvertOnlyLowercaseTests
 {
     [Fact]
@@ -8,8 +11,8 @@ public class ConvertOnlyLowercaseTests
 
         ConvertOnlyLowercase.nextUpper = '*';
 
-        var s = ConvertOnlyLowercase.To(input);
-        Assert.Equal(expected, s);
+        var text = ConvertOnlyLowercase.To(input);
+        Assert.Equal(expected, text);
     }
 
     [Fact]
@@ -20,8 +23,8 @@ public class ConvertOnlyLowercaseTests
 
         ConvertOnlyLowercase.nextUpper = '*';
 
-        var s = ConvertOnlyLowercase.From(input);
-        Assert.Equal(expected, s);
+        var text = ConvertOnlyLowercase.From(input);
+        Assert.Equal(expected, text);
     }
 
 }

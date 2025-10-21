@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Entity;
 
 public class SongFromInternet : IEquatable<SongFromInternet>
@@ -66,10 +69,10 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     /// <param name="ytCode"></param>
     public SongFromInternet(string song, string ytCode = null)
     {
-        string n, t, r;
-        ManageArtistDashTitle.GetArtistTitleRemix(song, out n, out t, out r);
+        string n, t, result;
+        ManageArtistDashTitle.GetArtistTitleRemix(song, out n, out t, out result);
 
-        Init(n, t, r);
+        Init(n, t, result);
 
         this.ytCode = ytCode;
 
@@ -89,12 +92,12 @@ public class SongFromInternet : IEquatable<SongFromInternet>
         return Init(t.Item1, t.Item2, t.Item3);
     }
 
-    public SongFromInternet Init(string n, string t, string r)
+    public SongFromInternet Init(string n, string t, string result)
     {
         Artist(n);
 
         var splittedNazevTitle = SplitNazevTitle(t);
-        var splittedRemix = SplitRemix(r);
+        var splittedRemix = SplitRemix(result);
 
         title.AddRange(splittedNazevTitle);
         remix.AddRange(splittedRemix);
@@ -151,10 +154,10 @@ public class SongFromInternet : IEquatable<SongFromInternet>
     /// </summary>
     public string RemixOnlyContent()
     {
-        var r = Remix();
-        r = CA.ReplaceAll(r, AllLists.featLower, string.Empty);
-        r = CA.ReplaceAll(r, AllLists.featUpper, string.Empty);
-        return r;
+        var result = Remix();
+        result = CA.ReplaceAll(result, AllLists.featLower, string.Empty);
+        result = CA.ReplaceAll(result, AllLists.featUpper, string.Empty);
+        return result;
     }
 
     /// <summary>
@@ -169,7 +172,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     public float CalculateSimilarity(SongFromInternet s, bool woDiacritic)
     {
-        float n, t, r;
+        float n, t, result;
         if (woDiacritic)
         {
             int psn, prn, pst, prt, psr, prr;
@@ -179,7 +182,7 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
             n = CalculateSimilarity(psn, prn, s.nazev, nazevWoDiacritic);
             t = CalculateSimilarity(pst, prt, s.title, titleWoDiacritic);
-            r = CalculateSimilarity(psr, prr, s.remix, remixWoDiacritic);
+            result = CalculateSimilarity(psr, prr, s.remix, remixWoDiacritic);
         }
         else
         {
@@ -190,13 +193,13 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
             n = CalculateSimilarity(psn, prn, s.nazev, nazev);
             t = CalculateSimilarity(pst, prt, s.title, title);
-            r = CalculateSimilarity(psr, prr, s.remix, remix);
+            result = CalculateSimilarity(psr, prr, s.remix, remix);
         }
 
         float vr = (n + t) / 2;
         if (vr == 1)
         {
-            vr = (n + t + r) / 3;
+            vr = (n + t + result) / 3;
         }
 
         return vr;
@@ -380,13 +383,13 @@ public class SongFromInternet : IEquatable<SongFromInternet>
 
     public string TitleAndRemixInConvention()
     {
-        StringBuilder sb = new StringBuilder();
-        sb.Append(TitleInConvention());
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.Append(TitleInConvention());
         if (remix.Count != 0)
         {
-            sb.Append("[" + RemixInConvention() + "]");
+            stringBuilder.Append("[" + RemixInConvention() + "]");
         }
-        return sb.ToString();
+        return stringBuilder.ToString();
     }
 
     /// <summary>

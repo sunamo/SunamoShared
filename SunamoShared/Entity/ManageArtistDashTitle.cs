@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 // Instance variables refactored according to C# conventions
 namespace SunamoShared.Entity;
 
@@ -5,10 +8,10 @@ public class ManageArtistDashTitle
 {
     public static void GetArtistTitleRemix(string item, out string artist, out string song, out string remix)
     {
-        var r = GetArtistTitleRemix(item);
-        artist = r.Item1;
-        song = r.Item2;
-        remix = r.Item3;
+        var result = GetArtistTitleRemix(item);
+        artist = result.Item1;
+        song = result.Item2;
+        remix = result.Item3;
     }
 
     public static bool ContainsBracket(string t, ref List<char> left, ref List<char> right, bool mustBeLeftAndRight = false)
@@ -90,13 +93,13 @@ public class ManageArtistDashTitle
                 }
             }
 
-            StringBuilder sb = new StringBuilder();
+            StringBuilder stringBuilder = new StringBuilder();
             for (int i = 1; i < toks.Count; i++)
             {
-                sb.Append(toks[i]);
+                stringBuilder.Append(toks[i]);
             }
 
-            VratTitleRemix(sb.ToString().TrimEnd('-'), out song, out remix);
+            VratTitleRemix(stringBuilder.ToString().TrimEnd('-'), out song, out remix);
         }
         return new Tuple<string, string, string>(artist, song, remix);
     }
@@ -177,13 +180,13 @@ public class ManageArtistDashTitle
         else
         {
             název = toks[0];
-            StringBuilder sb = new StringBuilder();
+            StringBuilder stringBuilder = new StringBuilder();
             for (int i = 1; i < toks.Count; i++)
             {
-                sb.Append(toks[i] + "-");
+                stringBuilder.Append(toks[i] + "-");
             }
 
-            title = sb.ToString().TrimEnd('-');
+            title = stringBuilder.ToString().TrimEnd('-');
         }
     }
 
@@ -230,9 +233,9 @@ public class ManageArtistDashTitle
             }
         }
 
-        StringBuilder sb = new StringBuilder();
-        sb.Append(ch);
-        return sb.ToString();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.Append(ch);
+        return stringBuilder.ToString();
     }
 
     /// <param name = "p"></param>
@@ -264,12 +267,12 @@ public class ManageArtistDashTitle
         string temp = d[0];
         d[0] = d[d.Count - 1];
         d[d.Count - 1] = temp;
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         foreach (string item in d)
         {
-            sb.Append(item + "-");
+            stringBuilder.Append(item + "-");
         }
 
-        return sb.ToString().TrimEnd('-');
+        return stringBuilder.ToString().TrimEnd('-');
     }
 }

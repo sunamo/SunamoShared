@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Crypting;
 
 public class CryptHelperAdvanced
@@ -11,7 +14,7 @@ public class CryptHelperAdvanced
     /// <param name="MoveBase"></param>
     private static string InverseByBase(string st, int MoveBase)
     {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         int c;
         for (int i = 0; i < st.Length; i += MoveBase)
         {
@@ -19,9 +22,9 @@ public class CryptHelperAdvanced
                 c = st.Length - i;
             else
                 c = MoveBase;
-            sb.Append(InverseString(st.Substring(i, c)));
+            stringBuilder.Append(InverseString(st.Substring(i, c)));
         }
-        return sb.ToString();
+        return stringBuilder.ToString();
     }
 
     /// <summary>
@@ -30,12 +33,12 @@ public class CryptHelperAdvanced
     /// <param name="st"></param>
     private static string InverseString(string st)
     {
-        StringBuilder SB = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         for (int i = st.Length - 1; i >= 0; i--)
         {
-            SB.Append(st[i]);
+            stringBuilder.Append(st[i]);
         }
-        return SB.ToString();
+        return stringBuilder.ToString();
     }
 
     /// <summary>
@@ -44,15 +47,15 @@ public class CryptHelperAdvanced
     /// <param name="st"></param>
     private static string ConvertToLetterDigit(string st)
     {
-        StringBuilder SB = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         foreach (char ch in st)
         {
             if (char.IsLetterOrDigit(ch) == false)
-                SB.Append(Convert.ToInt16(ch).ToString());
+                stringBuilder.Append(Convert.ToInt16(ch).ToString());
             else
-                SB.Append(ch);
+                stringBuilder.Append(ch);
         }
-        return SB.ToString();
+        return stringBuilder.ToString();
     }
 
     /// <summary>

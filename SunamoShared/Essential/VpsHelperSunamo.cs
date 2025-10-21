@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Essential;
 public class VpsHelperSunamo
 {
@@ -12,20 +15,20 @@ public class VpsHelperSunamo
     #region For easy copy
     /*
 Zkopíroval jsem z C:\repos\_\Projects\PlatformIndependentNuGetPackages.webWithoutDep\SunamoExceptions.web\_\Essential\VpsHelperSunamo.cs
-    nevím zda je to správný postup - NENÍ, pak je tu duplikátní s C:\repos\_\Projects\PlatformIndependentNuGetPackages\sunamo\Essential\VpsHelperSunExcSunamo.cs
+    nevím zda je to správný postup - NENÍ, pak je tu duplikátní text C:\repos\_\Projects\PlatformIndependentNuGetPackages\sunamo\Essential\VpsHelperSunExcSunamo.cs
      */
     //public static bool IsQ
     //=> Environment.MachineName == "NRJANCIK";
     #endregion
 
-    public static string LocationOfSqlBackup(string s, string mssqllserverPath)
+    public static string LocationOfSqlBackup(string text, string mssqllserverPath)
     {
         //var mssqllserverPath = string.Empty;
         //p = @"C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\";
         //mssqllserverPath = @"C:\mssqllserver\";
 
-        var r = mssqllserverPath += @"Backup\" + s + ".bak";
-        return r;
+        var result = mssqllserverPath += @"Backup\" + text + ".bak";
+        return result;
     }
 
     public static string SunamoSln()

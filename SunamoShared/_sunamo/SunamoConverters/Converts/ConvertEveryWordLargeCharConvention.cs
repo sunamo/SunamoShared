@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared._sunamo.SunamoConverters.Converts;
 
 internal class ConvertEveryWordLargeCharConvention
@@ -10,7 +13,7 @@ internal class ConvertEveryWordLargeCharConvention
     internal static string ToConvention(string p)
     {
         p = p.ToLower();
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         bool dalsiVelke = true;
         foreach (char item in p)
         {
@@ -19,69 +22,69 @@ internal class ConvertEveryWordLargeCharConvention
                 if (char.IsUpper(item))
                 {
                     dalsiVelke = false;
-                    sb.Append(' ');
-                    sb.Append(item);
+                    stringBuilder.Append(' ');
+                    stringBuilder.Append(item);
                     continue;
                 }
                 else if (char.IsLower(item))
                 {
                     dalsiVelke = false;
-                    if (sb.Length != 0)
+                    if (stringBuilder.Length != 0)
                     {
-                        if (!IsSpecialChar(sb[sb.Length - 1]))
+                        if (!IsSpecialChar(stringBuilder[stringBuilder.Length - 1]))
                         {
-                            sb.Append(' ');
+                            stringBuilder.Append(' ');
                         }
                     }
-                    sb.Append(char.ToUpper(item));
+                    stringBuilder.Append(char.ToUpper(item));
                     continue;
                 }
                 else if (IsSpecialChar(item))
                 {
-                    sb.Append(item);
+                    stringBuilder.Append(item);
                     continue;
                 }
                 else if (char.IsDigit(item))
                 {
-                    sb.Append(item);
+                    stringBuilder.Append(item);
                     continue;
                 }
                 else
                 {
-                    sb.Append(' ');
+                    stringBuilder.Append(' ');
                     continue;
                 }
             }
             if (char.IsUpper(item))
             {
-                if (!char.IsUpper(sb[sb.Length - 1]))
+                if (!char.IsUpper(stringBuilder[stringBuilder.Length - 1]))
                 {
-                    sb.Append(' ');
+                    stringBuilder.Append(' ');
                 }
-                sb.Append(item);
+                stringBuilder.Append(item);
             }
             else if (char.IsLower(item))
             {
-                sb.Append(item);
+                stringBuilder.Append(item);
             }
             else if (char.IsDigit(item))
             {
                 dalsiVelke = true;
-                sb.Append(item);
+                stringBuilder.Append(item);
                 continue;
             }
             else if (IsSpecialChar(item))
             {
-                sb.Append(item);
+                stringBuilder.Append(item);
                 continue;
             }
             else
             {
-                sb.Append(' ');
+                stringBuilder.Append(' ');
                 dalsiVelke = true;
             }
         }
-        string vr = sb.ToString().Trim();
+        string vr = stringBuilder.ToString().Trim();
 
         vr = vr.Replace("  ", " "); //SHReplace.ReplaceAll(vr, "", "");
         return vr;

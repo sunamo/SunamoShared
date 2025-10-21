@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared._sunamo.SunamoFileSystem;
 
 internal class FS
@@ -44,16 +47,16 @@ internal class FS
             invalidFileNameChars2 = Path.GetInvalidFileNameChars().ToList();
         }
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         foreach (char item in filenameOrPath)
         {
             if (!invalidFileNameChars2.Contains(item))
             {
-                sb.Append(item);
+                stringBuilder.Append(item);
             }
         }
 
-        var result = sb.ToString();
+        var result = stringBuilder.ToString();
         SH.FirstCharUpper(ref result);
         return result;
     }

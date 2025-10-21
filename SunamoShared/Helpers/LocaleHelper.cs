@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Helpers;
 
 public class LocaleHelper
@@ -21,18 +24,18 @@ public class LocaleHelper
         lang = lang.ToLower();
         foreach (var item in CultureInfo.GetCultures(CultureTypes.AllCultures))
         {
-            var p = SHSplit.Split(item.Name, "-");
-            if (p.Count > 1)
+            var parameter = SHSplit.Split(item.Name, "-");
+            if (parameter.Count > 1)
             {
-                if (p[0] == lang)
+                if (parameter[0] == lang)
                 {
-                    if (p[1].Length == 2)
+                    if (parameter[1].Length == 2)
                     {
-                        ComplexInfoString cis = new ComplexInfoString(p[1]);
+                        ComplexInfoString cis = new ComplexInfoString(parameter[1]);
                         if (cis.QuantityUpperChars == 2)
                         {
                             // Its not good idea because for en return AG
-                            return p[1];
+                            return parameter[1];
                         }
                     }
 

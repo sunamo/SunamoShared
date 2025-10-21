@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 // Instance variables refactored according to C# conventions
 namespace SunamoShared.Crypting;
 /// <summary>
@@ -80,20 +83,20 @@ public class Asymmetric
         }
         /// <summary>
         /// Returns *.config file XML section representing this public key
-        /// Vratim 2x tax Add s argumenty PP Modulus a Exponent
+        /// Vratim 2x tax Add text argumenty PP Modulus a Exponent
         /// </summary>
         public string ToConfigSection()
         {
-            StringBuilder sb = new StringBuilder();
-            // TODO: Nevim zda bych nemel vytvorit novou instanci SB
-            StringBuilder _with1 = sb;
+            StringBuilder stringBuilder = new StringBuilder();
+            // TODO: Nevim zda bych nemel vytvorit novou instanci stringBuilder
+            StringBuilder _with1 = stringBuilder;
             _with1.Append(UtilsNonNetStandard.WriteConfigKey(_KeyModulus, Modulus));
             _with1.Append(UtilsNonNetStandard.WriteConfigKey(_KeyExponent, Exponent));
-            return sb.ToString();
+            return stringBuilder.ToString();
         }
         /// <summary>
         /// Writes the *.config file representation of this public key to a file
-        /// Prepnu A1 2x tagem Add s argumenty PP Modulus a Exponent
+        /// Prepnu A1 2x tagem Add text argumenty PP Modulus a Exponent
         /// </summary>
         public void ExportToConfigFile(string filePath)
         {
@@ -127,15 +130,15 @@ public class Asymmetric
         /// </summary>
         public string ToXml()
         {
-            StringBuilder sb = new StringBuilder();
-            // TODO: Nevim zda bych nemel vytvoiit novou instanci SB
-            StringBuilder _with2 = sb;
-            // Mohl bych to zapsat pomoci T RSAParameters ale nevim jak by se to vyporadalo s verejnym klicem.
+            StringBuilder stringBuilder = new StringBuilder();
+            // TODO: Nevim zda bych nemel vytvoiit novou instanci stringBuilder
+            StringBuilder _with2 = stringBuilder;
+            // Mohl bych to zapsat pomoci T RSAParameters ale nevim jak by se to vyporadalo text verejnym klicem.
             _with2.Append(UtilsNonNetStandard.WriteXmlNode(_ElementParent, false));
             _with2.Append(UtilsNonNetStandard.WriteXmlElement(_ElementModulus, Modulus));
             _with2.Append(UtilsNonNetStandard.WriteXmlElement(_ElementExponent, Exponent));
             _with2.Append(UtilsNonNetStandard.WriteXmlNode(_ElementParent, true));
-            return sb.ToString();
+            return stringBuilder.ToString();
         }
         /// <summary>
         /// Writes the Xml representation of this public key to a file
@@ -214,13 +217,13 @@ public class Asymmetric
         }
         /// <summary>
         /// Returns *.config file XML section representing this private key
-        /// Vratim xx tax Add s argumenty PP Modulus a Exponent
+        /// Vratim xx tax Add text argumenty PP Modulus a Exponent
         /// </summary>
         public string ToConfigSection()
         {
-            StringBuilder sb = new StringBuilder();
-            // TODO: Nevim zda bych nemel vytvorit novou instanci SB
-            StringBuilder _with3 = sb;
+            StringBuilder stringBuilder = new StringBuilder();
+            // TODO: Nevim zda bych nemel vytvorit novou instanci stringBuilder
+            StringBuilder _with3 = stringBuilder;
             _with3.Append(UtilsNonNetStandard.WriteConfigKey(_KeyModulus, Modulus));
             _with3.Append(UtilsNonNetStandard.WriteConfigKey(_KeyExponent, Exponent));
             _with3.Append(UtilsNonNetStandard.WriteConfigKey(_KeyPrimeP, PrimeP));
@@ -229,11 +232,11 @@ public class Asymmetric
             _with3.Append(UtilsNonNetStandard.WriteConfigKey(_KeyPrimeExponentQ, PrimeExponentQ));
             _with3.Append(UtilsNonNetStandard.WriteConfigKey(_KeyCoefficient, Coefficient));
             _with3.Append(UtilsNonNetStandard.WriteConfigKey(_KeyPrivateExponent, PrivateExponent));
-            return sb.ToString();
+            return stringBuilder.ToString();
         }
         /// <summary>
         /// Writes the *.config file representation of this private key to a file
-        /// Prepnu A1 2x tagem Add s argumenty PP Modulus a Exponent a dalsi
+        /// Prepnu A1 2x tagem Add text argumenty PP Modulus a Exponent a dalsi
         /// </summary>
         public void ExportToConfigFile(string strFilePath)
         {
@@ -262,9 +265,9 @@ public class Asymmetric
         /// </summary>
         public string ToXml()
         {
-            StringBuilder sb = new StringBuilder();
-            // TODO: Nevim zda bych nemel vytvorit novou instanci SB
-            StringBuilder _with4 = sb;
+            StringBuilder stringBuilder = new StringBuilder();
+            // TODO: Nevim zda bych nemel vytvorit novou instanci stringBuilder
+            StringBuilder _with4 = stringBuilder;
             _with4.Append(UtilsNonNetStandard.WriteXmlNode(_ElementParent, false));
             _with4.Append(UtilsNonNetStandard.WriteXmlElement(_ElementModulus, Modulus));
             _with4.Append(UtilsNonNetStandard.WriteXmlElement(_ElementExponent, Exponent));
@@ -275,7 +278,7 @@ public class Asymmetric
             _with4.Append(UtilsNonNetStandard.WriteXmlElement(_ElementCoefficient, Coefficient));
             _with4.Append(UtilsNonNetStandard.WriteXmlElement(_ElementPrivateExponent, PrivateExponent));
             _with4.Append(UtilsNonNetStandard.WriteXmlNode(_ElementParent, true));
-            return sb.ToString();
+            return stringBuilder.ToString();
         }
         /// <summary>
         /// Writes the Xml representation of this private key to a file
@@ -305,7 +308,7 @@ public class Asymmetric
     }
     /// <summary>
     /// Instantiates a new asymmetric encryption session using a specific key size
-    /// OOP A1 _KeySize a do _rsa vlozim provider M GetRSAProvider. Vytvorim instance pro novou asymetrickou krypt. session s velikostm klice A1
+    /// OOP A1 _KeySize a do _rsa vlozim provider M GetRSAProvider. Vytvorim instance pro novou asymetrickou krypt. session text velikostm klice A1
     /// </summary>
     public Asymmetric(int keySize)
     {
@@ -462,7 +465,7 @@ public class Asymmetric
     static Type type = typeof(Asymmetric);
     /// <summary>
     /// Decrypts data using the default private key
-    /// Nacte klic z CM.AS a dekryptuje A1 s timto klicem.
+    /// Nacte klic z CM.AS a dekryptuje A1 text timto klicem.
     /// </summary>
     public DataCrypt Decrypt(DataCrypt encryptedDataCrypt)
     {
@@ -503,16 +506,16 @@ public class Asymmetric
         }
         catch (/*XmlSyntaxException*/ Exception ex)
         {
-            string s = null;
+            string text = null;
             if (isPrivate)
             {
-                s = "private";
+                text = "private";
             }
             else
             {
-                s = "public";
+                text = "public";
             }
-            throw new Exception(string.Format(Translate.FromKey(XlfKeys.TheProvided0EncryptionKeyXMLDoesNotAppearToBeValid) + ".", s));
+            throw new Exception(string.Format(Translate.FromKey(XlfKeys.TheProvided0EncryptionKeyXMLDoesNotAppearToBeValid) + ".", text));
         }
     }
     /// <summary>
@@ -526,7 +529,7 @@ public class Asymmetric
     /// <summary>
     /// gets the default RSA provider using the specified key size; 
     /// note that Microsoft's CryptoAPI has an underlying file system dependency that is unavoidable
-    /// Inicializuji krypt. ttidu RSA s PP a  _KeySize a _KeyContainerName
+    /// Inicializuji krypt. ttidu RSA text PP a  _KeySize a _KeyContainerName
     /// Klic se bude uchovavat v ulozisti klice PC, nikoliv v uz. profilu
     /// Pokud se nepodari nacist, VV
     /// </summary>

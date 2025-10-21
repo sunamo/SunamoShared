@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Essential;
 
 public class SharedAlgorithms
@@ -17,12 +20,12 @@ public class SharedAlgorithms
             }
             catch (Exception ex)
             {
-                var m = ex.Message;
-                if (m.StartsWith("The remote server returned an error: "))
+                var message = ex.Message;
+                if (message.StartsWith("The remote server returned an error: "))
                 {
-                    var p = SHSplit.Split(SHReplace.ReplaceOnce(m, "The remote server returned an error: ", string.Empty), " ");
-                    var s = p[0].TrimEnd(')').TrimStart('(');
-                    lastError = int.Parse(s);
+                    var parameter = SHSplit.Split(SHReplace.ReplaceOnce(message, "The remote server returned an error: ", string.Empty), " ");
+                    var text = parameter[0].TrimEnd(')').TrimStart('(');
+                    lastError = int.Parse(text);
                 }
                 if (lastError == 404)
                 {

@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Helpers.Resource;
 
 public class GuidHelper
@@ -22,23 +25,23 @@ public class GuidHelper
 
     public static string GuidsOnlySingleLetter()
     {
-        List<string> ls = new List<string>();
+        List<string> list = new List<string>();
         for (int i = 0; i < 10; i++)
         {
-            var ts = i.ToString();
-            ts = ts.PadLeft(32, ts[0]);
+            var text = i.ToString();
+            text = text.PadLeft(32, text[0]);
 
-            ls.Add(AddDashes(ts));
+            list.Add(AddDashes(text));
         }
 
         for (char i = 'a'; i < 'g'; i++)
         {
-            var ts = i.ToString();
-            ts = ts.PadLeft(32, ts[0]);
+            var text = i.ToString();
+            text = text.PadLeft(32, text[0]);
 
-            ls.Add(AddDashes(ts));
+            list.Add(AddDashes(text));
         }
 
-        return string.Join(Environment.NewLine, ls);
+        return string.Join(Environment.NewLine, list);
     }
 }

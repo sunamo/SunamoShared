@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared;
 
 public static class ReClasser
@@ -10,9 +13,9 @@ public static class ReClasser
     /// <returns></returns>
     public static dynamic FixMeUp(this object fixMe)
     {
-        var t = fixMe.GetType();
+        var temp = fixMe.GetType();
         var returnClass = new ExpandoObject() as IDictionary<string, object>;
-        var props = t.GetProperties();
+        var props = temp.GetProperties();
         foreach (var pr in props)
         {
             var val = pr.GetValue(fixMe);

@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoShared.Helpers;
 public class GridHelperSunamo
 {
@@ -9,10 +12,10 @@ public class GridHelperSunamo
     public static List<string> ForAllTheSame(int columns)
     {
         List<string> result = new List<string>(columns);
-        var d = 100d / columns;
+        var data = 100d / columns;
         for (int i = 0; i < columns; i++)
         {
-            result.Add(d + "*");
+            result.Add(data + "*");
         }
 
         return result;
