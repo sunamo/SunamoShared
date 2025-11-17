@@ -13,6 +13,6 @@ public class CheckArgumentArgs
     public CheckArgumentArgs(string argName, StringBuilder stringBuilder)
     {
         this.argName = argName;
-        this.sb = stringBuilder;
+        this.stringBuilder = stringBuilder;
     }
 }

@@ -110,7 +110,7 @@ bool fillAlsoFirstTwo = true)
     IEnumerable<T> collection)
     {
         var count = collection.Count();
-        return count != requireElements ? CheckBefore(before) + $" {nameCollection} has {c}, it's required {requireElements}" : null;
+        return count != requireElements ? CheckBefore(before) + $" {nameCollection} has {count}, it's required {requireElements}" : null;
     }
     internal static string? IsNull(string before, string variableName, object? variable)
     {

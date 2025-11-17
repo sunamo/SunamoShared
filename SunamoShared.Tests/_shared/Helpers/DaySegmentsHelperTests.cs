@@ -1,5 +1,6 @@
 namespace shared.Tests.Helpers;
 
+using SunamoShared.Helpers;
 
 public class DaySegmentsHelperTests
 {
