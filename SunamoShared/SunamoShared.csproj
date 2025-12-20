@@ -1,8 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Version>25.6.7.1</Version>
-    <Description>Many code (222 code files to 1/9/2024) which is waiting for separated to standalone packages</Description>
+    <Description>Many code (222 code files to 1/9/2024) which is waiting for separated to standalone
+      packages</Description>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
     <PackageProjectUrl>https://sunamo.cz/</PackageProjectUrl>
@@ -18,7 +19,8 @@
     <Compile Remove="_sunamo\SunamoExceptions\_AddedToAllCsproj\**" />
     <EmbeddedResource Remove="_sunamo\SunamoExceptions\_AddedToAllCsproj\**" />
     <None Remove="_sunamo\SunamoExceptions\_AddedToAllCsproj\**" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.3" Pack="True" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.3"
+      Pack="True" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Diacritics" Version="3.3.29" />

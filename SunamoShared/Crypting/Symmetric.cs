@@ -2,18 +2,16 @@
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 // Instance variables refactored according to C# conventions
 namespace SunamoShared.Crypting;
-
 /// <summary>
 /// Symmetric encryption uses a single key to encrypt and decrypt. 
 /// Both parties (encryptor and decryptor) must share the same secret key.
 /// Symetricke sifrovani pouzivajici jeden klic pro krypt i dekrypt.
 /// Obe casti dekryptor i kryptor musi sdilet stejny klic.
 /// </summary>
-public class Symmetric
+public partial class Symmetric
 {
     private const string _DefaultIntializationVector = "%1Az=-@qT";
     private const int _BufferSize = 2048;
-
     /// <summary>
     /// Provideri symetrickeho sifrovani.
     /// </summary>
@@ -65,7 +63,6 @@ public class Symmetric
             case Provider.Rijndael:
                 symmetricAlgorithm = new RijndaelManaged();
                 symmetricAlgorithm.Mode = CipherMode.CBC;
-
                 break;
             case Provider.TripleDES:
                 symmetricAlgorithm = new TripleDESCryptoServiceProvider();
@@ -92,7 +89,11 @@ public class Symmetric
     /// </summary>
     public int KeySizeBytes
     {
-        get { return symmetricAlgorithm.KeySize / 8; }
+        get
+        {
+            return symmetricAlgorithm.KeySize / 8;
+        }
+
         set
         {
             symmetricAlgorithm.KeySize = value * 8;
@@ -108,7 +109,11 @@ public class Symmetric
     /// </summary>
     public int KeySizeBits
     {
-        get { return symmetricAlgorithm.KeySize; }
+        get
+        {
+            return symmetricAlgorithm.KeySize;
+        }
+
         set
         {
             symmetricAlgorithm.KeySize = value;
@@ -122,7 +127,11 @@ public class Symmetric
     /// </summary>
     public DataCrypt Key
     {
-        get { return encryptionKey; }
+        get
+        {
+            return encryptionKey;
+        }
+
         set
         {
             encryptionKey = value;
@@ -140,7 +149,11 @@ public class Symmetric
     /// </summary>
     public DataCrypt IntializationVector
     {
-        get { return initializationVector; }
+        get
+        {
+            return initializationVector;
+        }
+
         set
         {
             initializationVector = value;
@@ -172,7 +185,6 @@ public class Symmetric
     }
 
     static Type type = typeof(Symmetric);
-
     /// <summary>
     /// Ensures that _crypto object has valid Key and IV
     /// prior to any attempt to encrypt/decrypt anythingv
@@ -191,6 +203,7 @@ public class Symmetric
                 throw new Exception(Translate.FromKey(XlfKeys.NoKeyWasProvidedForTheDecryptionOperation) + "!");
             }
         }
+
         if (initializationVector.IsEmpty)
         {
             if (isEncrypting)
@@ -202,6 +215,7 @@ public class Symmetric
                 throw new Exception(Translate.FromKey(XlfKeys.NoInitializationVectorWasProvidedForTheDecryptionOperation) + "!");
             }
         }
+
         symmetricAlgorithm.Key = encryptionKey.Bytes;
         symmetricAlgorithm.IV = initializationVector.Bytes;
     }
@@ -224,14 +238,11 @@ public class Symmetric
     public DataCrypt Encrypt(DataCrypt d)
     {
         MemoryStream ms = new MemoryStream();
-
         ValidateKeyAndIv(true);
-
         CryptoStream cs = new CryptoStream(ms, symmetricAlgorithm.CreateEncryptor(), CryptoStreamMode.Write);
         cs.Write(d.Bytes, 0, d.Bytes.Length);
         cs.Close();
         ms.Close();
-
         return new DataCrypt(ms.ToArray());
     }
 
@@ -254,104 +265,5 @@ public class Symmetric
     {
         Key = key;
         return Encrypt(s);
-    }
-
-    /// <summary>
-    /// Encrypts the specified stream to memory using preset key and preset initialization vector
-    /// Zasifruje proud A1. Pokud neude platny Iv nebo key, vygeneruji novy.
-    /// </summary>
-    public DataCrypt Encrypt(Stream s)
-    {
-        MemoryStream ms = new MemoryStream();
-        byte[] b = new byte[_BufferSize + 1];
-        int i = 0;
-
-        ValidateKeyAndIv(true);
-
-        CryptoStream cs = new CryptoStream(ms, symmetricAlgorithm.CreateEncryptor(), CryptoStreamMode.Write);
-        i = s.Read(b, 0, _BufferSize);
-        while (i > 0)
-        {
-            cs.Write(b, 0, i);
-            i = s.Read(b, 0, _BufferSize);
-        }
-
-        cs.Close();
-        ms.Close();
-
-        return new DataCrypt(ms.ToArray());
-    }
-
-    /// <summary>
-    /// Decrypts the specified data using provided key and preset initialization vector
-    /// Dekryptuje data A1 s klicem A2 ktery OOP
-    /// </summary>
-    public DataCrypt Decrypt(DataCrypt encryptedDataCrypt, DataCrypt key)
-    {
-        Key = key;
-        return Decrypt(encryptedDataCrypt);
-    }
-
-    /// <summary>
-    /// Decrypts the specified stream using provided key and preset initialization vector
-    /// Dekryptuje proud A1 s klicem A2. A2 OOP
-    /// </summary>
-    public DataCrypt Decrypt(Stream encryptedStream, DataCrypt key)
-    {
-        Key = key;
-        return Decrypt(encryptedStream);
-    }
-
-    /// <summary>
-    /// Decrypts the specified stream using preset key and preset initialization vector
-    /// Dekryptuje A1. Pokud klic a IV nebyly zadany, a budou prazdne, VV
-    /// </summary>
-    public DataCrypt Decrypt(Stream encryptedStream)
-    {
-        MemoryStream ms = new MemoryStream();
-        byte[] b = new byte[_BufferSize + 1];
-
-        ValidateKeyAndIv(false);
-        CryptoStream cs = new CryptoStream(encryptedStream, symmetricAlgorithm.CreateDecryptor(), CryptoStreamMode.Read);
-
-        int i = 0;
-        i = cs.Read(b, 0, _BufferSize);
-
-        while (i > 0)
-        {
-            ms.Write(b, 0, i);
-            i = cs.Read(b, 0, _BufferSize);
-        }
-        cs.Close();
-        ms.Close();
-
-        return new DataCrypt(ms.ToArray());
-    }
-
-    /// <summary>
-    /// Decrypts the specified data using preset key and preset initialization vector
-    /// Dekryptuje data A1. Musi byt zadan platny klic a IV.
-    /// </summary>
-    public DataCrypt Decrypt(DataCrypt encryptedDataCrypt)
-    {
-        MemoryStream ms = new MemoryStream(encryptedDataCrypt.Bytes, 0, encryptedDataCrypt.Bytes.Length);
-        byte[] b = new byte[encryptedDataCrypt.Bytes.Length];
-
-        ValidateKeyAndIv(false);
-        CryptoStream cs = new CryptoStream(ms, symmetricAlgorithm.CreateDecryptor(), CryptoStreamMode.Read);
-
-        try
-        {
-            cs.Read(b, 0, encryptedDataCrypt.Bytes.Length - 1);
-        }
-        catch (CryptographicException ex)
-        {
-            throw new Exception(Translate.FromKey(XlfKeys.UnableToDecryptDataTheProvidedKeyMayBeInvalid) + "." + Exceptions.TextOfExceptions(ex));
-        }
-        finally
-        {
-            cs.Close();
-        }
-        return new DataCrypt(b);
     }
 }
