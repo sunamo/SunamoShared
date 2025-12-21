@@ -1,6 +1,7 @@
+namespace SunamoShared.Crypting;
+
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-namespace SunamoShared.Crypting;
 /// <summary>
 /// Friend public class for shared utility methods used by multiple Encryption classes
 /// </summary>

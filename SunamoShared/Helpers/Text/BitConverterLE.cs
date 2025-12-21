@@ -1,6 +1,7 @@
+namespace SunamoShared.Helpers.Text;
+
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-namespace SunamoShared.Helpers.Text;
 public static class BitConverterLE
 {
     public static byte[] GetBytes(ulong value)

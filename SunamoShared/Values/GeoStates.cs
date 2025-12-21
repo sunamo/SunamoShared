@@ -1,6 +1,7 @@
+namespace SunamoShared.Values;
+
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-namespace SunamoShared.Values;
 public class GeoStates
 {
     public Dictionary<string, string> statesFullNames = null;

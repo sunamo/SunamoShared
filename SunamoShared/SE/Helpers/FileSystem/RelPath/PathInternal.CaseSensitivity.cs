@@ -1,5 +1,3 @@
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 namespace SunamoShared.SE.Helpers.FileSystem.RelPath;
 
 public partial class PathInternal
@@ -12,4 +10,3 @@ public partial class PathInternal
     public static bool IsCaseSensitive => true;
     //return !(OperatingSystem.IsWindows() || OperatingSystem.IsMacOS() || OperatingSystem.IsIOS() || OperatingSystem.IsTvOS() || OperatingSystem.IsWatchOS());
 }
-

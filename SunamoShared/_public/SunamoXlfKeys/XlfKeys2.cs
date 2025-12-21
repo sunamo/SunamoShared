@@ -1,6 +1,7 @@
+namespace SunamoShared._public.SunamoXlfKeys;
+
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-namespace SunamoShared._public.SunamoXlfKeys;
 /// <summary>
 /// Nastaven na public protože dle mě nemusí být public - opakuje se ve SunamoDotnetCmdBuilder, SunamoDictionary a SunamoValues
 /// 

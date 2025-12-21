@@ -1,6 +1,7 @@
+namespace SunamoShared.Generators;
+
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-namespace SunamoShared.Generators;
 public static class SpecialFolders
 {
     public static string MyDocuments(string path)

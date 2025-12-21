@@ -1,7 +1,3 @@
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-
-// Instance variables refactored according to C# conventions
 namespace SunamoShared.Crypting;
 
 public class Utils

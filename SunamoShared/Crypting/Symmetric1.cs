@@ -1,7 +1,8 @@
+namespace SunamoShared.Crypting;
+
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 // Instance variables refactored according to C# conventions
-namespace SunamoShared.Crypting;
 /// <summary>
 /// Symmetric encryption uses a single key to encrypt and decrypt. 
 /// Both parties (encryptor and decryptor) must share the same secret key.

@@ -1,7 +1,8 @@
+namespace SunamoShared.Crypting;
+
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 // Instance variables refactored according to C# conventions
-namespace SunamoShared.Crypting;
 /// <summary>
 /// Asymmetric encryption uses a pair of keys to encrypt and decrypt.
 /// There is a "public" key which is used to encrypt. Decrypting, on the other hand, 

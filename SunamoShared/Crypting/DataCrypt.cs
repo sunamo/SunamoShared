@@ -1,6 +1,7 @@
+namespace SunamoShared.Crypting;
+
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-namespace SunamoShared.Crypting;
 /// <summary>
 /// represents Hex, Byte, Base64, or String data to encrypt/decrypt;
 /// use the .Text property to set/get a string representation
