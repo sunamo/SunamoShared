@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net9.0;net8.0</TargetFrameworks>
-    <Version>25.12.31.1</Version>
+    <TargetFrameworks>net10.0;net9.0;net8.0</TargetFrameworks>
+    <Version>26.1.1.153</Version>
     <Description>Many code (222 code files to 1/9/2024) which is waiting for separated to standalone
       packages</Description>
     <Authors>www.sunamo.cz</Authors>
